@@ -1,9 +1,10 @@
-Using The Service
-=================
+Falkonry Service in the Cloud
+=============================
 
-Accessing the Falkonry Service is simple. When you initially signed up for the Falkonry 
-Service, a Personal account was created for you automatically. You can start using the 
-service at any time to learn how to create pipelines and produce condition predictions.
+Accessing the Falkonry Service in the Cloud is simple. When you initially signed up for 
+the Falkonry Service, a Personal account was created for you automatically. Using this 
+account, you can start using the Falkonry Service at any time to learn how to create 
+pipelines and produce condition assessments.
 
 Falkonry Personal Account
 -------------------------

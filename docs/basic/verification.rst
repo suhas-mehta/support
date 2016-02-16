@@ -24,7 +24,7 @@ match the field name supplied to the Pipeline at setup), and one or more Assessm
 The figure below shows an example file to upload a set of verified conditions for the 
 Assessment ``L1 Wheel Health``.
 
-.. image:: images/verification.png
+.. image:: ./images/verification.png
 
 For a more detail regarding how to format data files for use with Falkonry, 
 please refer here_
@@ -43,7 +43,7 @@ assessment results for a specific Thing. Users are directly able to add individu
 conditions from the Thing detail view as shown in the figure below.  This dialog is 
 invoked by clicking the Add Verification Example button.
 
-.. image:: images/ui_verification.png
+.. image:: ./images/ui_verification.png
 
 Via a client application like the Splunk App
 --------------------------------------------
@@ -53,4 +53,4 @@ Splunk user experience.  'Add Verification' is an available action for any Pipel
 visible on the Manage tab.  Invoking that action produces a dialog shown in the figure 
 below that lets a user create a set of verified condition examples from a Splunk search query.
 
-.. image:: images/splunk_verification.png
+.. image:: ./images/splunk_verification.png

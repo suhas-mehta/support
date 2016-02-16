@@ -19,7 +19,7 @@ specific format.
 The following figure shows part of a file in the appropriate structure.  The Thing field 
 is named ``car``, and we have three signals ``L1DynVert``, ``L1VertAvg``, & ``L1VertPk``.
 
-.. image:: images/data.png
+.. image:: ./images/data.png
 
 The three signals above were all of the *numerical* type.  Falkonry supports two types of 
 source signals:
@@ -39,6 +39,6 @@ context and to use the app to send data to the Falkonry Service.   In the case o
 Splunk App, a user gathers the source signal data they need through a standard Splunk 
 search query.  The figure below shows the display of such a search in the Splunk App.
 
-.. image:: images/splunk.png
+.. image:: ./images/splunk.png
 
  

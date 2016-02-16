@@ -21,14 +21,18 @@ Learn more about the Falkonry Service and what it can do for your operations:
    :maxdepth: 1
 
    concepts
+   using
    
 Sign up for the `Falkonry Service <https://falkonry.io/signup>`_ and get started now.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
-   using
-   dataformat
-   transfer
-   verification
-   assessment
+   basic/index.rst
+   
+Use Falkonry Splunk App to work with your existing Splunk data
+
+.. toctree::
+   :maxdepth: 2
+   
+   splunk_app/index.rst

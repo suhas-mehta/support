@@ -1,22 +1,24 @@
-.. Falkonry documentation master file, created by
-   sphinx-quickstart on Mon Feb 15 16:08:45 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+About The Falkonry Service
+==========================
 
-Welcome to Falkonry's documentation!
-====================================
+There is tremendous value of being able to understand the condition of complex systems 
+(machines, devices, people, animals, plants, weather, organizations) from data streams 
+produced by those systems. The Falkonry Service was built in response to the need to make 
+condition recognition ubiquitous and easily accessible by system operators. The service is 
+easily added to any application that manages time-series data and does not require data 
+scientists or custom software development.  
 
-Contents:
+The Falkonry Service is used to transform signal data into real-time assessments of 
+condition.  It is not, however, a machine learning toolkit for data scientists.  Users of 
+the service simply supply it with signal data and any available examples of verified 
+conditions and it will learn to recognize conditions.  Once it learns conditions it will 
+recognize those conditions in new data.  As it accumulates data and additional verified 
+examples, it continues to learn and improve its ability to recognize or ‘assess’ conditions.
+
+Learn more about the Falkonry Service and what it can do for your operations:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   concepts
+   using

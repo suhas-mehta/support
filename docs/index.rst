@@ -20,6 +20,7 @@ Learn more about the Falkonry Service and what it can do for your operations:
 .. toctree::
    :maxdepth: 1
 
+   problem
    concepts
    usecases
    using/index

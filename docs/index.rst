@@ -22,25 +22,32 @@ Learn more about the Falkonry Service and what it can do for your operations:
 
    concepts
    usecases
-   using/index.rst
+   using/index
    
 Sign up for the `Falkonry Service <https://falkonry.io/signup>`_ and get started now.
 
 .. toctree::
    :maxdepth: 2
    
-   basic/index.rst
+   basic/index
    
 Use Falkonry Splunk App to work with your existing Splunk data
 
 .. toctree::
    :maxdepth: 2
    
-   splunk_app/index.rst
+   splunk_app/index
+
+Follow and  execute tutorials with Falkonry supplied data
+
+.. toctree::
+  :maxdepth: 2
+  
+  tutorial/index
 
 Develop connectors to Falkonry
 
 .. toctree::
    :maxdepth: 2
    
-   connector/index.rst
+   connector/index

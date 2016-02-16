@@ -21,4 +21,14 @@ Learn more about the Falkonry Service and what it can do for your operations:
    :maxdepth: 1
 
    concepts
+   
+Sign up for the `Falkonry Service <https://falkonry.io/signup>`_ and get started now.
+
+.. toctree::
+   :maxdepth: 1
+   
    using
+   dataformat
+   transfer
+   verification
+   assessment

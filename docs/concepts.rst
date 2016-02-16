@@ -1,5 +1,5 @@
-Basic Elements of The Service
-=============================
+Basic Concepts
+==============
 
 Here's a quick overview of the basic elements of the Falkonry Service and concepts that
 are referenced elsewhere in the documentation.
@@ -28,7 +28,9 @@ providing a stream of condition predictions in exchange for a stream of source s
 from Things.
 
 .. image:: images/pipeline.png
-
+   :height: 223
+   :width: 240
+   
 Source Signals
 --------------
 

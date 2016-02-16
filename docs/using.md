@@ -1,5 +1,5 @@
-Using The Falkonry Service
-==========================
+Using The Service
+=================
 
 Accessing the Falkonry Service is simple. When you initially signed up for the Falkonry 
 Service, a Personal account was created for you automatically. You can start using the 

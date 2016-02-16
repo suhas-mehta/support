@@ -1,6 +1,11 @@
 Basic Elements of The Service
 =============================
 
+Here's a quick overview of the basic elements of the Falkonry Service and concepts that
+are referenced elsewhere in the documentation.
+
+.. image:: images/operations.png
+
 Things
 ------
 
@@ -22,8 +27,7 @@ Service for condition prediction. The Pipeline augments the Operational View, by
 providing a stream of condition predictions in exchange for a stream of source signal data
 from Things.
 
-
-                    
+.. image:: images/pipeline.png
 
 Source Signals
 --------------

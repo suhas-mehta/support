@@ -1,5 +1,5 @@
-About The Falkonry Service
-==========================
+The Falkonry Service
+====================
 
 There is tremendous value of being able to understand the condition of complex systems 
 (machines, devices, people, animals, plants, weather, organizations) from data streams 

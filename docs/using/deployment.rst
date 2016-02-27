@@ -27,16 +27,11 @@ use with Falkonry is the following:
       - 1 TB SSD for learning buffer volumes
       - 128 GB SSD for internal database volumes
 
-  - For Splunk Enterprise used inside Falkonry Deployment Health
-    - 1 instance with 2 full cores and 16 GB RAM
-    - 1 TB attached SATA
-
 - Software 
 
   - `Kubernetes v1.1 <http://kubernetes.io/v1.1/gs-custom.html>`_ including 
     `kubectl <http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html>`_
     The VMs can run any operating systems as long as Kubernetes is fully supported.
-  - `Splunk Enterprise 6.3 <http://www.splunk.com/en_us/download.html>`_ Free Download 
   
 - Network
  
@@ -57,7 +52,11 @@ Download the Falkonry Installer from `falkonry.com/download <http://falkonry.com
 
 Also, you will need to his step requires the following:
   
-- Obtain Falkonry software repository credentials for downloading Falkonry Enterprise
+- Obtain the following from Falkonry:
+
+  - Software repository credentials for downloading Falkonry Enterprise
+  - Splunk HTTP Event Collector Token for monitoring
+
 - Decide the configuration for the following properties:
 
   - Tiny vs. medium size deployment as explained earlier
@@ -65,7 +64,6 @@ Also, you will need to his step requires the following:
   - External host protocol. If using `https` ensure that appropriate certificates are set up
     on a proxy server that can forward to port `30061` on the IP address of the Kubernetes 
     master.
-  - Splunk HTTP Event Collector Token
 
 Executing the Falkonry Installer
 --------------------------------

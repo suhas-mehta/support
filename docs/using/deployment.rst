@@ -81,7 +81,18 @@ from as confirmed in the previous step.
 You will run the installer in the following command from the folder where you opened the
 Falkonry Installer Zip file::
 
-  $ ./install.sh -c tiny -h falkonry.acme.com -p http -t splunk-event-collector-token
+  $ ./install.sh -c=tiny -h=falkonry.acme.com -p=http -t=splunk-event-collector-token
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
 selected by using the ``-c`` switch above.
+
+The full usage documentation of this installer script is as follows::
+
+  Example : install.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret"
+    -c | --clusterType   : Cluster type - tiny or medium.
+    -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
+    -p | --protocol      : Host protocol to be used - http or https.
+    -k | --kubeToken     : Kubernetes authentication token.
+    -t | --token         : Splunk token to be used. This is provided by Falkonry.
+    -u | --username      : Splunk username to be used. This is provided by Falkonry.
+    -s | --password      : Splunk password to be used. This is provided by Falkonry.

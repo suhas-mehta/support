@@ -54,9 +54,14 @@ Also, you will need to his step requires the following:
   
 - Obtain the following from Falkonry:
 
-  - Software repository credentials for downloading Falkonry Enterprise
-  - Splunk HTTP Event Collector Token for monitoring
+  - Software repository credentials for downloading Falkonry Enterprise.
+  - Splunk HTTP Event Collector Token for deployment health monitoring.
 
+- Every instance that is part of the Kubernetes cluster will have to login to Falkonry's
+  software repository using credentials from the previous step. The command will look like
+  the following where the ``-u`` and ``-p`` values will be the credentials provided to you::
+  
+    docker login -e="." -u="falkonry+installer" -p="9496DSFLGKJ49TS5MGZNW8MK5SDWZDIAKC003ZR8SM71B03UUIVAVOSC66F7S" quay.io
 - Decide the configuration for the following properties:
 
   - Tiny vs. medium size deployment as explained earlier
@@ -76,7 +81,7 @@ from as confirmed in the previous step.
 You will run the installer in the following command from the folder where you opened the
 Falkonry Installer Zip file::
 
-  $ ./install-falkonry -c tiny -h falkonry.acme.com -p http -t splunk-event-collector-token
+  $ ./install.sh -c tiny -h falkonry.acme.com -p http -t splunk-event-collector-token
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
 selected by using the ``-c`` switch above.

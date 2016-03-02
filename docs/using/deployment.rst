@@ -56,6 +56,7 @@ Also, you will need to his step requires the following:
 
   - Software repository credentials for downloading Falkonry Enterprise.
   - Splunk HTTP Event Collector Token for deployment health monitoring.
+  - Splunk credentials for application logging.
 
 - Every instance that is part of the Kubernetes cluster will have to login to Falkonry's
   software repository using credentials from the previous step. The command will look like

@@ -56,12 +56,14 @@ Also, before executing the next step, complete the following:
 
   - Software repository credentials for downloading Falkonry Enterprise.
   - Splunk HTTP Event Collector Token for deployment health monitoring.
+  - Splunk credentials for application logging.
 
 - Every instance that is part of the Kubernetes cluster will have to login to Falkonry's
   software repository using credentials from the previous step. The command will look like
   the following where the ``-u`` and ``-p`` values will be the credentials provided to you::
   
-    docker login -e="." -u="falkonry+installer" -p="9496DSFLGKJ49TS5MGZNW8MK5SDWZDIAKC003ZR8SM71B03UUIVAVOSC66F7S" quay.io
+    docker login -e="." -u="falkonry+installer" \
+    -p="9496DSFLGKJ49TS5MGZNW8MK5SDWZDIAKC003ZR8SM71B03UUIVAVOSC66F7S" quay.io
 - Decide the configuration for the following properties:
 
   - Tiny vs. medium size deployment as explained earlier
@@ -89,10 +91,22 @@ from as confirmed in the previous step.
 You will run the installer in the following command from the folder where you opened the
 Falkonry Installer Zip file::
 
-  $ ./install.sh -c tiny -h falkonry.acme.com -p http -t splunk-event-collector-token
+  $ ./install.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
+  -t=splunk-token -u=splunk-user -s=splunk-password
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
 selected by using the ``-c`` switch above.
+
+The full usage documentation of this installer script is as follows::
+
+  Example : install.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+    -c | --clusterType   : Cluster type - tiny or medium.
+    -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
+    -p | --protocol      : Host protocol to be used - http or https.
+    -k | --kubeToken     : Kubernetes authentication token.
+    -t | --token         : Splunk token to be used. This is provided by Falkonry.
+    -u | --username      : Splunk username to be used. This is provided by Falkonry.
+    -s | --password      : Splunk password to be used. This is provided by Falkonry.
 
 Post-Installation Steps
 -----------------------
@@ -101,5 +115,4 @@ If you have prepared correctly for the installation, then once the installation 
 completed, you will be able to open the URL for your host in a regular browser to bring up
 Falkonry. For example, if your configured host were ``falkonry.acme.com`` and configured 
 host protocol is ``http``, then just type ``http://falkonry.acme.com`` to start using
-Falkonry Service.
-the same host name in the browser as 
+your private deployment of the Falkonry Service.

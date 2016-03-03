@@ -75,10 +75,11 @@ Also, before executing the next step, complete the following:
   
 - Map externally accessible ports to the Falkonry UI Server port ``30061``. You can use 
   Apache or another Web server for this purpose.
+
   - If you are using the ``http`` protocol in the previous step, you will need to proxy
-  from port ``80`` to port ``30061``. 
+    from port ``80`` to port ``30061``. 
   - If you are using the ``https`` protocol in the previous step, you will need to proxy
-  from port ``443`` to port ``30061``. 
+    from port ``443`` to port ``30061``. 
 
 Executing the Falkonry Installer
 --------------------------------

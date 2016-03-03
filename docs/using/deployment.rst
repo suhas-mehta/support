@@ -50,7 +50,7 @@ following steps::
 
 Download the Falkonry Installer from `falkonry.com/download <http://falkonry.com/download>`_.
 
-Also, you will need to his step requires the following:
+Also, before executing the next step, complete the following:
   
 - Obtain the following from Falkonry:
 
@@ -66,9 +66,17 @@ Also, you will need to his step requires the following:
 
   - Tiny vs. medium size deployment as explained earlier
   - External host name
-  - External host protocol. If using `https` ensure that appropriate certificates are set up
-    on a proxy server that can forward to port `30061` on the IP address of the Kubernetes 
-    master.
+  - External host protocol such as ``http`` or ``https``
+
+- Create a DNS entry for your selected host name and map it to the IP address for the
+  Kubernetes host.
+  
+- Map externally accessible ports to the Falkonry UI Server port ``30061``. You can use 
+  Apache or another Web server for this purpose.
+  - If you are using the ``http`` protocol in the previous step, you will need to proxy
+  from port ``80`` to port ``30061``. 
+  - If you are using the ``https`` protocol in the previous step, you will need to proxy
+  from port ``443`` to port ``30061``. 
 
 Executing the Falkonry Installer
 --------------------------------
@@ -85,3 +93,13 @@ Falkonry Installer Zip file::
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
 selected by using the ``-c`` switch above.
+
+Post-Installation Steps
+-----------------------
+
+If you have prepared correctly for the installation, then once the installation is 
+completed, you will be able to open the URL for your host in a regular browser to bring up
+Falkonry. For example, if your configured host were ``falkonry.acme.com`` and configured 
+host protocol is ``http``, then just type ``http://falkonry.acme.com`` to start using
+Falkonry Service.
+the same host name in the browser as 

@@ -48,7 +48,7 @@ following steps::
   $ kubectl get services
   $ kubectl get rc
 
-Download the Falkonry Installer from `falkonry.com/download <http://falkonry.com/download>`_.
+Download the Falkonry Installer from `falkonry.com/partners <http://falkonry.com/partners>`_.
 
 Also, before executing the next step, complete the following:
   

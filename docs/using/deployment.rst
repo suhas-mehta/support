@@ -138,7 +138,7 @@ selected by using the ``-c`` switch above.
 
 The full usage documentation of this update script is as follows::
 
-  Example : install.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+  Example : update.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
     -c | --clusterType   : Cluster type - tiny or medium.
     -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
     -p | --protocol      : Host protocol to be used - http or https.

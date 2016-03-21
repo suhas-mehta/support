@@ -32,6 +32,9 @@ use with Falkonry is the following:
   - `Kubernetes v1.1 <http://kubernetes.io/v1.1/gs-custom.html>`_ including 
     `kubectl <http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html>`_
     The VMs can run any operating systems as long as Kubernetes is fully supported.
+  - Falkonry installer is downloaded from the `Falkonry Partner Website <http://falkonry.com/partners>`_. It is 
+    named as `Falkonry-k8-installer.zip` file. 
+  - To execute the installer script, you will need a shell environment such as `bash` or `tcsh`.  
   
 - Network
  
@@ -47,8 +50,6 @@ following steps::
 
   $ kubectl get services
   $ kubectl get rc
-
-Download the Falkonry Installer from `falkonry.com/partners <http://falkonry.com/partners>`_.
 
 Also, before executing the next step, complete the following:
   
@@ -81,16 +82,14 @@ Also, before executing the next step, complete the following:
   - If you are using the ``https`` protocol in the previous step, you will need to proxy
     from port ``443`` to port ``30061``. 
 
+You should run the Falkonry installer from the environment that has access to Kubernetes
+as confirmed in the previous step. Also, run the installation scripts from the folder 
+where you opened the Falkonry Installer.
+
 Executing the Falkonry Installer
 --------------------------------
 
-You can run the Falkonry installer from the downloaded `Falkonry-k8-installer.zip` file. To execute the
-installer, you will need a shell environment such as `bash` or `tcsh`. Also, make sure
-that you run the Falkonry installer from the environment that you can access Kubernetes
-from as confirmed in the previous step.
-
-You will run the installer in the following command from the folder where you opened the
-Falkonry Installer Zip file::
+The installation script is run with the following command::
 
   $ ./install.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
@@ -118,19 +117,14 @@ Falkonry. For example, if your configured host were ``falkonry.acme.com`` and co
 host protocol is ``http``, then just type ``http://falkonry.acme.com`` to start using
 your private deployment of the Falkonry Service.
 
-Updating Falkonry software
+Upgrading Falkonry software
 --------------------------
 
-You can run the Falkonry update script from the downloaded `Falkonry-k8-installer.zip` file. To execute the
-script, you will need a shell environment such as `bash` or `tcsh`. Also, make sure
-that you run the script from the environment that you can access Kubernetes
-from as confirmed in the previous step. Using this script, all the configurational changes released by Falkonry
-will be patched to your existing installation.
+This script installs upgraded software and updates configuration changes used by Falkonry.
+It must be used with the same credentials provided by Falkonry as used during installation.
+The upgrade script is run with the following command::
 
-You will run the update script in the following command from the folder where you opened the
-Falkonry Installer Zip file::
-
-  $ ./update.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
+  $ ./upgrade.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
@@ -138,7 +132,7 @@ selected by using the ``-c`` switch above.
 
 The full usage documentation of this update script is as follows::
 
-  Example : update.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+  Example : upgrade.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
     -c | --clusterType   : Cluster type - tiny or medium.
     -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
     -p | --protocol      : Host protocol to be used - http or https.
@@ -147,15 +141,11 @@ The full usage documentation of this update script is as follows::
     -u | --username      : Splunk username to be used. This is provided by Falkonry.
     -s | --password      : Splunk password to be used. This is provided by Falkonry.
 
-Upgrading Falkonry software
+Uninstalling Falkonry software
 ---------------------------
 
-You can run the Falkonry upgrade script from the downloaded `Falkonry-k8-installer.zip` file. To execute the
-script, you will need a shell environment such as `bash` or `tcsh`. Also, make sure
-that you run the script from the environment that you can access Kubernetes
-from as confirmed in the previous step.
+Uninstalling the Falkonry software will stop the Kubernetes services and remove the Falkonry software.
+The script does not remove any of the data created using Falkonry. The uninstall script is simply run 
+with the following command::
 
-You will run the upgrade script in the following command from the folder where you opened the
-Falkonry Installer Zip file::
-
-  $ ./upgrade.sh
+  $ ./uninstall.sh

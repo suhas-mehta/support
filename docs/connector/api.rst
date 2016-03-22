@@ -15,6 +15,5 @@ The Falkonry Prediction Service can be accessed via an HTTP API. You can see the
 into Falkonry. Note that you will need to login just like when you log in to the Falkonry Service.
 
 If you wish to use the API programmatically, e.g., from the command line or from a Java 
-application, then you will need to use an API token as a query parameter on every request. 
-Please contact us via a support request or by writing to `support@falkonry.com <mailto:support@falkonry.com>`_ 
-to obtain your API token.
+application, then you will need to use an API token with the HTTP `Authorization` header on every request. 
+You can create new or access existing API tokens in your account under the Settings > Integration view.

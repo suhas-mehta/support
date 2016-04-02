@@ -24,4 +24,5 @@ document.
    :maxdepth: 3
    
    api/live
-   api/index
+   api/pipeline/index
+   api/buffer/index

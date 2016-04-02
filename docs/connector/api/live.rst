@@ -14,8 +14,7 @@ Notice that the functions support both design-time functions (such as ``POST /pi
 which creates a pipeline) and run-time functions (such as ``POST /pipeline{id}/input``, 
 which posts input data to a pipeline). 
 
-Example: GET /pipeline/{id}
----------------------------
+**Example:** ``GET /pipeline/{id}``
 
 To get a sense of what you can do with this web page, let’s look at one of these functions 
 in detail. One of the most basic and easiest functions to understand is the one that 

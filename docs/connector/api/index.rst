@@ -1,5 +1,6 @@
-Using the REST API
+Pipeline REST API
 ==================
+
 Most likely you will want to use the API programmatically from within an application.  
 This section gives example API calls using Javascript and Node.js, and utilizing the 
 ``unirest`` node.js module. For detailed information on using Node.js please visit 
@@ -8,8 +9,8 @@ please visit http://unirest.io/nodejs.html.  Please note these examples are inte
 a simple starting point, not fully robust code.  At a minimum you will need to add error 
 handling.
 
-Falkonry Pipeline Lifecycle using the API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Falkonry Pipeline Lifecycle using the API**
+
 The following outlines a typical lifecycle of a pipeline created through the API.  Each of 
 the steps represents a calling an API function.
 

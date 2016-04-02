@@ -12,8 +12,6 @@ Falkonry API or client libraries.
   Please remember that Falkonry API is a Beta Preview. Things are subject to change, and 
   there might be a few rough edges.
 
-Before you begin
-----------------
 Before you can use the Falkonry API you must have a Falkonry account.  Create an account 
 from the `Falkonry Website <http://falkonry.com/start>`_.  Additionally, this document 
 assumes knowledge of `Falkonry AI concepts <../concepts.html>`_ and the Falkonry UI.  

@@ -118,7 +118,7 @@ host protocol is ``http``, then just type ``http://falkonry.acme.com`` to start 
 your private deployment of the Falkonry Service.
 
 Upgrading Falkonry software
---------------------------
+---------------------------
 
 This script installs upgraded software and updates configuration changes used by Falkonry.
 It must be used with the same credentials provided by Falkonry as used during installation.
@@ -142,7 +142,7 @@ The full usage documentation of this update script is as follows::
     -s | --password      : Splunk password to be used. This is provided by Falkonry.
 
 Uninstalling Falkonry software
----------------------------
+------------------------------
 
 Uninstalling the Falkonry software will stop the Kubernetes services and remove the Falkonry software.
 The script does not remove any of the data created using Falkonry. The uninstall script is simply run 

@@ -20,7 +20,7 @@ Connector Technologies
 ----------------------
 
 There are several ways to interact with the Falkonry service.  Whether you are 
-creating a pipeline or uploading source data, you currently have two choices besides
+creating a pipeline or uploading source data, you currently have a number of choices besides
 the `Falkonry UI <../concepts.html>`_ and `Falkonry Splunk App <../splunk_app/index.html>`_:
       
 .. toctree::

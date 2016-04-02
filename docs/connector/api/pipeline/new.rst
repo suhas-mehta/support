@@ -140,19 +140,19 @@ Step 1. Copy the example pipeline JSON below
 
 Step 2. Click on the function ``POST /pipeline`` to view the details
 
-.. image:: ./images/post-pipeline.png
+.. image:: ../images/post-pipeline.png
 
 This API takes an input **body**, which is the JSON definition of the pipeline you are 
 creating.  Copy and paste the contents of the JSON above into the box labeled **body**.
 
-.. image:: ./images/post-example.png
+.. image:: ../images/post-example.png
 
 Later we will look at this JSON in more detail. For now, click the **Try it out** button 
 to create the Pipeline. Go to your Falkonry UI to verify the pipeline was created.  You 
 should see *“APITestPipeline”* in your list of pipelines along with whatever other pipelines 
 you had created.
 
-.. image:: ./images/pipelines.png
+.. image:: ../images/pipelines.png
 
 Notice that it has 15 input signals defined and one assessment.  
 

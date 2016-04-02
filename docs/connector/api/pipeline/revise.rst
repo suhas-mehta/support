@@ -9,12 +9,12 @@ In our current example, we have just added data to the pipeline but have not com
 learning cycle so there is not yet a model in the pipeline.  From the Falkonry Service UI, 
 take a look at the **Learn** tab to verify that no model currently exists.
 
-.. image:: ./images/before-revision.png
+.. image:: ../images/before-revision.png
 
 We are going to create a new revision using the Falkonry Service API. Let's take a look at
 the API details for ``reviseMode`` on the Interactive API Web page.
 
-.. image:: ./images/revise-pipeline.png
+.. image:: ../images/revise-pipeline.png
 
 The inputs are ``id``, ``startTime``, and ``endTime``. The ``id`` is the pipeline ID as 
 before. The ``startTime`` and ``endTime`` parameters are inputs which specify the time 
@@ -50,7 +50,7 @@ to the console.  You should see something like this.
 
 Response:
 
-.. image:: ./images/pending-revision.png
+.. image:: ../images/pending-revision.png
 
 .. note::
    
@@ -64,7 +64,7 @@ Let’s take another look at the Falkonry UI.  We can see now that model revisio
 We have not yet added verification examples.  As a result during the learning cycle, 
 Falkonry Service identified conditions and applied generated names to label them.
    
-.. image:: ./images/revision.png
+.. image:: ../images/revision.png
    
 From here, let’s add some verification data to the pipeline.
    

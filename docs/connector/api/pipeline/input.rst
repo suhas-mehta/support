@@ -9,18 +9,18 @@ via the UI, the data must match what the pipeline is expecting.  In other words,
 names in the csv file must match the input signal names and thing identifier that you used 
 to set up the pipeline.
 
-.. image:: ./images/test-pipeline.png
+.. image:: ../images/test-pipeline.png
 
 For this example, a pipeline has been created from the API with no input data.  The 
 pipeline creation specifies the names of the input signals, but as you can see by
 clicking on the **Inflow** box, notice there are signals defined but no recorded Events.
 
-.. image:: ./images/empty.png
+.. image:: ../images/empty.png
 
 Let’s take a look at ``POST /pipeline{id}/input`` on the API test webpage to get a 
 sense of how it is used.
 
-.. image:: ./images/input-pipeline.png
+.. image:: ../images/input-pipeline.png
 
 From this page we can see that the function takes two inputs: ``id`` and ``data``. The 
 ``id`` input is the pipeline ID which you can find on the pipeline **Configure** tab as 
@@ -78,12 +78,12 @@ node.js, please visit https://nodejs.org/en/.
 
 The javascript prints out the response to the console.  You should see something like below:
 
-.. image:: ./images/tracker.png
+.. image:: ../images/tracker.png
 
 Now let’s look at the pipeline again in the Falkonry UI.  Click on the **Inflow** box in
 the **Configure** tab and see that there are new Events
 
-.. image:: ./images/input-confirm.png
+.. image:: ../images/input-confirm.png
 
 We have now successfully loaded the input signal data. 
 

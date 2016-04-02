@@ -31,10 +31,10 @@ the steps represents a calling an API function.
 .. toctree::
    :maxdepth: 1
    
-   new
-   input
-   revise
-   verification
-   open
-   output
-   create
+   pipeline/new
+   pipeline/input
+   pipeline/revise
+   pipeline/verification
+   pipeline/open
+   pipeline/output
+   pipeline/create

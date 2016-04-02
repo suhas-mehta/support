@@ -7,11 +7,11 @@ of assessments. Before you open a pipeline, it must have one or more existing mo
 revisions.  Let’s look at the pipeline in the Falkonry Service UI.  Open the **Configure** 
 tab and notice the pipeline is in the **Closed** state.
 
-.. image:: ./images/pipeline-flow.png
+.. image:: ../images/pipeline-flow.png
 
 Let’s look at the details of the open API in the Interactive API Web page.
 
-.. image:: ./images/open-pipeline.png
+.. image:: ../images/open-pipeline.png
 
 The request requires the pipeline ``id`` and an optional ``modelRevision``. The pipeline 
 ID will be used in the request URL and the ``modelRevision`` will be a query parameter.  
@@ -59,7 +59,7 @@ print to the console:
 Now when we look at the pipeline in the Falkonry Service UI we can see that the pipeline 
 is open with the Model revision #1. 
 
-.. image:: ./images/open-example.png
+.. image:: ../images/open-example.png
 
 The pipeline is now ready to produce output data.  Your application will want to retrieve 
 that data, so let’s take a look at how you would do that.

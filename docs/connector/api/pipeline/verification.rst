@@ -8,12 +8,12 @@ expecting.
 In our example pipeline, we currently have no verification data loaded.  Click on the 
 **Verify** tab in the Falkonry Service UI to confirm.
 
-.. image:: ./images/verification.png
+.. image:: ../images/verification.png
 
 From the Interactive API Web page we can see that the use of this API is very similar to 
 the input data function we used earlier.
 
-.. image:: ./images/verify-pipeline.png
+.. image:: ../images/verify-pipeline.png
 
 The function takes an input of ``id`` and ``data``. The ``id`` is the pipeline ID and 
 ``data`` is the location of the CSV or JSON file containing the examples. The Javascript 
@@ -54,7 +54,7 @@ implementation.
 Return to the **Verify** tab in the Falkonry Service UI and notice that the verification 
 data has been loaded.
 
-.. image:: ./images/verify-example.png
+.. image:: ../images/verify-example.png
 
 From here, you would likely want to run another learning cycle to incorporate the known 
 conditions into the model.  Refer to the previous example, ``POST /pipeline{id}/reviseModel``

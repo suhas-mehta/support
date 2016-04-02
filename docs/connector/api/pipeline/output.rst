@@ -11,7 +11,7 @@ The pipeline may be open or closed at the time you retrieve output.
 
 Let’s look at this API on the Interactive API Web page.
 
-.. image:: ./images/output-pipeline.png
+.. image:: ../images/output-pipeline.png
 
 Notice the inputs it takes: ``id``, ``assessment``, ``startTime``, and ``lastTime``.  As 
 before, ``id`` is the pipeline ID. The ``assessment`` is the name of the Assessment in 
@@ -64,7 +64,7 @@ visit http://csv.adaltas.com/parse/.  The ``response.body`` is read via the ``cs
 which creates a two dimensional array of the data..  The code above prints the array to 
 the console.  You should see something like this:
 
-.. image:: ./images/output-example.png
+.. image:: ../images/output-example.png
 
 After receiving the output data, your code would then inspect the array and act upon 
 whatever conditions you are interested in.  Notice the first row of data contains the 

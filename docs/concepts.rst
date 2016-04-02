@@ -1,4 +1,4 @@
-Basic Concepts
+Falkonry Concepts
 ==============
 
 Here's a quick overview of the basic elements of the Falkonry Service and concepts that

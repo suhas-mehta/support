@@ -1,5 +1,5 @@
-Working with Falkonry Service
-=============================
+Falkonry Service UI
+===================
 
 .. toctree::
    :maxdepth: 1

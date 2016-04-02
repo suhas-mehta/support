@@ -38,8 +38,10 @@ Your timestamp data can be specified using one of the following formats:
 
 - ISO 8601 format. As you can see in this primer on the time format, you can identify timezones, sub-second precision, as well as the regular components on date and time.
 - As a Unix-style long integer encoded as the number of milliseconds since Jan 1, 1970.
-- 12/19/2014 11:22:00 or MM/DD/YYYY HH:mm:ss
-- 2015-02-03 12:55:03 or YYYY-MM-DD HH:mm:ss
+- 12/19/2014 11:22:00 or ``MM/DD/YYYY HH:mm:ss``
+- 2015-02-03 12:55:03 or ``YYYY-MM-DD HH:mm:ss``
+- Any timestamp format that can be described using `Java SimpleDateFormat 
+  <https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html>`_
 
 When supplying verification data, you must also supply a second time column called end. 
 This column is used to mark the end of the interval for which the record provides values.

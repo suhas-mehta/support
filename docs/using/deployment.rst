@@ -32,6 +32,9 @@ use with Falkonry is the following:
   - `Kubernetes v1.1 <http://kubernetes.io/v1.1/gs-custom.html>`_ including 
     `kubectl <http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html>`_
     The VMs can run any operating systems as long as Kubernetes is fully supported.
+  - Falkonry installer is downloaded from the `Falkonry Partner Website <http://falkonry.com/partners>`_. It is 
+    named as `Falkonry-k8-installer.zip` file. 
+  - To execute the installer script, you will need a shell environment such as `bash` or `tcsh`.  
   
 - Network
  
@@ -47,8 +50,6 @@ following steps::
 
   $ kubectl get services
   $ kubectl get rc
-
-Download the Falkonry Installer from `falkonry.com/download <http://falkonry.com/download>`_.
 
 Also, before executing the next step, complete the following:
   
@@ -75,21 +76,20 @@ Also, before executing the next step, complete the following:
   
 - Map externally accessible ports to the Falkonry UI Server port ``30061``. You can use 
   Apache or another Web server for this purpose.
+
   - If you are using the ``http`` protocol in the previous step, you will need to proxy
-  from port ``80`` to port ``30061``. 
+    from port ``80`` to port ``30061``. 
   - If you are using the ``https`` protocol in the previous step, you will need to proxy
-  from port ``443`` to port ``30061``. 
+    from port ``443`` to port ``30061``. 
+
+You should run the Falkonry installer from the environment that has access to Kubernetes
+as confirmed in the previous step. Also, run the installation scripts from the folder 
+where you opened the Falkonry Installer.
 
 Executing the Falkonry Installer
 --------------------------------
 
-You can run the Falkonry installer from the downloaded `falkonry.zip` file. To execute the
-installer, you will need a shell environment such as `bash` or `tcsh`. Also, make sure
-that you run the Falkonry installer from the environment that you can access Kubernetes
-from as confirmed in the previous step.
-
-You will run the installer in the following command from the folder where you opened the
-Falkonry Installer Zip file::
+The installation script is run with the following command::
 
   $ ./install.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
@@ -116,3 +116,36 @@ completed, you will be able to open the URL for your host in a regular browser t
 Falkonry. For example, if your configured host were ``falkonry.acme.com`` and configured 
 host protocol is ``http``, then just type ``http://falkonry.acme.com`` to start using
 your private deployment of the Falkonry Service.
+
+Upgrading Falkonry software
+--------------------------
+
+This script installs upgraded software and updates configuration changes used by Falkonry.
+It must be used with the same credentials provided by Falkonry as used during installation.
+The upgrade script is run with the following command::
+
+  $ ./upgrade.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
+  -t=splunk-token -u=splunk-user -s=splunk-password
+  
+Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
+selected by using the ``-c`` switch above.
+
+The full usage documentation of this update script is as follows::
+
+  Example : upgrade.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+    -c | --clusterType   : Cluster type - tiny or medium.
+    -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
+    -p | --protocol      : Host protocol to be used - http or https.
+    -k | --kubeToken     : Kubernetes authentication token.
+    -t | --token         : Splunk token to be used. This is provided by Falkonry.
+    -u | --username      : Splunk username to be used. This is provided by Falkonry.
+    -s | --password      : Splunk password to be used. This is provided by Falkonry.
+
+Uninstalling Falkonry software
+---------------------------
+
+Uninstalling the Falkonry software will stop the Kubernetes services and remove the Falkonry software.
+The script does not remove any of the data created using Falkonry. The uninstall script is simply run 
+with the following command::
+
+  $ ./uninstall.sh

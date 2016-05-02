@@ -107,10 +107,10 @@ Connect the Falkonry Splunk App with your Falkonry Service
 
 3. In addition to these settings, you must enter:
   - The **Event Collector Token ID** you set up earlier (to find this again, you can go to 
-  **Settings > Data Inputs > HTTP Event Collector** and check the token value for the 
-  Falkonry Event Collector)
+    **Settings > Data Inputs > HTTP Event Collector** and check the token value for the 
+    Falkonry Event Collector)
   - Splunk credentials (username and password) for a Splunk user that has ``edit_tcp``, 
-  ``edit_udp``, ``rtsearch``, ``schedule_rtsearch`` and ``search`` capabilities.
+    ``edit_udp``, ``rtsearch``, ``schedule_rtsearch`` and ``search`` capabilities.
 
 4. Once you have entered values for all the required fields, click **Connect**.
 

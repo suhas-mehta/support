@@ -19,13 +19,27 @@ In the condition prediction context, there is an Operational View where a locus 
 information about the set of Things is managed.  It is from this view that the state of 
 the Things is monitored and in some cases controlled.  
 
+Event Buffer
+------------
+
+An _Event Buffer_ is a logical or physical holding area in Falkonry for the operational data
+being analyzed for patterns. An event buffer can receive data from a variety of sources,
+both external and internal. External sources can be Falkonry connectors such as OSISoft PI,
+Splunk, Azure IoT Hub, PubNub, and Falkonry client libraries such as for JavaScript, C#,
+and Python. The only internal source that brings data into an event buffer is a pipeline,
+described below, whose outflow can be dumped into an event buffer.
+
+As operational data arrives in an event buffer, it is saved and available for use in
+existing pipelines connected to the event buffer as well as for any future pipelines
+created from the event buffer. 
+
 Pipeline
 --------
 
-A Pipeline is the basic organizing unit in the Falkonry Service.  Signal data sent into the
-pipeline is referred to as Inflow.  The output that is produced by the pipeline is 
-referred to as Outflow.  In addition to Inflow/Outflow, a Pipeline also consumes 
-Verification data in form of known condition examples. 
+A _Pipeline_ is the basic organizing unit in the Falkonry Service.  A pipeline receives
+data from  an event buffer and this data flow is referred to as _Inflow_.  The output that 
+is produced by the pipeline is referred to as _Outflow_.  In addition to Inflow/Outflow, a 
+Pipeline also consumes _Verification_ data in form of known condition examples. 
 
 A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline 
 augments the Operational View, by providing a stream of condition predictions in exchange
@@ -33,20 +47,22 @@ for a stream of signal data from Things.
 
 .. image:: images/pipeline.png
 
-A pipeline performs two basic functions: 
-- Learning - the process of building a Model from signal and verification data.
-- Assessment - the process of applying a Model to a signal stream to produce a stream of 
-condition assessments.
+A pipeline sets up an AI Assistant from accumulated operational data as well as applies an 
+AI Assistant to live operational data and performs two basic functions: 
+- Set up AI Assistant model from signal and verification data.
+- Generate Operational Assessment by applying an AI Assistant model to live operational 
+data to produce a stream of assessments.
 
-When a pipeline is first created, it has no models and produces no outflow. Once the 
-pipeline is supplied signal data it can learn - with whatever verification data is 
-available (even none).  The result of learning is a model.  Once a model is available, 
-the pipeline can be Opened and assessments will flow out of the pipeline.  As data flows 
-through the pipeline it is saved in a learning buffer and is available for learning a 
-revised model at any time.  Likewise, new verification data can be added at any time and 
-is available for future model learning.  A pipeline then can execute a process of 
-continuous learning by generating a sequence of improving models and ‘hot-swapping’ those 
-models into the real-time assessment flow.
+When a pipeline is first created, it has no AI Assistant model and cannot produce any 
+outflow. Once the pipeline is supplied signal data it can learn an AI Assistant with whatever 
+verification data is available - even none. The result of the set up process is an AI 
+Assistant model. Once this model is available, the pipeline can be Opened and assessments 
+will flow out of the pipeline.  Any operational data that flows into the pipeline is 
+available for improving the AI Assistant model at any time. Likewise, 
+new verification data can be added at any time and is available for future improvements to
+the AI Assistant.  A pipeline can carry out a process of continuous improvement by 
+generating a sequence of improving AI Assistant and ‘hot-swapping’ those models into the 
+real-time assessment flow.
    
 Signal Data
 -----------

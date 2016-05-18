@@ -22,7 +22,7 @@ the Things is monitored and in some cases controlled.
 Event Buffer
 ------------
 
-An _Event Buffer_ is a logical or physical holding area in Falkonry for the operational data
+An *Event Buffer* is a logical or physical holding area in Falkonry for the operational data
 being analyzed for patterns. An event buffer can receive data from a variety of sources,
 both external and internal. External sources can be Falkonry connectors such as OSISoft PI,
 Splunk, Azure IoT Hub, PubNub, and Falkonry client libraries such as for JavaScript, C#,
@@ -36,10 +36,10 @@ created from the event buffer.
 Pipeline
 --------
 
-A _Pipeline_ is the basic organizing unit in the Falkonry Service.  A pipeline receives
-data from  an event buffer and this data flow is referred to as _Inflow_.  The output that 
-is produced by the pipeline is referred to as _Outflow_.  In addition to Inflow/Outflow, a 
-Pipeline also consumes _Verification_ data in form of known condition examples. 
+A *Pipeline* is the basic organizing unit in the Falkonry Service.  A pipeline receives
+data from  an event buffer and this data flow is referred to as *Inflow*.  The output that 
+is produced by the pipeline is referred to as *Outflow*.  In addition to Inflow/Outflow, a 
+Pipeline also consumes *Verification* data in form of known condition examples. 
 
 A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline 
 augments the Operational View, by providing a stream of condition predictions in exchange

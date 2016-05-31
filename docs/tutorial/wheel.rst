@@ -27,9 +27,6 @@ Instructions
 
 `Railcar Wheels Tutorial <https://vimeo.com/falkonry/wheels>`_ Video (subscribe to `Falkonry tutorial videos <https://vimeo.com/falkonry>`_ on Vimeo)
 
-The detailed steps of this tutorial with screen captures are available in 
-`Railcar Wheel Health Tutorial (pdf) <https://docs.google.com/a/falkonry.com/document/d/1DAVlqMfH4tl0i8FDTluoIsDUrixQoPaBXrWUPXefoQw/export?format=pdf>`_
-
 Data
 ----
 

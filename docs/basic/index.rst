@@ -1,4 +1,4 @@
-Falkonry Service UI
+Using the Falkonry Service
 ===================
 
 .. toctree::

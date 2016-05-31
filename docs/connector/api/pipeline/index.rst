@@ -16,8 +16,9 @@ the steps represents a calling an API function.
 
  1. `Pipeline (create) <create.html>`_ - This sets up an empty pipeline and names the input 
     signals, things, and assessments.
- 2. `Pipeline input <input.html>`_- Load input signal data into a pipeline. The names of 
-    the signals and things must match what was set up in the create pipeline step.
+ 2. `Event Buffer input <../buffer/input.html>`_- Load input signal data into the pipeline's
+    event buffer. The names of the signals and things must match what was set up in the 
+    create pipeline step.
  3. `Pipeline reviseModel <revise.html>`_ - This initiates a learning cycle and generates 
     the first or a new version of the model.
  4. `Pipeline verification <verification.html>`_ - Adds verification data to the pipeline.  
@@ -25,7 +26,8 @@ the steps represents a calling an API function.
     in the pipeline creation.
  5. `Pipeline open <open.html>`_ - Promotes the pipeline to live state.  Pipeline will 
     generate outflow assessment data based on the input data it receives.
- 6. `Pipeline input <input.html>`_ - Add additional input signal data, possibly live data.
+ 6. `Event Buffer input <../buffer/input.html>`_ - Add additional input signal data, 
+    possibly live data.
  7. `Pipeline output <output.html>`_ - Retrieve the condition assessment data produced by 
     the pipeline.  
  8. Repeat: verification, reviseModel, open, close, input, output as needed.
@@ -34,7 +36,6 @@ the steps represents a calling an API function.
    :maxdepth: 1
    
    new
-   input
    revise
    verification
    open

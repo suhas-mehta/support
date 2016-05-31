@@ -6,13 +6,14 @@ Let’s first examine the API through the `interactive Falkonry Service API web 
 outputs, get a sense of how to access these functions, and actually test the functions
 interactively.  You will need to log in to the Falkonry Service before using this Web page. 
 Once you have logged in you can view the detailed API and use the built-in forms to try 
-the various functions.  From the API page click **Pipeline** to expand the list of functions.
+the various functions.  From the API page click **Pipeline** and **Event Buffer** to expand 
+the list of functions.
 
 .. image:: ./images/pipeline.png
 
 Notice that the functions support both design-time functions (such as ``POST /pipeline`` 
-which creates a pipeline) and run-time functions (such as ``POST /pipeline{id}/input``, 
-which posts input data to a pipeline). 
+which creates a pipeline) and run-time functions (such as ``POST /eventBuffer/{id}``, 
+which posts input data to an event buffer). 
 
 **Example:** ``GET /pipeline/{id}``
 

@@ -21,7 +21,7 @@ will represent one record, and will contain a value for each of the labels defin
 header row.
 
 Falkonry data file requirements
--------------------------
+-------------------------------
 
 CSV and JSON files for use with Falkonry have a few specific requirements.  Every file must have a 
 timestamp column. Additionally, all the values used in the data file must have the same 
@@ -78,9 +78,11 @@ For example, data used in the Sports Activity example contains the following hea
 
   time, person, T_xacc, T_yacc, T_zacc, RA_xacc, RA_yacc, RA_zacc, ...
 
-A row of data in that file might look like this::
+A row of data in that CSV file might look like this::
 
   1452030355080, p1, 7.9469, 0.29302, 5.604, 1.0998, 0.57985, 6.8342, ...
+
+In line-delimited JSON, this data would appear like the following::
 
   {"time": 1452030355080, "person": "p1", "T_xacc": 7.9469, "T_yacc": 0.29302, "T_zacc": 5.604, ...}
   
@@ -117,6 +119,8 @@ data from another data set conveys four different episodes being verified::
   2015-04-22T19:54:10Z,PM-6428,2015-04-22T19:54:11Z,Production
   2015-04-22T19:54:30Z,PM-6428,2015-04-22T19:54:35Z,Dead Sensor
 
+In line-delimited JSON, this data would appear like the following::
+
   {"time": "2015-04-22T19:54:02Z", "unit": "PM-6428", "end": "2015-04-22T19:54:04.750Z", "Reliability": "Base"}
   {"time": "2015-04-22T19:54:05Z", "unit": "PM-6428", "end": "2015-04-22T19:54:06Z", "Reliability": "Production"}
   {"time": "2015-04-22T19:54:10Z", "unit": "PM-6428", "end": "2015-04-22T19:54:11Z", "Reliability": "Production"}
@@ -144,6 +148,8 @@ the following data is a snippet of the output from the sports activity pipeline:
   2016-01-05T21:44:48.000Z, p1, Sitting
   2016-01-05T21:45:32.000Z, p1, Walking
   2016-01-05T21:42:24.000Z, p1, Rowing
+  
+In line-delimited JSON, this data would appear like the following::  
   
   {"time": "2016-01-05T21:42:50.000Z", "person": "p1", "ActivityClassification": "Sitting"}
   {"time": "2016-01-05T21:44:48.000Z", "person": "p1", "ActivityClassification": "Sitting"}

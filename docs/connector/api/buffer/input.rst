@@ -18,16 +18,16 @@ clicking on the **Inflow** box, notice there are signals defined but no recorded
 
 .. image:: ../images/empty.png
 
-Let’s take a look at ``POST /eventBuffer/{id}/input`` on the API test webpage to get a 
+Let’s take a look at ``POST /eventBuffer/{id}`` on the API test webpage to get a 
 sense of how it is used.
 
-.. image:: ../images/input-pipeline.png
+.. image:: ../images/input-eventbuffer.png
 
 From this page we can see that the function takes two inputs: ``id`` and ``data``. The 
-``id`` input is the pipeline ID which you can find on the pipeline **Configure** tab as 
-shown in the previous section.  The ``data`` input is the CSV or JSON file which contains 
-your signal data.  Now let’s look at an example in Javascript which creates and sends the 
-HTTP POST request.
+``id`` input is the event buffer ID which you can find on the event buffer **Configure** 
+tab as shown in the previous section.  The ``data`` input is the CSV or JSON file which 
+contains your signal data.  Now let’s look at an example in Javascript which creates and 
+sends the HTTP POST request.
 
 .. code-block:: javascript
 
@@ -70,7 +70,7 @@ second input as outlined above on the Interactive API Web page.
 .. note::
 
    The value of the Content-Type header should match the format of data that is used.
-   For example, JSON files should be submitted under ``application/json`` and CSV under
+   For example, JSON files should be submitted under ``text/plain`` and CSV under
    ``text/csv``.
 
 Once you have your variables set up with the proper values, you can run the Javascript 

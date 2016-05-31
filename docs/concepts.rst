@@ -1,5 +1,5 @@
 Falkonry Concepts
-==============
+=================
 
 Here's a quick overview of the basic elements of the Falkonry Service and concepts that
 are referenced elsewhere in the documentation.
@@ -69,15 +69,19 @@ Signal Data
 
 The source signals provide to the Pipeline a stream of values over time, that can be 
 indexed by the Thing identity.  At a given time, then, the Pipeline receives a set of 
-signals (e.g. representing a set of sensor readings), and it can receive sets of signals 
-for many individual Things.  The signals can be of three types:  numerical, categorical, 
-and vector (a sequence of numerical values associated with one time point).
+signals (e.g. representing a set of sensor readings or discrete events), and it can 
+receive sets of signals for many individual Things.  The signals can be of two types: 
+numerical and categorical
+
+Certain categorical signals can be used to identify Things where behaviors of interest 
+occur.  Other categorical signals can be used to group a consecutive set of points into an
+episode that is treated as a defined sequence associated with one time point.
 
 Condition Assessments
 ---------------------
 
-Condition assessments are what the Pipeline produces.  Like the source signals, each 
-condition assessment output is a stream of values over time that is indexed by the Thing 
+Condition assessments are what a Pipeline produces.  Like the source signals, each 
+condition assessment output is a live stream of values  that is indexed by the Thing 
 identity.  The value type of an Assessment is categorial, where each potential value is a 
 ‘Condition’ associated with that Thing.  There can be multiple Assessments associated with
 one type of Thing, e.g. a *Health Assessment* and an *Operating Mode Assessment*.

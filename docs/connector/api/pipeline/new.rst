@@ -13,11 +13,8 @@ Step 1. Copy the example pipeline JSON below
     {
       "sourceId": "sourcename",
       "name": "APITestPipeline",
-      "inputConf": {
-        "type": "FILE"
-      },
+      "input": "8s7f21s13",
       "thingIdentifier": "person",
-      "timeIdentifier": "time",
       "inputList": [
         {
            "name": "T_xacc",
@@ -155,10 +152,3 @@ you had created.
 .. image:: ../images/pipelines.png
 
 Notice that it has 15 input signals defined and one assessment.  
-
-.. note::
-
-  Unlike creating a pipeline via the Falkonry UI, this pipeline does not yet contain input 
-  signal data or verification data.  Let’s next look at how you would add input data to 
-  this pipeline.
-

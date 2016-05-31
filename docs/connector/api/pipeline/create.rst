@@ -11,43 +11,20 @@ closer look at that JSON definition.  Here are the first few lines for review:
 
   "sourceId": "sourcename",
   "name": "APITestPipeline",
+  "input": "3ykf2jjfr6gvgd",
   "thingIdentifier": "person",
-  "timeIdentifier": "time",
 
 =================== =========   ==================================================================================================
 Property            Data type   Description
 =================== =========   ==================================================================================================
 ``sourceId``        string      An identifier used in an external system to identify this pipeline
 ``name``            string      An identifying name for the pipeline. It must be  unique for the account and may be changed later.  
+``input``           string      The identifier of the event buffer used to supply inflow to this pipeline
 ``thingIdentifier`` string      The column in the input data which identifies each individual unit or thing in the pipeline. 
-``timeIdentifier``  string      The column in the input data which represents timestamps for each event
 =================== =========   ==================================================================================================
 
-When creating a pipeline, its data source should be identified. In the simplest case, a
-pipeline can be created directly from files that are loaded from the input API. In such 
-a case, a new event buffer is created for the pipeline and all data loaded into this 
-pipeline will be loaded in to that newly created Event Buffer. 
 
-
-::
-
-  "inputConf": {
-    "type": "FILE"
-  },
-
-In a more complex case, a pipeline can reference an existing Event Buffer for its data. In
-this case, the Event Buffer must contain the signals referenced in the pipeline creation
-API call. In this case, the pipeline definition will contain a distinct marker for the
-input configuration like shown below:
-
-::
-
-  "inputConf": {
-    "type": "EVENTBUFFER",
-    "buffer": "3ykf2jjfr6gvgd"
-  },
-
-Thereafter, the list of signals referenced in the pipeline is defined along with their
+The list of signals referenced in the pipeline is defined along with their
 name, value, and event types. 
 
 The ``name`` of a signal is the column header value in the case of a CSV file or the
@@ -126,10 +103,11 @@ duplicate values should be used.
     },
 
 
-Another important option to specify is the frequency at which assessment results are 
-produced for the pipeline. This frequency can either be specified as a fixed interval,
-as a grouping signal that references a categorical input, or be left undefined in which
-case, it is assumed to mean the highest frequency possible.
+Another important option to specify is the minimum frequency at which assessment results are 
+desired for the pipeline. This frequency can either be specified as a fixed interval or
+as a grouping signal that references a categorical input. If left undefined, it is assumed
+to mean that desired frequency is once a second or upon the dominant interval whichever is
+higher.
 
 :: 
 
@@ -168,11 +146,11 @@ Here is some sample code for invoking the pipeline creation API:
     var unirest = require('unirest');
     var fs = require('fs');
 
-    var myPipelineId = "517cher3ptu1fm"
-    var myToken = "m9v8pxfykd24bz"
+    var myPipelineId = null;
+    var myToken = "m9v8pxfykd24bz";
 
     var url = "https://service.falkonry.io/pipeline";
-    var myFile = "./createPipeline.json"
+    var myFile = "./createPipeline.json";
 
     var myData = JSON.parse(fs.readFileSync(myFile))  //add error handling here
 
@@ -183,10 +161,11 @@ Here is some sample code for invoking the pipeline creation API:
         'Accept': 'application/json'
       }).send(myData)
       .end(function (response) {
+         myPipelineId = response.id;
          //add error handling here
          console.log(response.status);
          console.log(response.body);
     })
 
-The values of ``myPipelineID`` and ``myToken`` will vary for your implementation.
+The value of ``myToken`` will vary for your implementation.
 

@@ -1,10 +1,8 @@
 ``POST /eventBuffer/``
 ===================
 
-For the sake of completeness, let’s take another look at the create pipeline API.   
-
-Earlier in this document, we created the pipeline using the Interactive API Web page.  We 
-copied and pasted the JSON definition of the pipeline into that Web page.  Let’s take a 
+In order to create an event buffer all that is needed is the specification of the time
+identifier and format of the values of timestamps used in the event buffer. Let’s take a 
 closer look at that JSON definition.  Here are the first few lines for review:
 
 :: 
@@ -43,7 +41,9 @@ Here is some sample code for invoking the event buffer creation API:
         'Accept': 'application/json'
       }).send({
         "name": "My pipeline",
-        "sourceId": "An external identifier"
+        "sourceId": "An external identifier",
+        "timeIdentifier": "time",
+        "timeFormat": "ISO8601"
       })
       .end(function (response) {
          myEventBufferId = response.id;

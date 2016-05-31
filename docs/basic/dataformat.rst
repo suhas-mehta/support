@@ -1,14 +1,17 @@
 Formatting data
 ===============
 
-The currently supported data format for exchange with Falkonry is CSV (comma separated values). 
-This commonly used general purpose data exchange format allows you to use numerical, 
-categorical, timestamp, and other types of data.  CSV files can be used to supply Input 
+The currently supported data formats for exchange with Falkonry are CSV (comma separated
+values) and line-delimited JSON_. 
+Both formats are commonly used general purpose data exchange format allowing numerical, 
+categorical, timestamp, and other types of data.  Both formats can be used to supply Input 
 data (source signals) as well as verification data to Falkonry.
+
+.. _JSON: http://jsonlines.org/
 
 The first line of any CSV file will contain one line of "header" data which labels the 
 data that follows.  This header data is analogous to the row of column names in a 
-spreadsheet.  Each name or label will be separated by a comma.  For example, data used in 
+spreadsheet.  Each name or label will be separated by a comma.  For example, CSV data used in 
 the Turbofan example contains the following header::
 
   time, unit, T20_1, Nfc_1, SmLPC_1
@@ -17,11 +20,11 @@ The remaining rows in the CSV file will contain the data records.  Each line in 
 will represent one record, and will contain a value for each of the labels defined in the 
 header row.
 
-Falkonry CSV requirements
+Falkonry data file requirements
 -------------------------
 
-CSV files for use with Falkonry have a few specific requirements.  Every CSV must have a 
-timestamp column. Additionally, all the values used in the CSV file must have the same 
+CSV and JSON files for use with Falkonry have a few specific requirements.  Every file must have a 
+timestamp column. Additionally, all the values used in the data file must have the same 
 structure, i.e., the same set of attributes and their data types. Also, the file may 
 contain UTF-8 characters, which is the encoding used for supplying data to Falkonry. 
 
@@ -30,9 +33,9 @@ Identifying time
 
 In Falkonry, every record is used to convey data for a single instant or interval of time. 
 Therefore, timestamps must be present on every record provided to Falkonry, which also 
-means that your CSV file must have a column representing the timestamp. Within your CSV 
-file the naming of the timestamp column is flexible; the time column will be identified 
-during pipeline creation.
+means that your CSV file must have a column representing the timestamp or a JSON property
+containing a timestamp value. Within your data file the naming of the timestamp column is 
+flexible; the time column will be identified during pipeline creation.
 
 Your timestamp data can be specified using one of the following formats:
 
@@ -79,6 +82,8 @@ A row of data in that file might look like this::
 
   1452030355080, p1, 7.9469, 0.29302, 5.604, 1.0998, 0.57985, 6.8342, ...
 
+  {"time": 1452030355080, "person": "p1", "T_xacc": 7.9469, "T_yacc": 0.29302, "T_zacc": 5.604, ...}
+  
 where ``1452030355080`` is the time value, ``p1`` is the person identifier, and so on.  
 The columns after the person column are the raw source data or signal data which Falkonry 
 inspects and monitors to provide meaningful condition assessments.
@@ -112,6 +117,11 @@ data from another data set conveys four different episodes being verified::
   2015-04-22T19:54:10Z,PM-6428,2015-04-22T19:54:11Z,Production
   2015-04-22T19:54:30Z,PM-6428,2015-04-22T19:54:35Z,Dead Sensor
 
+  {"time": "2015-04-22T19:54:02Z", "unit": "PM-6428", "end": "2015-04-22T19:54:04.750Z", "Reliability": "Base"}
+  {"time": "2015-04-22T19:54:05Z", "unit": "PM-6428", "end": "2015-04-22T19:54:06Z", "Reliability": "Production"}
+  {"time": "2015-04-22T19:54:10Z", "unit": "PM-6428", "end": "2015-04-22T19:54:11Z", "Reliability": "Production"}
+  {"time": "2015-04-22T19:54:30Z", "unit": "PM-6428", "end": "2015-04-22T19:54:35Z", "Reliability": "Dead Sensor"}
+  
 Output data
 ~~~~~~~~~~~
 
@@ -134,3 +144,8 @@ the following data is a snippet of the output from the sports activity pipeline:
   2016-01-05T21:44:48.000Z, p1, Sitting
   2016-01-05T21:45:32.000Z, p1, Walking
   2016-01-05T21:42:24.000Z, p1, Rowing
+  
+  {"time": "2016-01-05T21:42:50.000Z", "person": "p1", "ActivityClassification": "Sitting"}
+  {"time": "2016-01-05T21:44:48.000Z", "person": "p1", "ActivityClassification": "Sitting"}
+  {"time": "2016-01-05T21:45:32.000Z", "person": "p1", "ActivityClassification": "Walking"}
+  {"time": "2016-01-05T21:42:24.000Z", "person": "p1", "ActivityClassification": "Rowing"}

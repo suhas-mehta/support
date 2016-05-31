@@ -27,9 +27,6 @@ Instructions
 
 `Human Activity Tutorial <https://vimeo.com/falkonry/sports>`_ Video (subscribe to `Falkonry tutorial videos <https://vimeo.com/falkonry>`_ on Vimeo)
 
-The detailed steps of this tutorial with screen captures are available in 
-`Sports Activity Recognition Tutorial (pdf) <https://docs.google.com/a/falkonry.com/document/d/1acFP2nlS22FCqgBidIt_Wv0jMwtRZraJztZs1p_812w/export?format=pdf>`_
-
 Data
 ----
 

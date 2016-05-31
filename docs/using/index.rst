@@ -1,4 +1,4 @@
-Using Falkonry Service
+Accessing the Falkonry Service
 ======================
 
 There are two ways to deploy and use the Falkonry Service depending on your specific 

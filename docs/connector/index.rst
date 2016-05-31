@@ -27,6 +27,5 @@ the `Falkonry UI <../concepts.html>`_ and `Falkonry Splunk App <../splunk_app/in
    :maxdepth: 3
    
    rest
-   mqtt
    python
    javascript

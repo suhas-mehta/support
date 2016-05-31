@@ -22,18 +22,20 @@ match the field name supplied to the Pipeline at setup), and one or more Assessm
 (matching Assessments already configured in the Pipeline).
 
 The figure below shows an example file to upload a set of verified conditions for the 
-Assessment ``L1 Wheel Health``.
+Assessment ``Health``.
 
 .. image:: ./images/verification.png
 
 For a more detail regarding how to format data files for use with Falkonry, 
-please refer here_
-
-.. _here: dataformat.html
+please refer to `Data Formatting <./dataformat.html>`_.
 
 In the Falkonry Service UI the Manage Verification button (available on Learning and 
 Outflow tabs) is used to view all previously entered examples and upload new examples 
 contained in verification files. 
+
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/168553120" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
 
 Direct entry into Falkonry Service UI
 -------------------------------------
@@ -43,14 +45,16 @@ assessment results for a specific Thing. Users are directly able to add individu
 conditions from the Thing detail view as shown in the figure below.  This dialog is 
 invoked by clicking the Add Verification Example button.
 
-.. image:: ./images/ui_verification.png
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/168709192" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
 
 Via a client application like the Splunk App
 --------------------------------------------
 
 Falkonry's Splunk App provides a direct way for users to add verification from within their 
-Splunk user experience.  'Add Verification' is an available action for any Pipeline 
-visible on the Manage tab.  Invoking that action produces a dialog shown in the figure 
+Splunk user experience.  **Add Verification** is an available action for any Event Buffer 
+visible on the **Data Exports** list.  Invoking that action produces a dialog shown in the figure 
 below that lets a user create a set of verified condition examples from a Splunk search query.
 
 .. image:: ./images/splunk_verification.png

@@ -34,10 +34,6 @@ Installation via Virtual Box
 
 Once you've downloaded your Falkonry.ova file you can import it into Virtual Box.
 
-.. note::
-
-  To download the Falkonry Virtual Appliance, please contact us at `sales@falkonry.com`.
-
 .. image:: images/VirtualBoxImport.png
 
 .. image:: images/VirtualBoxImport2.png

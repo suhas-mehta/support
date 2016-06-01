@@ -88,13 +88,10 @@ The installation script is run with the following command::
   $ ./install.sh -c=medium -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
   
-Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
-selected by using the ``-c`` switch above.
-
 The full usage documentation of this installer script is as follows::
 
-  Example : install.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
-    -c | --clusterType   : Cluster type - tiny or medium.
+  Example : install.sh -c=medium -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+    -c | --clusterType   : Cluster type - only medium is supported at the moment.
     -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
     -p | --protocol      : Host protocol to be used - http or https.
     -k | --kubeToken     : Kubernetes authentication token.
@@ -118,16 +115,13 @@ This script installs upgraded software and updates configuration changes used by
 It must be used with the same credentials provided by Falkonry as used during installation.
 The upgrade script is run with the following command::
 
-  $ ./upgrade.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
+  $ ./upgrade.sh -c=medium -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
-  
-Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 
-selected by using the ``-c`` switch above.
 
 The full usage documentation of this update script is as follows::
 
-  Example : upgrade.sh -c=tiny -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
-    -c | --clusterType   : Cluster type - tiny or medium.
+  Example : upgrade.sh -c=medium -h=falkonry.acme.com -p=https -k=kube-secret -t=1234567890 -u=username -s=secret
+    -c | --clusterType   : Cluster type - only medium is supported at the moment.
     -h | --host          : Falkonry host to be used. Example - falkonry.acme.com.
     -p | --protocol      : Host protocol to be used - http or https.
     -k | --kubeToken     : Kubernetes authentication token.

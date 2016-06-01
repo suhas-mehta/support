@@ -5,6 +5,10 @@ A Falkonry Virtual Appliance can be installed on any Virtual Machine environment
 Virtual Box or VMWare. The goal of the Falkonry Virtual Appliance is to provide a quick
 installation process using widely deployed virtualization technologies.
 
+.. note::
+
+ To obtain the Falkonry Virtual Appliance, please contact us at `sales@falkonry.com`.
+
 System requirements
 -------------------
 
@@ -24,6 +28,10 @@ use with Falkonry is the following:
 
   - Oracle Virtual Box
 
-.. note::
+Installation via Virtual Box
+----------------------------
 
-  To access the Falkonry Virtual Appliance, please contact us at `sales@falkonry.com`.
+Once you've downloaded your Falkonry.ova file you can import it into Virtual Box.
+.. image:: images/VirtualBoxImport.png
+.. image:: images/VirtualBoxImport2.png
+

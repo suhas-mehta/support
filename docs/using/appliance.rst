@@ -43,8 +43,11 @@ a web browser at http://localhost:8080 as shown in the second screenshot.
 
 .. image:: images/VirtualBoxStartFalkonryVM.jpg
 
-Use the email 'admin@falkonry.local' to login.  Name is choice of user.
+.. note::
+  You can log in using any email address and name. The information you enter here is used solely
+  for identifying your account.
 
 .. image:: images/VirtualBoxLogin.jpg
 
-After logging in you will need to install a license.  See `Service Administration <./administration.html>`_.
+After logging in you will need to install a license.  See `Service Administration <./administration.html>`_ 
+for more details on this topic.

@@ -26,7 +26,8 @@ use with Falkonry is the following:
 
 - Software 
 
-  - Oracle Virtual Box
+  - Oracle Virtual Box or
+  - VMWare
 
 Installation via Virtual Box
 ----------------------------
@@ -41,4 +42,4 @@ Once you've downloaded your Falkonry.ova file you can import it into Virtual Box
 
 .. image:: images/VirtualBoxImport2.png
 
-Once the appliance is imported, the virtual machine can be started
+Once the appliance is imported, the virtual machine can be started.

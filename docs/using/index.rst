@@ -8,13 +8,16 @@ Service Cloud
 -------------
 
 The simplest way to get immediate and effortless access to the Falkonry service is to take 
-advantage of our hosted Falkonry Service via your Falkonry account. This allows you to 
+advantage of the `Falkonry Service Cloud <https://service.falkonry.io>`_. This allows you to 
 focus on creating and refining your pipelines while leaving the infrastructure management 
-and maintenance to us.
+and maintenance to us. 
 
-When you initially signed up, a free Personal account was created for you to experiment 
-and learn about the Falkonry service. If our cloud deployment is adequate for your needs, 
-the next step is to create a Team account and obtain expanded access the service.
+When you sign up for the Falkonry Service Cloud, a free Personal account is created for 
+you to experiment and learn about the Falkonry Service. You can use your account on the 
+Service Cloud to test and evaluate all major functions of the Falkonry Service. If your 
+piloting needs exceed the limits of a Personal account (e.g. higher data volumes, greater 
+numbers of signals, multiple users), you can purchase a Team account with expanded 
+capabilities.
 
 Service Accounts
 ----------------
@@ -30,8 +33,15 @@ feature called Service Accounts.
 Private Deployment
 ------------------
 
-The Falkonry Service can be accessed in the Cloud as well as installed for an exclusive
-deployment.
+The Falkonry Service can be also be deployed into customer-managed virtual private clouds 
+on IaaS, or directly onto customer managed compute and storage infrastructure.  There are 
+three specific choices then for private deployments:
+
+- VPC deployment on public IaaS cloud providers (Oracle Cloud, MS Azure, or Google Compute 
+  Engine): Take advantage of pre-configured deployment environments.
+- Virtual Appliance Deployment: Download OVA file and install into standard virtualization 
+  environments like Virtual Box
+- Install into private Kubernetes environment
 
 .. toctree::
    :maxdepth: 1

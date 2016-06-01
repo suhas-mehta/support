@@ -45,7 +45,8 @@ Use the email 'admin@falkonry.local' to login.  Name is choice of user.
 
 .. image:: images/VirtualBoxLogin.jpg
 
-After logging in you will need to install a license.  See 
+After logging in you will need to install a license.  See
+
 .. toctree::
  :maxdepth: 1
  

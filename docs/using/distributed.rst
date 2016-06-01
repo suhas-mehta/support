@@ -1,9 +1,9 @@
-Private Deployment
-==================
+Distributed Deployment
+======================
 
 A private deployment of Falkonry can be made into an Infrastructure-as-a-Service provider
-such as Microsoft Azure or AWS. It is also possible to provide a private deployment of
-Falkonry in your own data center or rack.
+such as Microsoft Azure or Google Container Engine. It is also possible to provide a 
+private deployment of Falkonry in your own data center or rack.
 
 System requirements
 -------------------
@@ -15,14 +15,9 @@ use with Falkonry is the following:
 - Hardware 
 
   - VM and bare metal instances are supported
-  - For Falkonry Enterprise
+  - For a distributed deployment of Falkonry Service, minimum of
 
-    - Tiny Deployment
-      - 1 instance with 4 full cores and 16 GB RAM
-      - 100 GB attached free SATA storage
-    
-    - Medium Deployment
-      - 4 instances with 4 full cores and 64 GB RAM each
+      - 4 nodes with 4 full cores and 64 GB RAM each
       - 256 GB attached SATA for root volumes
       - 1 TB SSD for learning buffer volumes
       - 128 GB SSD for internal database volumes
@@ -55,7 +50,7 @@ Also, before executing the next step, complete the following:
   
 - Obtain the following from Falkonry:
 
-  - Software repository credentials for downloading Falkonry Enterprise.
+  - Software repository credentials for downloading Falkonry Service.
   - Splunk HTTP Event Collector Token for deployment health monitoring.
   - Splunk credentials for application logging.
 
@@ -67,7 +62,6 @@ Also, before executing the next step, complete the following:
     -p="9496DSFLGKJ49TS5MGZNW8MK5SDWZDIAKC003ZR8SM71B03UUIVAVOSC66F7S" quay.io
 - Decide the configuration for the following properties:
 
-  - Tiny vs. medium size deployment as explained earlier
   - External host name
   - External host protocol such as ``http`` or ``https``
 
@@ -91,7 +85,7 @@ Executing the Falkonry Installer
 
 The installation script is run with the following command::
 
-  $ ./install.sh -c=tiny -h=falkonry.acme.com -p=http -k=kubernetes-token \
+  $ ./install.sh -c=medium -h=falkonry.acme.com -p=http -k=kubernetes-token \
   -t=splunk-token -u=splunk-user -s=splunk-password
   
 Note that `medium` deployment will require a multi-node Kubernetes cluster and can be 

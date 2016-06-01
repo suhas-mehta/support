@@ -1,5 +1,5 @@
 Accessing the Falkonry Service
-======================
+==============================
 
 There are two ways to deploy and use the Falkonry Service depending on your specific 
 business needs and requirements.
@@ -17,6 +17,11 @@ and learn about the Falkonry service. If our cloud deployment is adequate for yo
 the next step is to create a Team account and continue to access the service without 
 limitations for production use. 
 
+.. toctree::
+   :maxdepth: 1
+   
+   service
+
 Falkonry Service Private Deployment
 -----------------------------------
 
@@ -26,6 +31,6 @@ deployment.
 .. toctree::
    :maxdepth: 1
    
-   service
-   deployment
+   distributed
+   appliance
    administration

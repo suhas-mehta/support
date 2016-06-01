@@ -1,5 +1,5 @@
-Falkonry Service in the Cloud
-=============================
+Accounts and Users
+==================
 
 Accessing the Falkonry Service in the Cloud is simple. When you initially signed up for 
 the Falkonry Service, a Personal account was created for you automatically. Using this 
@@ -30,11 +30,10 @@ With a Team account you can create many more prediction pipelines and can share 
 account with other users. You can create a Team account after signing into your Personal 
 account.
 
-Pricing Details for Team Accounts
----------------------------------
+.. note::
 
-The pricing of your Team account depends on the number of pipelines in use and the total 
-amount of data. 
+  The cost of a Team account depends on the number of signals and things in the pipelines
+  used in your account. 
 
 Managing additional Users
 -------------------------

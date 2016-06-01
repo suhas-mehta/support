@@ -1,5 +1,5 @@
-Administration of Private Deployments
-=====================================
+Service Administration
+======================
 
 All private deployments, whether of a Falkonry Service Virtual Appliance or a Virtual 
 Private Cloud can be administered by a single administrative user. The administrative user

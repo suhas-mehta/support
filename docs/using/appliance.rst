@@ -20,9 +20,9 @@ use with Falkonry is the following:
 
   - A minimum of
 
-      - 4 full cores and 16 GB RAM
-      - 256 GB attached SATA for root volumes
-      - 1 TB SSD for internal database volumes
+   - 4 full cores and 16 GB RAM
+   - 128 GB attached SATA for root volumes
+   - 256 GB SSD for internal database volumes
 
 - Software 
 
@@ -37,7 +37,9 @@ Once you've downloaded your Falkonry.ova file you can import it into Virtual Box
 .. image:: images/VirtualBoxImport.jpg
 .. image:: images/VirtualBoxImport2.jpg
 
-Once the appliance is imported, the virtual machine can be started. The following screen will appear. There is no need to log into the Ubuntu window shown.  The service is running and is accessible via a web browser at localhost:8080 as shown in the second screenshot.
+Once the appliance is imported, the virtual machine can be started. The following screen will appear. 
+There is no need to log into the Ubuntu window shown.  The service is running and is accessible via 
+a web browser at http://localhost:8080 as shown in the second screenshot.
 
 .. image:: images/VirtualBoxStartFalkonryVM.jpg
 
@@ -45,9 +47,4 @@ Use the email 'admin@falkonry.local' to login.  Name is choice of user.
 
 .. image:: images/VirtualBoxLogin.jpg
 
-After logging in you will need to install a license.  See
-
-.. toctree::
- :maxdepth: 1
- 
- administration
+After logging in you will need to install a license.  See `Service Administration <./administration.html>`_.

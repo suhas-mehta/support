@@ -26,4 +26,4 @@ use with Falkonry is the following:
 
 .. note::
 
-  To access the Falkonry Virtual Appliance, please contact us at `sales@falkonry.com`.
+  To download the Falkonry Virtual Appliance, please contact us at `sales@falkonry.com`.

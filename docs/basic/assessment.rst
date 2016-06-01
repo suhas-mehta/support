@@ -1,10 +1,39 @@
+Managing Assessments
+====================
+
+The output from a *Pipeline* is a stream of conditions - for every point in time there is
+a condition value for each *Assessment* in that Pipeline.  
+
+Adding an assessment
+--------------------
+
+When a pipeline gets created, the user specifies an assessment they want it to produce.
+However, a user may choose to produce more than one stream of conditions from the same or
+a different subset of data in the same pipeline. For example, one assessment focuses on
+the reliability of sensors whereas another focuses on operating mode.
+
+It is easy to add multiple assessments and is done from the **Configure** tab of a 
+pipeline. Subsequently, all model revisions will compute all the assessments configured
+in the pipeline. Different results may be produced for different assessments, as different
+verified examples are provided in each assessment.
+
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/168547756" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+
+Changing the signals used in an assessment
+------------------------------------------
+
+Just as it is possible to add assessments, a user can change the set of signals used in a
+pipeline. This is done from the same place in the **Configure** tab where an edit tool is
+available for each of the assessments. When an assessment is chosen to be edited, the user
+can only change the list of signals used in the assessment. The user can choose any of the
+signals defined in the pipeline to be included in the assessment.
+
 Retrieving Assessment Data
-==========================
+--------------------------
 
-The output from a Pipeline is a stream of conditions - for every point in time there is a 
-condition value for each Assessment in that Pipeline.  Outflow from a Pipeline becomes 
-available after that Pipeline has been put in a Live mode.
-
+Outflow from a Pipeline becomes available after that Pipeline has been put in a Live mode.
 Output data can be retrieved from a Pipeline in three ways:
 
 - via the API

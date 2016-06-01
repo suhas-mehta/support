@@ -28,3 +28,4 @@ deployment.
    
    service
    deployment
+   administration

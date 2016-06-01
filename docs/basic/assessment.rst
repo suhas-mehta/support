@@ -42,7 +42,7 @@ Retrieving output through the Falkonry Service UI
 The Outflow tab of the Pipeline Details page provides a button to download Assessment 
 results.
 
-.. image:: ./images/assessment.png
+.. image:: ./images/pipeline_open.png
 
 Retrieving output through a client application
 ----------------------------------------------

@@ -38,9 +38,11 @@ Once you've downloaded your Falkonry.ova file you can import it into Virtual Box
 .. image:: images/VirtualBoxImport2.jpg
 
 Once the appliance is imported, the virtual machine can be started. The following screen will appear. 
-There is no need to log into the Ubuntu window shown.  The service is running and is accessible via 
-a web browser at http://localhost:8080 as shown in the second screenshot.
+The service is running and is accessible via a web browser at http://localhost:8080 as shown in the second screenshot.
 
+.. note::
+  There is no need to log into the window shown in the image below.
+  
 .. image:: images/VirtualBoxStartFalkonryVM.jpg
 
 .. note::

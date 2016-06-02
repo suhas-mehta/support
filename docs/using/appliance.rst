@@ -37,19 +37,22 @@ Once you've downloaded your Falkonry.ova file you can import it into Virtual Box
 .. image:: images/VirtualBoxImport.jpg
 .. image:: images/VirtualBoxImport2.jpg
 
-Once the appliance is imported, the virtual machine can be started. The following screen will appear. 
-The service is running and is accessible via a web browser at http://localhost:8080 as shown in the second screenshot.
+Once the appliance is imported, the virtual machine can be started. The following screen appears
+that shows the Falkonry Service as running. 
 
 .. note::
   There is no need to log into the window shown in the image below.
   
 .. image:: images/VirtualBoxStartFalkonryVM.jpg
 
-.. note::
-  You can log in using any email address and name. The information you enter here is used solely
-  for identifying your account.
+Falkonry Service is now accessible via a web browser at http://localhost:8080 as seen in the following
+screen. 
 
 .. image:: images/VirtualBoxLogin.jpg
 
-After logging in you will need to install a license.  See `Service Administration <./administration.html>`_ 
-for more details on this topic.
+Please read about `Service Administration <./administration.html>`_ before continuing to the next step.
+You will need to install a license first.
+
+.. note::
+  You can log in using any email address and name. The information you enter here is used solely
+  for identifying your account. 

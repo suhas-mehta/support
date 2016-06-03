@@ -11,7 +11,7 @@ scientists or custom software development.
 The Falkonry Service is used to transform signal data into real-time assessments of 
 condition.  It is not, however, a machine learning toolkit for data scientists.  Users of 
 the service simply supply it with signal data and any available examples of verified 
-conditions and it will learn to recognize conditions.  Once it learns conditions it will 
+conditions, and it will learn to recognize conditions.  Once it learns conditions, it will 
 recognize those conditions in new data.  As it accumulates data and additional verified 
 examples, it continues to learn and improve its ability to recognize or ‘assess’ conditions.
 

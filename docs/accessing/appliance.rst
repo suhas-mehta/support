@@ -43,7 +43,7 @@ Once the appliance is imported, you need to configure following:
 
 - Mounting database volume
   For mounting database volume, create a folder named `falkonry` on the SSD volume and add this
-  folder under shared folders as seen in the screen below.
+  folder under shared folders as shown in the screen below.
   Note: Make sure `auto-mount` option is selected.
 
 .. image:: images/VirtualBoxShared.png

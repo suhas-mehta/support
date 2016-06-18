@@ -26,8 +26,7 @@ use with Falkonry is the following:
 
 - Software 
 
-  - Oracle Virtual Box or
-  - VMWare
+  - Oracle Virtual Box
 
 Installation via Virtual Box
 ----------------------------
@@ -37,7 +36,19 @@ Once you've downloaded your Falkonry.ova file you can import it into Virtual Box
 .. image:: images/VirtualBoxImport.jpg
 .. image:: images/VirtualBoxImport2.jpg
 
-Once the appliance is imported, the virtual machine can be started. The following screen appears
+Once the appliance is imported, you need to configure following:
+
+- Memory
+  Memory allocation can be configured under section VA settings > System > Motherboard tab.
+
+- Mounting database volume
+  For mounting database volume, create a folder named `falkonry` on the SSD volume and add this
+  folder under shared folders as shown in the screen below.
+  Note: Make sure `auto-mount` option is selected.
+
+.. image:: images/VirtualBoxShared.png
+
+After configuring the virtual machine, it can be started. The following screen appears
 that shows the Falkonry Service as running. 
 
 .. note::

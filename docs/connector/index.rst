@@ -29,3 +29,5 @@ the `Falkonry UI <../concepts.html>`_ and `Falkonry Splunk App <../splunk_app/in
    rest
    python
    javascript
+   java
+   csharp

@@ -1,5 +1,5 @@
-Using the Falkonry Service
-==========================
+User Guide
+==========
 
 .. toctree::
    :maxdepth: 1

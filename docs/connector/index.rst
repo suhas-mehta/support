@@ -1,8 +1,8 @@
-Build Your Own Connectors
-=========================
+Setup and Integration
+=====================
 
 Who is it for?
---------------
+
 
 If you want to integrate your application directly with Falkonry, then you can use the 
 Falkonry API or client libraries. 
@@ -17,7 +17,7 @@ from the `Falkonry Website <http://falkonry.com/start>`_.  Additionally, this do
 assumes knowledge of `Falkonry AI concepts <../concepts.html>`_ and the Falkonry UI.  
    
 Connector Technologies
-----------------------
+
 
 There are several ways to interact with the Falkonry service.  Whether you are 
 creating a pipeline or uploading source data, you currently have a number of choices besides

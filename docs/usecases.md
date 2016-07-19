@@ -1,4 +1,4 @@
-Common Use Cases
+Examples and Use Cases
 ================
 
 The Falkonry Service can be used to support a wide variety of condition prediction 
@@ -43,4 +43,10 @@ platforms, data platforms, sensor frameworks, deployment infrastructure, etc.).
 The Falkonry Service provides an easily embeddable means of adding condition prediction to 
 any IoT application.  
 
- 
+Tutorial videos
+---------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tutorial/index

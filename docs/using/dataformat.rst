@@ -40,6 +40,7 @@ flexible; the time column will be identified during pipeline creation.
 Your timestamp data can be specified using one of the following formats:
 
 - ISO 8601 format. As you can see in this primer on the time format, you can identify timezones, sub-second precision, as well as the regular components on date and time.
+- As a Unix-style long integer encoded as the number of seconds since Jan 1, 1970
 - As a Unix-style long integer encoded as the number of milliseconds since Jan 1, 1970.
 - 12/19/2014 11:22:00 or ``MM/DD/YYYY HH:mm:ss``
 - 2015-02-03 12:55:03 or ``YYYY-MM-DD HH:mm:ss``
@@ -70,9 +71,8 @@ Input data
 
 Input data is used to create a pipeline as well as to add source signal data to an 
 existing and live pipeline. The input data must contain the following columns: a single 
-time column (must be the first column in the data), an optional thing identifier, followed 
-by one or more source signals. The header of the CSV file should reflect the appropriate 
-column names. 
+time column, an optional thing identifier, followed by one or more source signals. The 
+header of the CSV file should reflect the appropriate column names. 
 
 For example, data used in the Sports Activity example contains the following header::
 

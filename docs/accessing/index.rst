@@ -7,7 +7,8 @@ Accessing the Falkonry Service
 There are two ways to deploy and use the Falkonry Service depending on your specific 
 business needs and requirements.
 
-Service Cloud:
+Service Cloud
+~~~~~~~~~~~~~
 
 The simplest way to get immediate and effortless access to the Falkonry service is to take 
 advantage of the `Falkonry Service Cloud <https://service.falkonry.io>`_. This allows you to 
@@ -21,7 +22,8 @@ piloting needs exceed the limits of a Personal account (e.g. higher data volumes
 numbers of signals, multiple users), you can purchase a Team account with expanded 
 capabilities.
 
-Service Accounts:
+Service Accounts
+~~~~~~~~~~~~~~~~
 
 Falkonry provides isolated personal use as well as collaboration workspaces through its
 feature called Service Accounts.
@@ -31,7 +33,8 @@ feature called Service Accounts.
    
    accounts
 
-Private Deployment:
+Private Deployment
+~~~~~~~~~~~~~~~~~~
 
 The Falkonry Service can be also be deployed into customer-managed virtual private clouds 
 on IaaS, or directly onto customer managed compute and storage infrastructure.  There are 
@@ -54,7 +57,7 @@ Build Your Own Connectors
 -------------------------
 
 Who is it for?
-
+~~~~~~~~~~~~~~
 
 If you want to integrate your application directly with Falkonry, then you can use the 
 Falkonry API or client libraries. 
@@ -68,7 +71,8 @@ Before you can use the Falkonry API you must have a Falkonry account.  Create an
 from the `Falkonry Website <http://falkonry.com/start>`_.  Additionally, this document 
 assumes knowledge of `Falkonry AI concepts <../concepts.html>`_ and the Falkonry UI.  
    
-Connector Technologies:
+Connector Technologies
+~~~~~~~~~~~~~~~~~~~~~~
 
 There are several ways to interact with the Falkonry service.  Whether you are 
 creating a pipeline or uploading source data, you currently have a number of choices besides

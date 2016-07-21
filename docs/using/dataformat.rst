@@ -20,16 +20,16 @@ The remaining rows in the CSV file will contain the data records.  Each line in 
 will represent one record, and will contain a value for each of the labels defined in the 
 header row.
 
-Falkonry data file requirements
--------------------------------
+## Falkonry data file requirements
+
 
 CSV and JSON files for use with Falkonry have a few specific requirements.  Every file must have a 
 timestamp column. Additionally, all the values used in the data file must have the same 
 structure, i.e., the same set of attributes and their data types. Also, the file may 
 contain UTF-8 characters, which is the encoding used for supplying data to Falkonry. 
 
-Identifying time
-----------------
+## Identifying time
+
 
 In Falkonry, every record is used to convey data for a single instant or interval of time. 
 Therefore, timestamps must be present on every record provided to Falkonry, which also 
@@ -50,8 +50,8 @@ Your timestamp data can be specified using one of the following formats:
 When supplying verification data, you must also supply a second time column called end. 
 This column is used to mark the end of the interval for which the record provides values.
 
-Identifying things
-------------------
+## Identifying things
+
 
 Often your Falkonry data will correspond to more than one "thing".  You may have several 
 turbofan motors that you are monitoring, or you may be collecting activity data from many 
@@ -60,14 +60,14 @@ your thing identifier.  The column that is used to identify things can be named 
 appropriate for the data set.  During pipeline creation, Falkonry will identify this 
 column and the user will verify the selection.
 
-Example Data
-------------
+## Example Data
+
 
 CSV data files are used for source signals (Input data) as well as for verification data. 
 Let's look at some examples in detail.
 
-Input data
-~~~~~~~~~~
+### Input data
+
 
 Input data is used to create a pipeline as well as to add source signal data to an 
 existing and live pipeline. The input data must contain the following columns: a single 
@@ -95,8 +95,8 @@ different thing identifer::
 
   time, turbine, LuftTemp Austritt Kühlturm 1, LuftTemp Austritt Kühlturm 2, Drehzahl Lüfter, Temp Auslf WB Scheibe
 
-Verification data
-~~~~~~~~~~~~~~~~~
+### Verification data
+
 
 Verification data is used to provide feedback to the Falkonry learning process in order to 
 supply condition names as well as to fine tune its findings. The verification data must 
@@ -126,8 +126,8 @@ In line-delimited JSON, this data would appear like the following::
   {"time": "2015-04-22T19:54:10Z", "unit": "PM-6428", "end": "2015-04-22T19:54:11Z", "Reliability": "Production"}
   {"time": "2015-04-22T19:54:30Z", "unit": "PM-6428", "end": "2015-04-22T19:54:35Z", "Reliability": "Dead Sensor"}
   
-Output data
-~~~~~~~~~~~
+### Output data
+
 
 Output data can be retrieved from a Falkonry pipeline using its API, or exported manually 
 through the Falkonry UI, on the Outflow tab. The main purpose of this output data is to be 

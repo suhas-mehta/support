@@ -1,5 +1,5 @@
-Adding Verified Examples
-========================
+Verify
+======
 
 Verified condition examples are used by the Pipeline to apply meaningful names to 
 conditions and to refine learning in order produce better condition recognition.
@@ -41,9 +41,11 @@ Direct entry into Falkonry Service UI
 -------------------------------------
 
 Sometimes it is most convenient to add verification directly while viewing detailed 
-assessment results for a specific Thing. Users are directly able to add individual example 
-conditions from the Thing detail view as shown in the figure below.  This dialog is 
-invoked by clicking the Add Verification Example button.
+assessment results for a specific Thing. For example, the user examines the available 
+maintenance or inspection logs and is able to verify some example conditions. Users 
+are directly able to add individual example conditions from the Thing detail view as 
+shown in the figure below.  This dialog is invoked by clicking the Add Verification 
+Example button.
 
 .. raw:: html
 

@@ -4,8 +4,13 @@ User Guide
 .. toctree::
    :maxdepth: 1
    
-   dataformat
+   overview
+   data
+   eventbuffer
    pipeline
-   transfer
+   configure
+   learn
+   test
+   monitor
    verification
    assessment

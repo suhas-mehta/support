@@ -23,7 +23,7 @@ Instructions
 
 .. raw:: html
 
-   <iframe src="https://player.vimeo.com/video/146711614" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+   <iframe src="https://player.vimeo.com/video/175744365" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
 
 `Human Activity Tutorial <https://vimeo.com/falkonry/sports>`_ Video (subscribe to `Falkonry tutorial videos <https://vimeo.com/falkonry>`_ on Vimeo)
 

@@ -1,14 +1,15 @@
 Data
 ====
 
-Formatting data
----------------
+Data Formats
+------------
 
 The currently supported data formats for exchange with Falkonry are CSV (comma separated
 values) and line-delimited JSON_. 
 Both formats are commonly used general purpose data exchange format allowing numerical, 
 categorical, timestamp, and other types of data.  Both formats can be used to supply Input 
 data (source signals) as well as verification data to Falkonry.
+
 
 .. _JSON: http://jsonlines.org/
 
@@ -20,6 +21,7 @@ CSV and JSON files for use with Falkonry have a few specific requirements.  Ever
 timestamp column. Additionally, all the values used in the data file must have the same 
 structure, i.e., the same set of attributes and their data types. Also, the file may 
 contain UTF-8 characters, which is the encoding used for supplying data to Falkonry. 
+
 
 Identifying time
 ~~~~~~~~~~~~~~~~
@@ -43,53 +45,89 @@ Your timestamp data can be specified using one of the following formats:
 When supplying verification data, you must also supply a second time column called end. 
 This column is used to mark the end of the interval for which the record provides values.
 
+
 Identifying things
 ~~~~~~~~~~~~~~~~~~
 
 Often your Falkonry data will correspond to more than one "thing".  You may have several 
 turbofan motors that you are monitoring, or you may be collecting activity data from many 
 people. If you have data for multiple things, you must have a column of data which represents 
-your thing identifier.  The column that is used to identify things can be named as 
+your thing identifier, or the thing must be part of a tag.  The column that is used to identify things can be named as 
 appropriate for the data set.  During pipeline creation, Falkonry will identify this 
 column and the user will verify the selection.
 
-Example data
-~~~~~~~~~~~~
+Wide vs. Narrow
+~~~~~~~~~~~~~~~
 
-CSV data files are used for source signals (Input data) as well as for verification data. 
-Let's look at some examples in detail.
+CSV and JSON data can each be formatted in wide or narrow format for the input data. Wide files contain one line for each timestamp that have all of the values whereas narrow files only have a single value per each line. Narrow files concatenate the variables into a single tag.
 
 Input data
-__________
+~~~~~~~~~~
 
 Input data is used to create a pipeline as well as to add source signal data to an 
 existing and live pipeline. The input data must contain the following columns: a single 
 time column, an optional thing identifier, followed by one or more source signals. The 
 header of the CSV file should reflect the appropriate column names. 
 
-For example, data used in the Sports Activity example contains the following header::
+Wide format
+...........
 
-  time, person, T_xacc, T_yacc, T_zacc, RA_xacc, RA_yacc, RA_zacc, ...
+**CSV Example**
 
-A row of data in that CSV file might look like this::
+Data used in the Human Activity example looks like this::
 
-  1452030355080, p1, 7.9469, 0.29302, 5.604, 1.0998, 0.57985, 6.8342, ...
+  time, person, T_xacc, T_yacc, T_zacc
+  1452030355080, p1, 7.9469, 0.29302, 5.604
+  1452030356020, p1, 8.5439, 0.46781, 5.432
 
-In line-delimited JSON, this data would appear like the following::
+**JSON Example**
 
-  {"time": 1452030355080, "person": "p1", "T_xacc": 7.9469, "T_yacc": 0.29302, "T_zacc": 5.604, ...}
+The same data but formatted in line-delimited JSON would appear like the following::
+
+  {"time": 1452030355080, "person": "p1", "T_xacc": 7.9469, "T_yacc": 0.29302, "T_zacc": 5.604}
+  {"time": 1452030356020, "person": "p1", "T_xacc": 8.5439, "T_yacc": 0.46781, "T_zacc": 5.432}
   
 where ``1452030355080`` is the time value, ``p1`` is the person identifier, and so on.  
 The columns after the person column are the raw source data or signal data which Falkonry 
-inspects and monitors to provide meaningful condition assessments.
+inspects and monitors to provide meaningful condition assessments. The column names in the 
+header can be anything, because the user identifies the time and thing columns for Falkonry when 
+creating an event buffer.
 
-In another example, you can see how UTF-8 characters can be used in the header with a 
-different thing identifer::
+Narrow Format
+.............
 
-  time, turbine, LuftTemp Austritt Kühlturm 1, LuftTemp Austritt Kühlturm 2, Drehzahl Lüfter, Temp Auslf WB Scheibe
+**CSV Example**
+
+In this format the Human Activity data would appear as::
+
+  time, tag, value
+  1452030355080, p1:T_xacc, 7.9469
+  1452030355080, p1:T_yacc, 0.29302
+  1452030355080, p1:T_zacc, 5.604
+  1452030356020, p1:T_xacc, 8.5439
+  1452030356020, p1:T_yacc, 0.46781
+  1452030356020, p1:T_zacc, 5.432
+
+
+**JSON Example**
+
+Rows of data in a narrow JSON file would look like::
+
+  {"time": 1452030355080, "tag": p1:T_xacc, "value": 7.9469}
+  {"time": 1452030355080, "tag": p1:T_yacc, "value": 0.29302}
+  {"time": 1452030355080, "tag": p1:T_zacc, "value": 5.604}
+  {"time": 1452030356020, "tag": p1:T_xacc, "value": 8.5439}
+  {"time": 1452030356020, "tag": p1:T_yacc, "value": 0.46781}
+  {"time": 1452030356020, "tag": p1:T_zacc, "value": 5.432}
+
+note that each line only has a single data value. The first column is the time and the second 
+column has concatenated the variables, in this case person and sensor.
+  
 
 Verification data
-_________________
+~~~~~~~~~~~~~~~~~
+
+**CSV**
 
 Verification data is used to provide feedback to the Falkonry learning process in order to 
 supply condition names as well as to fine tune its findings. The verification data must 
@@ -112,6 +150,8 @@ data from another data set conveys four different episodes being verified::
   2015-04-22T19:54:10Z,PM-6428,2015-04-22T19:54:11Z,Production
   2015-04-22T19:54:30Z,PM-6428,2015-04-22T19:54:35Z,Dead Sensor
 
+**JSON**
+
 In line-delimited JSON, this data would appear like the following::
 
   {"time": "2015-04-22T19:54:02Z", "unit": "PM-6428", "end": "2015-04-22T19:54:04.750Z", "Reliability": "Base"}
@@ -120,7 +160,7 @@ In line-delimited JSON, this data would appear like the following::
   {"time": "2015-04-22T19:54:30Z", "unit": "PM-6428", "end": "2015-04-22T19:54:35Z", "Reliability": "Dead Sensor"}
   
 Output data
-___________
+~~~~~~~~~~~
 
 Output data can be retrieved from a Falkonry pipeline using its API, or exported manually 
 through the Falkonry UI, on the Outflow tab. The main purpose of this output data is to be 

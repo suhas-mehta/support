@@ -30,11 +30,10 @@ Instructions
 Data
 ----
 
-The tutorial uses 2 data files and 2 verification files below. Click links to download and use:
+The tutorial uses 2 data files and 3 verification files in the folder below. Click links to download and use:
 
-- Initial data loaded for pipeline creation (can also be found under the library sources
-  at the time of pipeline creation):
-  `activity_input_part1.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30OVBlM29UZExKdTg>`_ 
-- Verified examples for learning Sports Activity: `verification_activity_part1.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30V1dBM0ZFWlhWSVU>`_
-- New data to be used for testing prediction system: `activity_input_part2.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30YVVxbjlYYVhoLVU>`_
-- Verified examples for validating prediction system: `verification_activity_part2.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30MFlwZWEtTk90SGM>`_
+- Initial learning data to create pipeline `file1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuQ1dGS3VPTmV0R28>`_ 
+- Second file of data, for monitoring `file2.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuVGhzdFpvRFNpTFk>`_
+- parital verification of the first file `partialVerification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAua3BMZjVHY2Vkb1k>`_
+- full verification of the first file `verification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuODdybHJHcEk0STA>`_
+- full verification of the second file `verification2.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuMHJpZ0tnZnNQaE0>`_

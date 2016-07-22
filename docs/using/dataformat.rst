@@ -1,5 +1,5 @@
-Formatting data
-===============
+Data Formats
+============
 
 The currently supported data formats for exchange with Falkonry are CSV (comma separated
 values) and line-delimited JSON_. 

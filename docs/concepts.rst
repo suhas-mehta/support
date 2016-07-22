@@ -1,26 +1,50 @@
 Falkonry Concepts
 =================
 
-Here's a quick overview of the basic elements of the Falkonry Service and concepts that
+Here's a quick overview of the basic elements of the Falkonry AI Assistant and concepts that
 are referenced elsewhere in the documentation.
 
-.. image:: images/operations.png
+.. image:: images/appfalkonry.png
 
+The Falkonry AI Assistant is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry AI Assistant is to provide intelligence to applications that are monitoring some Thing or set of Things.  
+	   
 Things
 ------
 
 Things are what they sound like - anything (e.g. an appliance, a device, a vehicle, a 
-machine) that produce a stream of data through its operation.
+machine, a person) that produce a stream of data through its operation.
 
-Operational View
-----------------
+Signals
+-------
 
-In the condition prediction context, there is an Operational View where a locus of 
-information about the set of Things is managed.  It is from this view that the state of 
-the Things is monitored and in some cases controlled.  
+Time series data is represented in the Falkonry AI Assistant as a set of Signals. Each Signal represents a sequence of values over time that can be indexed by Thing.  Signals can carry either numerical or categorical values.
 
-Event Buffer
-------------
+Conditions
+----------
+
+Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Thing. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition classification.
+
+Examples (Verification)
+-----------------------
+
+An example is a verified or known condition for a particular episode of time.  Examples can come from external sources, inspection reports, or investigations.  Example data typically becomes available after events have passed.
+
+Learning
+--------
+
+The Falkonry AI Assistant is able to *Learn* a condition model from signal data and any examples of verified conditions.  The Falkonry AI Assistant is able to perform unsupervised, semi-supervised, and supervised learning on the supplied data to create a condition model.  When no examples are present, the model will recognize conditions and assign machine generated names. Examples aid learning, but there is no minimum numbers of examples that need to be supplied.  The Falkonry AI Assistant uses a continuous learning approach where models are revised over time as more signal data and examples are received.
+
+Recognition
+-----------
+
+The application of a model to signal data to produce a condition assessment is called *Recognition*. The Falkonry AI Assistant supports real-time condition recognition on signal data.
+
+Event Buffers and Pipelines
+---------------------------
+
+The Falkonry AI Assistant uses two primary building blocks - *Event Buffers* and *Pipelines*.
+
+**Event Buffer**
 
 An *Event Buffer* is a logical or physical holding area in Falkonry for the operational data
 being analyzed for patterns. An event buffer can receive data from a variety of sources,
@@ -33,64 +57,15 @@ As operational data arrives in an event buffer, it is saved and available for us
 existing pipelines connected to the event buffer as well as for any future pipelines
 created from the event buffer. 
 
-Pipeline
---------
+**Pipeline**
 
-A *Pipeline* is the basic organizing unit in the Falkonry Service.  A pipeline receives
-data from  an event buffer and this data flow is referred to as *Inflow*.  The output that 
+A *Pipeline* is the basic organizing unit in the Falkonry AI Assistant.  A pipeline receives
+data from an event buffer and this data flow is referred to as *Inflow*.  The output that 
 is produced by the pipeline is referred to as *Outflow*.  In addition to Inflow/Outflow, a 
 Pipeline also consumes *Verification* data in form of known condition examples. 
 
-A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline 
-augments the Operational View, by providing a stream of condition predictions in exchange
-for a stream of signal data from Things.
+A Pipeline is what a user interacts with when using the Falkonry AI Assistant. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Things.
 
 .. image:: images/pipeline.png
 
-A pipeline sets up an AI Assistant from accumulated operational data as well as applies an 
-AI Assistant to live operational data and performs two basic functions: 
-- Set up AI Assistant model from signal and verification data.
-- Generate Operational Assessment by applying an AI Assistant model to live operational 
-data to produce a stream of assessments.
-
-When a pipeline is first created, it has no AI Assistant model and cannot produce any 
-outflow. Once the pipeline is supplied signal data it can learn an AI Assistant with whatever 
-verification data is available - even none. The result of the set up process is an AI 
-Assistant model. Once this model is available, the pipeline can be Opened and assessments 
-will flow out of the pipeline.  Any operational data that flows into the pipeline is 
-available for improving the AI Assistant model at any time. Likewise, 
-new verification data can be added at any time and is available for future improvements to
-the AI Assistant.  A pipeline can carry out a process of continuous improvement by 
-generating a sequence of improving AI Assistant and ‘hot-swapping’ those models into the 
-real-time assessment flow.
-   
-Signal Data
------------
-
-The source signals provide to the Pipeline a stream of values over time, that can be 
-indexed by the Thing identity.  At a given time, then, the Pipeline receives a set of 
-signals (e.g. representing a set of sensor readings or discrete events), and it can 
-receive sets of signals for many individual Things.  The signals can be of two types: 
-numerical and categorical
-
-Certain categorical signals can be used to identify Things where behaviors of interest 
-occur.  Other categorical signals can be used to group a consecutive set of points into an
-episode that is treated as a defined sequence associated with one time point.
-
-Condition Assessments
----------------------
-
-Condition assessments are what a Pipeline produces.  Like the source signals, each 
-condition assessment output is a live stream of values  that is indexed by the Thing 
-identity.  The value type of an Assessment is categorial, where each potential value is a 
-‘Condition’ associated with that Thing.  There can be multiple Assessments associated with
-one type of Thing, e.g. a *Health Assessment* and an *Operating Mode Assessment*.
-
-Verification Example Data
--------------------------
-
-A Falkonry Pipeline learns by example, i.e. as verified condition states for Things are 
-supplied, the Pipeline’s machine learning capabilities improve its condition predictions.  
-These verified condition examples can come from periodic inspection reports, incident 
-reports, or other forms of data collection.  The Pipeline can use verified conditions from 
-individual Things to improve predictions across the entire set.
+When a pipeline is first created, it has no model and cannot produce any outflow. Once the pipeline is supplied signal data it can learn a model with whatever example data is available - even none. Once this model is available, the pipeline can be Opened and condition assessments will flow out of the pipeline. A pipeline can carry out a process of continuous improvement by generating a sequence of improved model and ‘hot-swapping’ those models into the real-time assessment flow.

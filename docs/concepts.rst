@@ -1,12 +1,12 @@
 Falkonry Concepts
 =================
 
-Here's a quick overview of the basic elements of the Falkonry AI Assistant and concepts that
+Here's a quick overview of the basic elements of the Falkonry Service and concepts that
 are referenced elsewhere in the documentation.
 
 .. image:: images/appfalkonry.png
 
-The Falkonry AI Assistant is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry AI Assistant is to provide intelligence to applications that are monitoring some Thing or set of Things.  
+The Falkonry Service is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry Service is to provide intelligence to applications that are monitoring some Thing or set of Things.  
 	   
 Things
 ------
@@ -17,7 +17,7 @@ machine, a person) that produce a stream of data through its operation.
 Signals
 -------
 
-Time series data is represented in the Falkonry AI Assistant as a set of Signals. Each Signal represents a sequence of values over time that can be indexed by Thing.  Signals can carry either numerical or categorical values.
+Time series data is represented in the Falkonry Service as a set of Signals. Each Signal represents a sequence of values over time that can be indexed by Thing.  Signals can carry either numerical or categorical values.
 
 Conditions
 ----------
@@ -32,17 +32,17 @@ An example is a verified or known condition for a particular episode of time.  E
 Learning
 --------
 
-The Falkonry AI Assistant is able to *Learn* a condition model from signal data and any examples of verified conditions.  The Falkonry AI Assistant is able to perform unsupervised, semi-supervised, and supervised learning on the supplied data to create a condition model.  When no examples are present, the model will recognize conditions and assign machine generated names. Examples aid learning, but there is no minimum numbers of examples that need to be supplied.  The Falkonry AI Assistant uses a continuous learning approach where models are revised over time as more signal data and examples are received.
+The Falkonry Service is able to *Learn* a condition model from signal data and any examples of verified conditions.  The Falkonry Service is able to perform unsupervised, semi-supervised, and supervised learning on the supplied data to create a condition model.  When no examples are present, the model will recognize conditions and assign machine generated names. Examples aid learning, but there is no minimum numbers of examples that need to be supplied.  The Falkonry Service uses a continuous learning approach where models are revised over time as more signal data and examples are received.
 
 Recognition
 -----------
 
-The application of a model to signal data to produce a condition assessment is called *Recognition*. The Falkonry AI Assistant supports real-time condition recognition on signal data.
+The application of a model to signal data to produce a condition assessment is called *Recognition*. The Falkonry Service supports real-time condition recognition on signal data.
 
 Event Buffers and Pipelines
 ---------------------------
 
-The Falkonry AI Assistant uses two primary building blocks - *Event Buffers* and *Pipelines*.
+The Falkonry Service uses two primary building blocks - *Event Buffers* and *Pipelines*.
 
 **Event Buffer**
 
@@ -59,12 +59,12 @@ created from the event buffer.
 
 **Pipeline**
 
-A *Pipeline* is the basic organizing unit in the Falkonry AI Assistant.  A pipeline receives
+A *Pipeline* is the basic organizing unit in the Falkonry Service.  A pipeline receives
 data from an event buffer and this data flow is referred to as *Inflow*.  The output that 
 is produced by the pipeline is referred to as *Outflow*.  In addition to Inflow/Outflow, a 
 Pipeline also consumes *Verification* data in form of known condition examples. 
 
-A Pipeline is what a user interacts with when using the Falkonry AI Assistant. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Things.
+A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Things.
 
 .. image:: images/pipeline.png
 

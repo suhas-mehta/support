@@ -1,5 +1,5 @@
 Examples and Use Cases
-================
+======================
 
 The Falkonry Service can be used to support a wide variety of condition prediction 
 problems, and can flexibly be embedded in different modes of use.

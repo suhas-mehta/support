@@ -25,10 +25,4 @@ Learn more about the Falkonry Service and what it can do for your operations:
    accessing/index
    using/index
 
-Sign up for an account on the `Falkonry Service Cloud <https://falkonry.io/signup>`_ and get started now.
-
-.. toctree::
-   :maxdepth: 2
-   
-   basic/index
-   
+Sign up for an account on the `Falkonry Service Cloud <https://falkonry.io/signup>`_ and get started now.   

@@ -100,18 +100,20 @@ Connect the Falkonry Splunk App with your Falkonry Service
 .. image:: images/app.png
 
 2. On the Falkonry connection screen, the status will show as Not Connected. The default settings should show:
+
   - Service URL: *https://service.falkonry.io*
   - Connection Mode: *Default*
   - Management Port: *8089*
   - Event Collector Port: *8088*
-
+  
 3. In addition to these settings, you must enter:
+
   - The **Event Collector Token ID** you set up earlier (to find this again, you can go to 
     **Settings > Data Inputs > HTTP Event Collector** and check the token value for the 
     Falkonry Event Collector)
   - Splunk credentials (username and password) for a Splunk user that has ``edit_tcp``, 
     ``edit_udp``, ``rtsearch``, ``schedule_rtsearch`` and ``search`` capabilities.
-
+    
 4. Once you have entered values for all the required fields, click **Connect**.
 
 5. If you are not logged in to your Falkonry service account, you will be directed to the 

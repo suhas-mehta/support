@@ -36,7 +36,6 @@ three specific choices then for private deployments:
 .. toctree::
    :maxdepth: 1
    
-   distributed
    appliance
    administration
 

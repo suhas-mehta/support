@@ -51,15 +51,7 @@ Once the appliance is imported, you need to configure following:
 After configuring the virtual machine, it can be started. The following screen appears
 that shows the Falkonry Service as running. 
 
-.. note::
-  There is no need to log into the window shown in the image below.
-  
-.. image:: images/VirtualBoxStartFalkonryVM.jpg
-
-Falkonry Service is now accessible via a web browser at http://localhost:8080 as seen in the following
-screen. 
-
-.. image:: images/VirtualBoxLogin.jpg
+Falkonry Service is now accessible via a web browser at http://localhost:8080.
 
 Please read about `Service Administration <./administration.html>`_ before continuing to the next step.
 You will need to install a license first.

@@ -6,103 +6,44 @@ Configure
 
 The configure tab allows you to examine an overview of all your revisions and your flow history. After you create an initial model in the `learn <./learn.html>`_ tab, you can open the pipeline by clicking on the arrow and begin to `monitor <./monitor.html>`_  data.
 
+INFLOW
+------
 
-Add more data
--------------
+Clicking on the ``INFLOW`` box, displays a panel that lets you see inflow related properties and to perform functions related to the `Event Buffer <./eventbuffer.html>`_ that feeds the Pipeline including:
 
-Once a good model revision is created as verified from the results of the revision, the 
-pipeline can be used for continuous monitoring, in which case more data can be added to 
-the pipeline. From the UI, this can be done through the ``inflow`` box.
+  - Adding more data: While data often flows into the Event Buffer via the REST APIs, it is sometimes convenient to upload addition files via this panel.
+  - Navigate to the Event Buffer to see details or to configure new subscriptions.
 
-.. raw:: html
+To better understand how to configure API-based inflow of data see `Integration <../integration>`_.
 
-   <iframe src="https://player.vimeo.com/video/168813480" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+.. image:: ./images/INFLOW.png
 
+OUTFLOW
+-------
 
+Clicking on the ``OUTFLOW`` box, displays a panel that lets you see outflow related properties and to perform functions related to the assessments produced by the Pipeline including:
 
+  - Download output data: You can use the button to download a file containing pipeline output.
+  - Add Publications of output data: You can publish pipeline output to an external service.
+  - Edit Assessment properties: You can use the edit capability to change which signals are used in the assessement.
+  - Add Assessments: You can create additional assessments for the Pipeline. This is useful when the Pipeline is used to recognize separate groups of conditions simultaneously, e.g. Health and Operating Mode conditions.
 
-Managing Assessments
---------------------
+To better understand how to configure API-based outflow of data see `Integration <../integration>`_.
 
-The output from a *Pipeline* is a stream of conditions - for every point in time there is
-a condition value for each *Assessment* in that Pipeline.  
+.. image:: ./images/OUTFLOW.png
 
-Adding an assessment
-~~~~~~~~~~~~~~~~~~~~
+OPEN and CLOSING the Pipeline
+-----------------------------
 
-When a pipeline gets created, the user specifies an assessment they want it to produce.
-However, a user may choose to produce more than one stream of conditions from the same or
-a different subset of data in the same pipeline. For example, one assessment focuses on
-the reliability of sensors whereas another focuses on operating mode.
+.. image:: ./images/pipezoom.png
+	   
+Opening a Pipeline puts it into a live monitoring state.  When opened, the arrival of new inflow data will result in outflow of assessments.  When a Pipeline is opened a panel is presented where you can select the Model that will be used for condition recognition, and the time at which you want monitoring to start.  Inflow data will be stored in the Event Buffer so that it can be used in future Learning revisions.
 
-It is easy to add multiple assessments and subsequently, all model revisions will compute 
-all the assessments configured in the pipeline. Different results may be produced for 
-different assessments, as different verified examples are provided in each assessment.
+Closing a Pipeline shuts down any outflow.  Inflow into the Pipeline continues where it is stored for Learning or Monitoring in the future.
 
-.. raw:: html
+.. image:: ./images/OPEN.png
+	   
+Model Swapping
+--------------
+Clicking on the Model button allows the user to 'hot swap' the model revision being applied during monitoring.
 
-   <iframe src="https://player.vimeo.com/video/168547756" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
-
-
-
-Changing the signals used in an assessment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Just as it is possible to add assessments, a user can change the set of signals used in a
-pipeline with the edit tool. When an assessment is chosen to be edited, the user can only 
-change the list of signals used in the assessment. The user can choose any of the signals 
-defined in the pipeline to be included in the assessment.
-
-Retrieving Assessment Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Outflow from a Pipeline becomes available after that Pipeline has been put in a Live mode.
-Output data can be retrieved from a Pipeline in three ways:
-
-- via the API
-- through the Falkonry Service UI
-- through a client application like the Splunk App
-
-Retrieving output
------------------
-
-Via the Falkonry Service API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The output retrieved from the API is in CSV form with a header row containing the 
-following elements::
-
-  time, ThingFieldName, end, AssessmentName
-
-In the above header line, ``ThingFieldName``, and ``AssessmentName`` are replaced with the 
-values configured for the Pipeline.  The subsequent rows then provide corresponding 
-Assessment values for a given Thing at a given time.
-
-The figure below shows a sample file from the Sports Activity Pipeline::
-
-  time,value,suggestion,thing
-  1447882550000,walking,0.0,p1
-  1447882550040,walking,0.0,p1
-  1447882550080,walking,0.0,p1
-  1447882550120,walking,0.0,p1
-  1447882550160,running,0.0,p1
-  1447882550200,running,0.0,p1
-  1447882550240,running,0.0,p1
-  1447882550280,walking,0.0,p1
-
-
-Through the Falkonry Service UI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Outflow tab of the Pipeline Details page provides a button to download Assessment 
-results.
-
-.. image:: ./images/pipeline_open.png
-
-Through a client application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Output can also be retrieved through a client application like the Falkonry Splunk App. 
-The Splunk App writes the output of the Pipeline into a Splunk source that the user can 
-then search directly in Splunk.  The Splunk App provides convenient links to produce the 
-search for a specific Pipeline.

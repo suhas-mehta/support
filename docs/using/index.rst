@@ -9,8 +9,4 @@ User Guide
    data
    eventbuffer
    pipeline
-   configure
-   learn
-   test
-   monitor
-   verification
+   pipelinedetails

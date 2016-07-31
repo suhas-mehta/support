@@ -33,53 +33,30 @@ document.
 Prebuilt Connectors
 -------------------
 
-MQTT
-~~~~
+MQTT and AMQP Brokers
+~~~~~~~~~~~~~~~~~~~~~
 
-MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport. It is useful for connections with remote locations where a small code footprint is required and/or network bandwidth is at a premium. To set up a subscription refer to `Event Buffer subscription to MQTT broker <file:///Users/olsen/repos/support/docs/_build/html/using/eventbuffer.html#event-buffer-subscription-to-mqtt-broker>`_.
+`MQTT <http://mqtt.org/>`_ is a widely-used, machine-to-machine (M2M)/"Internet of Things" connectivity protocol. The `Advanced Message Queuing Protocol (AMQP) <https://www.amqp.org/>`_ is an open standard for passing business messages between applications or organizations.
 
+The Falkonry Service natively supports use of MQTT and AMQP brokers for inbound and outbound data communication. Configuration is straightforward - for inbound communication Event Buffers subscribe to a broker topic, and for outbound communication Pipelines can publish output to a broker topic.  See the following sections in the User Guide:
 
-.. toctree::
-   :maxdepth: 1
-   
-   MQTT <http://mqtt.org/>
-
-AMQP
-~~~~
-
-The Advanced Message Queuing Protocol (AMQP) is an open standard for passing business messages between applications or organizations.  It connects systems, feeds business processes with the information they need and reliably transmits onward the instructions that achieve their goals. 
-
-.. toctree::
-   :maxdepth: 1
-   
-   AMQP <https://www.amqp.org/>
+  - `Event Buffer Subscriptions <../using/eventbuffer.html#event-buffer-subscription-to-mqtt-broker>`_
+  - `Publishing Pipeline Output <../using/configure.html#through-a-client-application>`_
 
 Falkonry Splunk App
 ~~~~~~~~~~~~~~~~~~~
 
-The Falkonry Splunk App allows existing Splunk customers to connect the Falkonry Service 
-directly to Splunk so that the data you are already indexing in Splunk can be easily used
-with Falkonry to generate valuable condition assessments. Once you open the outflow
-of your Falkonry pipeline, it will continuously produce condition predictions as the data 
-flows into Splunk, where you can search and visualize the results using any Splunk tools
-directly.
-
-Use the Falkonry Splunk App to work with your existing Splunk data
+The Falkonry Splunk App allows existing `Splunk <http://www.splunk.com/>`_ customers to connect the Falkonry Service directly to Splunk so that the data in Splunk can be easily used with Falkonry to generate valuable condition assessments. The Splunk App (accessed within the Splunk application environment) will configure flow from Splunk to a Falkonry Event Buffer, and flow of condition assessment results back into Splunk.  The Falkonry Splunk App is available as a free download.
 
 .. toctree::
    :maxdepth: 1
    
    ../splunk_app/setup.rst
 
-OSIsoft PI
-~~~~~~~~~~
+Falkonry PI Integrator
+~~~~~~~~~~~~~~~~~~~~~~
 
-The PI System is a suite of software products that are used for data collection, historicizing, finding, analyzing, delivering, and visualizing. It is marketed as an enterprise infrastructure for management of real-time data and events.
-
-.. toctree::
-   :maxdepth: 1
-
-   OSIsoft PI <http://www.osisoft.com/pi-system/>
+The `OSISoft PI System <http://www.osisoft.com/pi-system/>`_ is a suite of software products that are used for data collection, historicizing, finding, analyzing, delivering, and visualizing. It is marketed as an enterprise infrastructure for management of real-time data and events.  Falkonry provides a pre-built integrator the PI evironment.  For more information contact info@falkonry.com.
    
 Build Your Own Connectors
 -------------------------

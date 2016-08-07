@@ -1,5 +1,5 @@
 ``POST /eventBuffer/``
-===================
+======================
 
 In order to create an event buffer all that is needed is the specification of the time
 identifier and format of the values of timestamps used in the event buffer. Let’s take a 

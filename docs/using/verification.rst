@@ -27,7 +27,7 @@ Assessment ``Health``.
 .. image:: ./images/verification.png
 
 For a more detail regarding how to format data files for use with Falkonry, 
-please refer to `Data Formats <file:///Users/olsen/repos/support/docs/_build/html/using/data.html#data-formats>`_.
+please refer to `Data Formats <http://help.falkonry.com/en/latest/using/data.html#data-formats>`_.
 
 In the Falkonry Service UI the Manage Verification button (available on Learning and 
 Outflow tabs) is used to view all previously entered examples and upload new examples 

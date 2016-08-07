@@ -120,9 +120,15 @@ Rows of data in a narrow JSON file would look like::
   {"time": 1452030356020, "tag": p1:T_yacc, "value": 0.46781}
   {"time": 1452030356020, "tag": p1:T_zacc, "value": 5.432}
 
-note that each line only has a single data value. The first column is the time and the second 
-column has concatenated the variables, in this case person and sensor.
-  
+note that each line only has a single data value. 
+
+The **Tag Field** in this case would be ``tag``, the concatenated variables person and sensor.
+
+The **Signal Delimeter** is a ``:``, or what seperates the concatenated variables in the tag field.
+
+The **Signal Location** is describing where the signal name is in the tag field. In the Human Activity example, the tag field contains the thing first, then the signal name (p1:T_xacc). Therefore the siganl location would be ``suffix`` because the signal name is at the end.
+
+The **Value Field** is ``value`` or the location of the numerical or categorical readings.
 
 Verification data
 ~~~~~~~~~~~~~~~~~

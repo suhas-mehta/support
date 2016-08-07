@@ -34,8 +34,7 @@ the pipeline using a similar mechanism once the pipeline is live.
 
 Note that the data does not contain multiple things and the event buffer is set to
 use the ISO 8601 timestamp format. More details regarding supported data formats such 
-as CSV and JSON files can be found in `Data Formats <file:///Users/olsen/repos/support/docs/_build/html/using/data.html#data-formats>`_.
-
+as CSV and JSON files can be found in `Data Formats <http://help.falkonry.com/en/latest/using/data.html#data-formats>`_.
 
 
 

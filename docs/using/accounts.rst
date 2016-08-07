@@ -40,6 +40,10 @@ account.
 .. image:: images/create-team.png
    :width: 200px
 
+After clicking **New Team Account** you will be given a list of options of usage plans.
+
+.. image:: images/AccountPayment.png
+
 Managing additional Users
 -------------------------
 

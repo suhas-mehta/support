@@ -28,6 +28,11 @@ Clicking on the ``OUTFLOW`` box, displays a panel that lets you see outflow rela
   - Edit Assessment properties: You can use the edit capability to change which signals are used in the assessement.
   - Add Assessments: You can create additional assessments for the Pipeline. This is useful when the Pipeline is used to recognize separate groups of conditions simultaneously, e.g. Health and Operating Mode conditions.
 
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/178232693" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+
+
 To better understand how to configure API-based outflow of data see `Integration <../integration>`_.
 
 .. image:: ./images/OUTFLOW.png

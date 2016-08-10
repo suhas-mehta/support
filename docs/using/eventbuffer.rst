@@ -29,7 +29,7 @@ the pipeline using a similar mechanism once the pipeline is live.
 
 .. raw:: html
 
-   <iframe src="https://player.vimeo.com/video/168553121" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+   <iframe src="https://player.vimeo.com/video/178061214" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
 
 
 Note that the data does not contain multiple things and the event buffer is set to
@@ -53,4 +53,4 @@ Once a subscription is created, the event buffer will keep receiving
 
 .. raw:: html
 
-   <iframe src="https://player.vimeo.com/video/168680003" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>
+   <iframe src="https://player.vimeo.com/video/178228914" width="500" height="281" frameborder="0" allowfullscreen=""></iframe>

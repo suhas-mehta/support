@@ -29,8 +29,8 @@ three specific choices then for private deployments:
 
 - VPC deployment on public IaaS cloud providers (Oracle Cloud, MS Azure, or Google Compute 
   Engine): Take advantage of pre-configured deployment environments.
-- Virtual Appliance Deployment: Download OVA file and install into standard virtualization 
-  environments like Virtual Box
+- Docker Deployment: Download Falkonry tarball file and install into standard Linux or  
+  docker-supported bare-metal or virtualized systems
 - Install into private Kubernetes environment
 
 .. toctree::

@@ -2,7 +2,7 @@ Installation
 =================
 
 The Falkonry Service can be installed on any bare metal or virtualized hardware that
-supports `Docker 1.12 <http://docker.com>`. The goal of the Falkonry Server 
+supports `Docker 1.12 <http://docker.com>`_. The goal of the Falkonry Server 
 Deployment is to provide a quick installation process that is completely under your
 control and disconnected from the network.
 

@@ -1,15 +1,10 @@
 Service Administration
 ======================
 
-All private deployments, whether of a Falkonry Service Virtual Appliance or a Virtual 
-Private Cloud can be administered by a single administrative user. The administrative user
-logs in using the same login page as non-administrative users.
+All private deployments are administered by a single administrative user, which is the first 
+user to log into the deployment. The administrative user logs in using the same login page as
+non-administrative users.
 
-.. note::
- 
-  The administrative user is preset as ``admin@falkonry.local`` and cannot currently be 
-  changed for Falkonry Service Virtual Appliance.
-  
 Once the administrative user logs in, they are taken to their *Personal* account. However,
 there is a menu option for the user to switch to Service *Administration* as shown in the 
 screen below.

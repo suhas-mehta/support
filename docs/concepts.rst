@@ -24,15 +24,15 @@ Conditions
 
 Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition assessment.
 
-Examples (Facts)
+Facts
 -----------------------
 
-An example is a known condition for a particular episode of time.  Examples can come from external sources, inspection reports, or investigations.  Example data typically becomes available after events have passed.
+A fact is a known condition for a particular episode of time.  Facts can come from external sources, inspection reports, or investigations.  Fact data typically becomes available after events have passed.
 
 Learning
 --------
 
-The Falkonry Service is able to *Learn* a condition model from signal data and any examples of verified conditions.  The Falkonry Service is able to perform unsupervised, semi-supervised, and supervised learning on the supplied data to create a condition model.  When no examples are present, the model will recognize conditions and assign machine generated names. Examples aid learning, but there is no minimum numbers of examples that need to be supplied.  The Falkonry Service uses a continuous learning approach where models are revised over time as more signal data and examples are received.
+The Falkonry Service is able to *Learn* a condition model from signal data and any condition facts.  The Falkonry Service is able to perform unsupervised, semi-supervised, and supervised learning on the supplied data to create a condition model.  When no condition facts are present, the model will recognize conditions and assign machine generated names. Facts aid learning, but there is no minimum numbers of facts that need to be supplied.  The Falkonry Service uses a continuous learning approach where models are revised over time as more signal data and facts are received.
 
 Recognition
 -----------
@@ -62,10 +62,10 @@ created from the event buffer.
 A *Pipeline* is the basic organizing unit in the Falkonry Service.  A pipeline receives
 data from an event buffer and this data flow is referred to as *Inflow*.  The output that 
 is produced by the pipeline is referred to as *Outflow*.  In addition to Inflow/Outflow, a 
-Pipeline also consumes *Verification* data in form of known condition examples. 
+Pipeline also consumes *Facts* data in form of known conditions. 
 
 A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Entities.
 
 .. image:: images/pipeline.png
 
-When a pipeline is first created, it has no model and cannot produce any outflow. Once the pipeline is supplied signal data it can learn a model with whatever example data is available - even none. Once this model is available, the pipeline can be Opened and condition assessments will flow out of the pipeline. A pipeline can carry out a process of continuous improvement by generating a sequence of improved model and ‘hot-swapping’ those models into the real-time assessment flow.
+When a pipeline is first created, it has no model and cannot produce any outflow. Once the pipeline is supplied signal data it can learn a model with whatever fact data is available - even none. Once this model is available, the pipeline can be Opened and condition assessments will flow out of the pipeline. A pipeline can carry out a process of continuous improvement by generating a sequence of improved model and ‘hot-swapping’ those models into the real-time assessment flow.

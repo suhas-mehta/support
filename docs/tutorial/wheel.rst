@@ -30,7 +30,7 @@ Instructions
 Data
 ----
 
-The tutorial uses a source data file and 2 facts files below. Click links to download and use:
+The tutorial uses a source data file and 2 fact files below. Click links to download and use:
 
 - Initial data loaded for pipeline creation (can also be found under the library sources
   at the time of pipeline creation):

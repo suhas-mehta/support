@@ -12,7 +12,7 @@ closer look at that JSON definition.  Here are the first few lines for review:
   "sourceId": "sourcename",
   "name": "APITestPipeline",
   "input": "3ykf2jjfr6gvgd",
-  "thingIdentifier": "person",
+  "entityIdentifier": "person",
 
 =================== =========   ==================================================================================================
 Property            Data type   Description
@@ -20,7 +20,7 @@ Property            Data type   Description
 ``sourceId``        string      An identifier used in an external system to identify this pipeline
 ``name``            string      An identifying name for the pipeline. It must be  unique for the account and may be changed later.  
 ``input``           string      The identifier of the event buffer used to supply inflow to this pipeline
-``thingIdentifier`` string      The column in the input data which identifies each individual unit or thing in the pipeline. 
+``entityIdentifier``string      The column in the input data which identifies each individual entity in the pipeline. 
 =================== =========   ==================================================================================================
 
 
@@ -71,7 +71,7 @@ by Falkonry service to produce the assessment. Note that the list of inputs can 
 altered during the lifetime of a pipeline. However, the name of an assessment cannot be
 changed once a revision is created.
 
-The a priori conditions are listed to provide options for the examples or verification
+The a priori conditions are listed to provide options for the facts
 used in the pipeline for the given assessment. Values can be arbitrary text and no
 duplicate values should be used.
 

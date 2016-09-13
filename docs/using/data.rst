@@ -8,7 +8,7 @@ The currently supported data formats for exchange with Falkonry are CSV (comma s
 values) and line-delimited JSON_. 
 Both formats are commonly used general purpose data exchange format allowing numerical, 
 categorical, timestamp, and other types of data.  Both formats can be used to supply Input 
-data (source signals) as well as verification data to Falkonry.
+data (source signals) as well as facts data to Falkonry.
 
 
 .. _JSON: http://jsonlines.org/
@@ -42,7 +42,7 @@ Your timestamp data can be specified using one of the following formats:
 - Any timestamp format that can be described using `Java SimpleDateFormat 
   <https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html>`_
 
-When supplying verification data, you must also supply a second time column called end. 
+When supplying facts data, you must also supply a second time column called end. 
 This column is used to mark the end of the interval for which the record provides values.
 
 
@@ -131,25 +131,25 @@ The **Signal Location** is describing where the signal name is in the tag field.
 
 The **Value Field** is ``value`` or the location of the numerical or categorical readings.
 
-Verification data
+Facts data
 ~~~~~~~~~~~~~~~~~
 
 **CSV**
 
-Verification data is used to provide feedback to the Falkonry learning process in order to 
-supply condition names as well as to fine tune its findings. The verification data must 
+Facts data is used to provide feedback to the Falkonry learning process in order to 
+supply condition names as well as to fine tune its findings. The facts data must 
 contain a time column (for the interval start), an end column (which must be called "end"), 
 an optional entity identifier, followed by one condition label. The header of the CSV file 
-should reflect the appropriate column names. For example, data used for verification of 
-the Wheel Health data contains the following header::
+should reflect the appropriate column names. For example, facts data used for the Wheel Health
+data contains the following header::
 
   time, unit, end, L1 Wheel Health
 
 Note that both the entity identifier and the assessment identified in the header must match 
 what has previously been set up in the pipeline.  It is possible to provide more than one 
-assessment in the verification data set. Moreover, the values for the assessment are the 
+assessment in the facts data set. Moreover, the values for the assessment are the 
 names of condition that are desired to be used in the pipeline. For example, the following 
-data from another data set conveys four different episodes being verified::
+data from another data set conveys four different condition facts::
 
   time,unit,end,Reliability
   2015-04-22T19:54:02Z,PM-6428,2015-04-22T19:54:04.750Z,Base

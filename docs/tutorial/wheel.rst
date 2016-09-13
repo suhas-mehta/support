@@ -5,7 +5,7 @@ Overview
 --------
 
 This tutorial uses a sample data set that contains several months of wheel force data for
-a fleet of locomotives, and verification data which includes known condition examples for
+a fleet of locomotives, and fact data which includes known condition examples for
 those wheels during that time.
 
 Concepts covered
@@ -14,7 +14,7 @@ Concepts covered
 - Create a Pipeline in Falkonry using a sample data file
 - Examine and understand Inflow and Outflow data
 - Add an assessment
-- Add verified condition examples
+- Add condition facts
 - Execute a learning iteration
 - Understand assessment results
 
@@ -30,10 +30,10 @@ Instructions
 Data
 ----
 
-The tutorial uses a source data file and 2 verification files below. Click links to download and use:
+The tutorial uses a source data file and 2 facts files below. Click links to download and use:
 
 - Initial data loaded for pipeline creation (can also be found under the library sources
   at the time of pipeline creation):
   `forces_only_L1inputs.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30T0l6QVZ3MkNyTkU>`_ 
-- Verified examples from periodic inspection: `inspection.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30ZlBGakswRElodlU>`_
-- Verified examples from maintenance events: `wheel_verificationL1.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30YUY3REdEbmFJRWc>`_
+- Facts from periodic inspection: `inspection.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30ZlBGakswRElodlU>`_
+- Facts from maintenance events: `wheel_verificationL1.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30YUY3REdEbmFJRWc>`_

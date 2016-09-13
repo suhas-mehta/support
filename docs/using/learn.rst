@@ -20,7 +20,7 @@ to different conditions in the data that it identified.
 Learn some more
 ---------------
 
-After the initial model was created, the user can add facts in the `Verify <./verify.html>`_ tab.
+After the initial model was created, the user can add facts in the `Facts <./verify.html>`_ tab.
 Then the user initiates another model revision that will incorporate the provided verified 
 conditions.
 

@@ -22,9 +22,9 @@ Time series data is represented in the Falkonry Service as a set of Signals. Eac
 Conditions
 ----------
 
-Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition classification.
+Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition assessment.
 
-Examples (Verification)
+Examples (Facts)
 -----------------------
 
 An example is a verified or known condition for a particular episode of time.  Examples can come from external sources, inspection reports, or investigations.  Example data typically becomes available after events have passed.

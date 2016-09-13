@@ -15,14 +15,14 @@ The following outlines a typical lifecycle of a pipeline created through the API
 the steps represents a calling an API function.
 
  1. `Pipeline (create) <create.html>`_ - This sets up an empty pipeline and names the input 
-    signals, things, and assessments.
+    signals, entities, and assessments.
  2. `Event Buffer input <../buffer/input.html>`_- Load input signal data into the pipeline's
-    event buffer. The names of the signals and things must match what was set up in the 
+    event buffer. The names of the signals and entities must match what was set up in the 
     create pipeline step.
  3. `Pipeline reviseModel <revise.html>`_ - This initiates a learning cycle and generates 
     the first or a new version of the model.
- 4. `Pipeline verification <verification.html>`_ - Adds verification data to the pipeline.  
-    The column names of the verification data must match the things and assessments used 
+ 4. `Pipeline facts <verification.html>`_ - Adds facts data to the pipeline.  
+    The column names of the facts data must match the entities and assessments used 
     in the pipeline creation.
  5. `Pipeline open <open.html>`_ - Promotes the pipeline to live state.  Pipeline will 
     generate outflow assessment data based on the input data it receives.
@@ -30,14 +30,14 @@ the steps represents a calling an API function.
     possibly live data.
  7. `Pipeline output <output.html>`_ - Retrieve the condition assessment data produced by 
     the pipeline.  
- 8. Repeat: verification, reviseModel, open, close, input, output as needed.
+ 8. Repeat: add facts, reviseModel, open, close, input, output as needed.
 
 .. toctree::
    :maxdepth: 1
    
    new
    revise
-   verification
+   add facts
    open
    output
    create

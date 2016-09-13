@@ -14,14 +14,14 @@ closer look at that JSON definition.  Here are the first few lines for review:
   "input": "3ykf2jjfr6gvgd",
   "entityIdentifier": "person",
 
-=================== =========   ==================================================================================================
-Property            Data type   Description
-=================== =========   ==================================================================================================
-``sourceId``        string      An identifier used in an external system to identify this pipeline
-``name``            string      An identifying name for the pipeline. It must be  unique for the account and may be changed later.  
-``input``           string      The identifier of the event buffer used to supply inflow to this pipeline
-``entityIdentifier``string      The column in the input data which identifies each individual entity in the pipeline. 
-=================== =========   ==================================================================================================
+==================== =========   ==================================================================================================
+Property             Data type   Description
+==================== =========   ==================================================================================================
+``sourceId``         string      An identifier used in an external system to identify this pipeline
+``name``             string      An identifying name for the pipeline. It must be  unique for the account and may be changed later.  
+``input``            string      The identifier of the event buffer used to supply inflow to this pipeline
+``entityIdentifier`` string      The column in the input data which identifies each individual entity in the pipeline. 
+==================== =========   ==================================================================================================
 
 
 The list of signals referenced in the pipeline is defined along with their

@@ -27,7 +27,7 @@ Conditions are what we are trying to extract from patterns found in time series 
 Examples (Facts)
 -----------------------
 
-An example is a verified or known condition for a particular episode of time.  Examples can come from external sources, inspection reports, or investigations.  Example data typically becomes available after events have passed.
+An example is a known condition for a particular episode of time.  Examples can come from external sources, inspection reports, or investigations.  Example data typically becomes available after events have passed.
 
 Learning
 --------

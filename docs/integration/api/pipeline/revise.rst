@@ -2,7 +2,7 @@
 ===================================
 
 This API is used to initiate a learning cycle in the Falkonry Service.  It can be called 
-before or after adding verification examples to a pipeline.  At the completion of a 
+before or after adding condition facts to a pipeline.  At the completion of a 
 learning cycle, a new version of the model will be created.
 
 In our current example, we have just added data to the pipeline but have not completed a 
@@ -61,10 +61,10 @@ Response:
    has finished and the new model revision is ready for use.
    
 Let’s take another look at the Falkonry UI.  We can see now that model revision #1 exists.  
-We have not yet added verification examples.  As a result during the learning cycle, 
+We have not yet added condition facts.  As a result during the learning cycle, 
 Falkonry Service identified conditions and applied generated names to label them.
    
 .. image:: ../images/revision.png
    
-From here, let’s add some verification data to the pipeline.
+From here, let’s add some facts data to the pipeline.
    

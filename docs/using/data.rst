@@ -46,15 +46,16 @@ When supplying verification data, you must also supply a second time column call
 This column is used to mark the end of the interval for which the record provides values.
 
 
-Identifying things
+Identifying entities
 ~~~~~~~~~~~~~~~~~~
 
-Often your Falkonry data will correspond to more than one "thing".  You may have several 
-turbofan motors that you are monitoring, or you may be collecting activity data from many 
-people. If you have data for multiple things, you must have a column of data which represents 
-your thing identifier, or the thing must be part of a tag.  The column that is used to identify things can be named as 
-appropriate for the data set.  During pipeline creation, Falkonry will identify this 
-column and the user will verify the selection.
+Often your Falkonry data will correspond to more than one "entity", such as a process, a machine,
+a device, a computer, or a subject.  You may have several turbofan motors that you are monitoring, 
+or you may be collecting activity data from many people. If you have data for multiple entities, 
+you must have a column of data which represents your entity identifier, or the entity must be 
+part of a tag.  The column that is used to identify entities can be named as appropriate for the 
+data set.  During pipeline creation, Falkonry will identify this column and the user will verify 
+the selection.
 
 Wide vs. Narrow
 ~~~~~~~~~~~~~~~
@@ -66,7 +67,7 @@ Input data
 
 Input data is used to create a pipeline as well as to add source signal data to an 
 existing and live pipeline. The input data must contain the following columns: a single 
-time column, an optional thing identifier, followed by one or more source signals. The 
+time column, an optional entity identifier, followed by one or more source signals. The 
 header of the CSV file should reflect the appropriate column names. 
 
 Wide format
@@ -90,7 +91,7 @@ The same data but formatted in line-delimited JSON would appear like the followi
 where ``1452030355080`` is the time value, ``p1`` is the person identifier, and so on.  
 The columns after the person column are the raw source data or signal data which Falkonry 
 inspects and monitors to provide meaningful condition assessments. The column names in the 
-header can be anything, because the user identifies the time and thing columns for Falkonry when 
+header can be anything, because the user identifies the time and entity columns for Falkonry when 
 creating an event buffer.
 
 Narrow Format
@@ -126,7 +127,7 @@ The **Tag Field** in this case would be ``tag``, the concatenated variables pers
 
 The **Signal Delimeter** is a ``:``, or what seperates the concatenated variables in the tag field.
 
-The **Signal Location** is describing where the signal name is in the tag field. In the Human Activity example, the tag field contains the thing first, then the signal name (p1:T_xacc). Therefore the siganl location would be ``suffix`` because the signal name is at the end.
+The **Signal Location** is describing where the signal name is in the tag field. In the Human Activity example, the tag field contains the entity first, then the signal name (p1:T_xacc). Therefore the siganl location would be ``suffix`` because the signal name is at the end.
 
 The **Value Field** is ``value`` or the location of the numerical or categorical readings.
 
@@ -138,13 +139,13 @@ Verification data
 Verification data is used to provide feedback to the Falkonry learning process in order to 
 supply condition names as well as to fine tune its findings. The verification data must 
 contain a time column (for the interval start), an end column (which must be called "end"), 
-an optional thing identifier, followed by one condition label. The header of the CSV file 
+an optional entity identifier, followed by one condition label. The header of the CSV file 
 should reflect the appropriate column names. For example, data used for verification of 
 the Wheel Health data contains the following header::
 
   time, unit, end, L1 Wheel Health
 
-Note that both the thing identifier and the assessment identified in the header must match 
+Note that both the entity identifier and the assessment identified in the header must match 
 what has previously been set up in the pipeline.  It is possible to provide more than one 
 assessment in the verification data set. Moreover, the values for the assessment are the 
 names of condition that are desired to be used in the pipeline. For example, the following 
@@ -170,19 +171,19 @@ Output data
 
 Output data can be retrieved from a Falkonry pipeline using its API, or exported manually 
 through the Falkonry UI, on the Outflow tab. The main purpose of this output data is to be 
-able to view all the assessments and estimates for every thing and timestamp. The output 
-data contains one time column, zero or one thing identifier, and one condition assessment.  
+able to view all the assessments and estimates for every entity and timestamp. The output 
+data contains one time column, zero or one entity identifier, and one condition assessment.  
 For example, the output data of the sports activity example contains the following header::
 
-  time, person, ActivityClassification
+  time, person, Activity
 
-Note that both the thing identifier and the assessment identified in the header will match 
+Note that both the entity identifier and the assessment identified in the header will match 
 what was previously been set up in the pipeline.  If the pipeline produces more than one 
 assessment, then each will be present in this data set. Moreover, the values for the 
 assessment are the names of conditions that were produced by the pipeline. For example, 
 the following data is a snippet of the output from the sports activity pipeline::
 
-  time, person, ActivityClassification
+  time, person, Activity
   2016-01-05T21:42:50.000Z, p1, Sitting
   2016-01-05T21:44:48.000Z, p1, Sitting
   2016-01-05T21:45:32.000Z, p1, Walking
@@ -190,10 +191,10 @@ the following data is a snippet of the output from the sports activity pipeline:
   
 In line-delimited JSON, this data would appear like the following::  
   
-  {"time": "2016-01-05T21:42:50.000Z", "person": "p1", "ActivityClassification": "Sitting"}
-  {"time": "2016-01-05T21:44:48.000Z", "person": "p1", "ActivityClassification": "Sitting"}
-  {"time": "2016-01-05T21:45:32.000Z", "person": "p1", "ActivityClassification": "Walking"}
-  {"time": "2016-01-05T21:42:24.000Z", "person": "p1", "ActivityClassification": "Rowing"}
+  {"time": "2016-01-05T21:42:50.000Z", "person": "p1", "Activity": "Sitting"}
+  {"time": "2016-01-05T21:44:48.000Z", "person": "p1", "Activity": "Sitting"}
+  {"time": "2016-01-05T21:45:32.000Z", "person": "p1", "Activity": "Walking"}
+  {"time": "2016-01-05T21:42:24.000Z", "person": "p1", "Activity": "Rowing"}
 
 Transferring Data
 -----------------

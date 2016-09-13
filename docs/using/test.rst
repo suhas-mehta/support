@@ -1,7 +1,7 @@
 Test
 ====
 
-The Test tab provides a flexible way to test the accuracy of each model against different sets of data. 
+The **Test** tab provides a flexible way to test the accuracy of each model against different sets of data. 
 
 In order to use the Test tab, the user must have already created a model revision in the `Learn <./learn.html>`_ 
 tab. If multiple revisions exist, the user is able to choose which revision to test. Then the user will 

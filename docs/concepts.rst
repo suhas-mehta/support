@@ -6,23 +6,23 @@ are referenced elsewhere in the documentation.
 
 .. image:: images/appfalkonry.png
 
-The Falkonry Service is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry Service is to provide intelligence to applications that are monitoring some Thing or set of Things.  
+The Falkonry Service is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry Service is to provide intelligence to applications that are monitoring some Entity or set of Entities.  
 	   
-Things
+Entities
 ------
 
-Things are what they sound like - anything (e.g. an appliance, a device, a vehicle, a 
+Entities are what they sound like - anything (e.g. an appliance, a device, a vehicle, a 
 machine, a person) that produce a stream of data through its operation.
 
 Signals
 -------
 
-Time series data is represented in the Falkonry Service as a set of Signals. Each Signal represents a sequence of values over time that can be indexed by Thing.  Signals can carry either numerical or categorical values.
+Time series data is represented in the Falkonry Service as a set of Signals. Each Signal represents a sequence of values over time that can be indexed by Entity.  Signals can carry either numerical or categorical values.
 
 Conditions
 ----------
 
-Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Thing. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition classification.
+Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition classification.
 
 Examples (Verification)
 -----------------------
@@ -64,7 +64,7 @@ data from an event buffer and this data flow is referred to as *Inflow*.  The ou
 is produced by the pipeline is referred to as *Outflow*.  In addition to Inflow/Outflow, a 
 Pipeline also consumes *Verification* data in form of known condition examples. 
 
-A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Things.
+A Pipeline is what a user interacts with when using the Falkonry Service. The Pipeline provides a stream of condition predictions in exchange for a stream of signal data from Entities.
 
 .. image:: images/pipeline.png
 

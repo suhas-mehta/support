@@ -2,11 +2,11 @@
 ====================================
 
 This API loads example data from a csv file into a particular pipeline.  The columns of 
-the csv file must match the thing identifier and the assessments which the pipeline is 
+the csv file must match the entity identifier and the assessments which the pipeline is 
 expecting.
 
-In our example pipeline, we currently have no verification data loaded.  Click on the 
-**Verify** tab in the Falkonry Service UI to confirm.
+In our example pipeline, we currently have no fact data loaded.  Click on the 
+**Facts** tab in the Falkonry Service UI to confirm.
 
 .. image:: ../images/verification.png
 
@@ -51,13 +51,13 @@ implementation.
    For example, JSON files should be submitted under ``application/json`` and CSV under
    ``text/csv``.
 
-Return to the **Verify** tab in the Falkonry Service UI and notice that the verification 
+Return to the **Facts** tab in the Falkonry Service UI and notice that the fact 
 data has been loaded.
 
 .. image:: ../images/verify-example.png
 
 From here, you would likely want to run another learning cycle to incorporate the known 
-conditions into the model.  Refer to the previous example, ``POST /pipeline{id}/reviseModel``
+condition facts into the model.  Refer to the previous example, ``POST /pipeline{id}/reviseModel``
 for details on how to generate the new model revision.
 
 Once we have the latest model, the next step might be to “open” the pipeline.  This puts 

@@ -19,7 +19,7 @@ Concepts covered
 - Falkonry requirements and advantages
 - Create pipeline in Falkonry, upload source data
 - Create a second Condition for monitoring
-- Upload verification data and run a learning cycle
+- Upload facts data and run a learning cycle
 - Make the pipeline "live"
 - Add additional data to pipeline from nine additional turbofan engines, previously unknown to Falkonry.
 - Overview of Falkonry and Splunk
@@ -37,12 +37,12 @@ Instructions
 Data
 ----
 
-The tutorial uses 2 data files and 2 verification files below. Click links to download and use:
+The tutorial uses 2 data files and 2 facts files below. Click links to download and use:
 
 - Initial data loaded for pipeline creation (can also be found under the library sources
   at the time of pipeline creation):
   `activity_input_part1.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30RENNLWlsOVlRTDQ>`_ 
-- Verified examples for Aerothermal Health: `verification.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30NHpuNHMyalI0VzA>`_
-- Verified examples for Sensor Health: `sensor_verification.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30NEFSQkVLcXBtaU0>`_
+- Condition facts for Aerothermal Health: `verification.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30NHpuNHMyalI0VzA>`_
+- Condition facts for Sensor Health: `sensor_verification.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30NEFSQkVLcXBtaU0>`_
 - New data to be used for testing prediction system: `activity_input_part2.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30YVVxbjlYYVhoLVU>`_
 - New data to be used for testing prediction system: `turbofan_live_compact.csv <https://drive.google.com/uc?export=download&id=0B51xEAJfLP30ZFZiM1pqc3RCUFU>`_

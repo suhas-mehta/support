@@ -27,7 +27,7 @@ Conditions are what we are trying to extract from patterns found in time series 
 Facts
 -----------------------
 
-A fact is a known condition for a particular episode of time.  Facts can come from external sources, inspection reports, or investigations.  Fact data typically becomes available after events have passed.
+A fact is a known condition for a particular episode of time.  Facts can come from external sources, inspection reports, or investigations.  Facts data typically becomes available after events have passed.
 
 Learning
 --------

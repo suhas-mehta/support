@@ -34,6 +34,6 @@ The tutorial uses 2 data files and 3 facts files in the folder below. Click link
 
 - Initial learning data to create pipeline `file1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuQ1dGS3VPTmV0R28>`_ 
 - Second file of data, for monitoring `file2.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuVGhzdFpvRFNpTFk>`_
-- parital facts of the first file `partialVerification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAua3BMZjVHY2Vkb1k>`_
-- full facts of the first file `verification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuODdybHJHcEk0STA>`_
-- full facts of the second file `verification2.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuMHJpZ0tnZnNQaE0>`_
+- Parital facts of the first file `partialVerification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAua3BMZjVHY2Vkb1k>`_
+- Full facts of the first file `verification1.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuODdybHJHcEk0STA>`_
+- Full facts of the second file `verification2.csv <https://drive.google.com/uc?export=download&id=0B-m-s7lHzcAuMHJpZ0tnZnNQaE0>`_

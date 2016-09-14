@@ -5,7 +5,7 @@ Overview
 --------
 
 This tutorial uses a sample data set that contains several months of wheel force data for
-a fleet of locomotives, and fact data which includes known condition examples for
+a fleet of locomotives, and facts data which includes known condition examples for
 those wheels during that time.
 
 Concepts covered

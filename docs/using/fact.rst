@@ -1,8 +1,8 @@
-Verify
-======
+Facts
+=====
 
-Condition facts (verified) examples are used by the Pipeline to apply meaningful names to 
-conditions and to refine learning in order produce better condition recognition.
+Condition facts are used by the Pipeline to learn meaningful names for conditions and 
+to refine learning in order produce better condition recognition.
 
 A condition fact is simply a condition value (a label) for a given time interval, for a 
 given Entity that is known to the user to be the true condition of the given entity. 

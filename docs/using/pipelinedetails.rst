@@ -8,4 +8,4 @@ Pipeline Details
    learn
    test
    monitor
-   verification
+   fact

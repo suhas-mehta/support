@@ -51,7 +51,7 @@ As the owner of your Team account, you have full control over other users' acces
 account, its pipelines and data. 
 
 .. image:: images/users-menu-updated.png
-   :width: 300px
+   :width: 500px
 
 Account owners can:
 

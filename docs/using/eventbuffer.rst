@@ -49,7 +49,7 @@ Simple properties of the subscription are specified when the MQTT broker is conf
 such as its URL, user name, and password. Falkonry treats the data transmission just like
 if individual files are created.
 
-Once a subscription is created, the event buffer will keep receiving 
+Once a subscription is created, the event buffer can continue to receive data from the external source.
 
 .. raw:: html
 

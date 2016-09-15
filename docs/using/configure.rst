@@ -1,7 +1,7 @@
 Configure
 =========
 
-.. image:: ./images/configure.png
+.. image:: ./images/updated-configure.png
 
 
 The configure tab allows you to examine an overview of all your revisions and your flow history. After you create an initial model in the `learn <./learn.html>`_ tab, you can open the pipeline by clicking on the arrow and begin to `monitor <./monitor.html>`_  data.
@@ -16,7 +16,7 @@ Clicking on the ``INFLOW`` box, displays a panel that lets you see inflow relate
 
 To better understand how to configure API-based inflow of data see `Integration <../integration>`_.
 
-.. image:: ./images/INFLOW.png
+.. image:: ./images/updated-inflow.png
 
 OUTFLOW
 -------
@@ -35,7 +35,7 @@ Clicking on the ``OUTFLOW`` box, displays a panel that lets you see outflow rela
 
 To better understand how to configure API-based outflow of data see `Integration <../integration>`_.
 
-.. image:: ./images/OUTFLOW.png
+.. image:: ./images/updated-outflow.png
 
 OPEN and CLOSING the Pipeline
 -----------------------------

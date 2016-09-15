@@ -50,7 +50,7 @@ Managing additional Users
 As the owner of your Team account, you have full control over other users' access to the 
 account, its pipelines and data. 
 
-.. image:: images/updated-users-menu.png
+.. image:: images/users-menu-updated.png
    :width: 200px
 
 Account owners can:

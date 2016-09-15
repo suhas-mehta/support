@@ -42,7 +42,7 @@ account.
 
 After clicking **New Team Account** you will be given a list of options of usage plans.
 
-.. image:: images/AccountPayment.png
+.. image:: images/AccountPaymentUpdated.png
 
 Managing additional Users
 -------------------------

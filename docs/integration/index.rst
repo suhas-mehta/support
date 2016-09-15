@@ -18,7 +18,7 @@ You can generate an API Token from the **Account** Settings for **Integration**.
 allows you to generate as many different tokens as you wish. The name of the token
 is used to identify the user that performs API actions.
 
-.. image:: ./images/auth-token.png
+.. image:: ./api/images/auth-token.png
 
 This token will be used in HTTP requests that are sent to Falkonry in the rest of this 
 document. 

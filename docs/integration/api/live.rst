@@ -9,7 +9,7 @@ Once you have logged in you can view the detailed API and use the built-in forms
 the various functions.  From the API page click **Pipeline** and **Event Buffer** to expand 
 the list of functions.
 
-.. image:: ./images/pipeline.png
+.. image:: ./images/pipeline-api.png
 
 Notice that the functions support both design-time functions (such as ``POST /pipeline`` 
 which creates a pipeline) and run-time functions (such as ``POST /eventBuffer/{id}``, 

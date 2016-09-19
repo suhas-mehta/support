@@ -24,6 +24,9 @@ private deployment and the corresponding pipeline activity.
 The *License* link provides a list of all the licenses applied to the private deployment
 and a means of installing a new license.
 
+The *Settings* link provides a list of all the event buffers for each account created in the private deployment.
+The admin can turn on/off the state of an event buffer here.
+
 .. image:: images/pre-license.png
 
 .. note::

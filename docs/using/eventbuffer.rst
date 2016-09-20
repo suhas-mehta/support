@@ -46,7 +46,7 @@ Falkonry either through its `Event Buffer REST API <../connector/api/buffer/inde
 or through subscription of the event buffer to an MQTT broker. 
 
 Simple properties of the subscription are specified when the MQTT broker is configured,
-such as its URL, user name, and password. Falkonry treats the data transmission just like
+such as its URL, Topic user name, and password. Falkonry treats the data transmission just like
 if individual files are created.
 
 Once a subscription is created, the event buffer can continue to receive data from the external source.

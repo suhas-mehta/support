@@ -199,15 +199,15 @@ In line-delimited JSON, this data would appear like the following::
 Transferring Data
 -----------------
 
-There are three methods by which Source Signal Data can be provided to a Falkonry Pipeline:
+There are several methods by which Source Signal Data can be provided to a Falkonry Pipeline:
 
 - File upload via `Falkonry Service UI <./pipeline.html>`_ 
 - Through a programmatic client using `Falkonry API <../connector/index.html>`_
 - Through an MQTT broker using `event buffer subscriptions <../connector/index.html>`_
-- Client application - like the `Falkonry Splunk App <../splunk_app/index.html>`_
-
-
-
+- Client application - like the `Falkonry Splunk App <../splunk_app/setup.html>`_ and the `Falkonry Integrator for PI System <../integration/index.html#falkonry-pi-integrator>`_
+- Through a Webhook integration using REST Gateways such as Kepware Server
+- Through Azure IoT Hub
+- Through Falkonry PubNub Block
 
 Sending data via a Client application like the Splunk App 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

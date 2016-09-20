@@ -33,7 +33,7 @@ test this function, locate the id of a Falkonry pipeline that you created previo
 
 .. image:: ./images/show-info.png
 .. image:: ./images/info.png
-   :width: 200px
+   :width: 400px
 
 Once you have the Pipeline ID, enter it into the **ID** value, then click **Try it out** to 
 run the function.  This actually creates and sends the HTTP request to the Falkonry service 

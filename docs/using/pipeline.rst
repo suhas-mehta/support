@@ -9,7 +9,7 @@ Falkonry displays the characteristics of each signal it identifys and allows the
 
 .. image:: ./images/updatedCreatePipeline.png
 
-Falkonry asks what is being accessed, in the case of the Human Activity example, it is what activity is being performed. 
+Falkonry asks what is being assessed, in the case of the Human Activity example, it is what activity is being performed. 
 
 Time Window Guidance
 

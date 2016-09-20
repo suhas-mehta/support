@@ -2,7 +2,7 @@ Facts
 =====
 
 Condition facts are used by the Pipeline to learn meaningful names for conditions and 
-to refine learning in order produce better condition recognition.
+to refine learning in order to produce better condition recognition.
 
 A condition fact is simply a condition value (a label) for a given time interval, for a 
 given Entity that is known to the user to be the true condition of the given entity. 
@@ -29,9 +29,8 @@ Assessment ``Health``.
 For more details regarding how to format data files for use with Falkonry, please refer 
 to `Data Formats <http://help.falkonry.com/en/latest/using/data.html#data-formats>`_.
 
-In the Falkonry Service UI the Add Fact button (available on Learning and 
-Outflow tabs) is used to view all previously entered facts and upload new facts 
-contained in fact files. 
+In the Falkonry Service UI the Facts dropdown option (available on Learn and 
+Monitor tabs) is used to view all previously entered facts.
 
 .. raw:: html
 

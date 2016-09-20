@@ -5,7 +5,7 @@ All private deployments are administered by a single administrative user, which 
 user to log into the deployment. The administrative user logs in using the same login page as
 non-administrative users.
 
-Once the administrative user logs in, they are taken to their *Personal* account. However,
+Once the administrative user logs in, she is taken to *Personal* account. However,
 there is a menu option for the user to switch to Service *Administration* as shown in the 
 screen below.
 

@@ -1,4 +1,4 @@
-``POST /pipeline/{id}/verification``
+``POST /pipeline/{id}/facts``
 ====================================
 
 This API loads example data from a csv file into a particular pipeline.  The columns of 

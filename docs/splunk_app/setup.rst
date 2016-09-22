@@ -120,6 +120,5 @@ Connect the Falkonry Splunk App with your Falkonry Service
    Login page where you can either log in directly or create a new Falkonry Personal account 
    to connect to Splunk.
 
-6. Once you have logged in, the connected Falkonry Splunk App will open to the Manage tab 
-   and display the sample pipeline included with all Personal accounts so you can start 
-   experimenting with the Falkonry App by completing a tutorial.
+6. Once you have logged in, the connected Falkonry Splunk App will open to the Data Connectors tab 
+   and display created Event Buffers and Data Sources.

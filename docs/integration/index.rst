@@ -56,7 +56,12 @@ The Falkonry Splunk App allows existing `Splunk <http://www.splunk.com/>`_ custo
 Falkonry PI Integrator
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The `OSISoft PI System <http://www.osisoft.com/pi-system/>`_ is a suite of software products that are used for data collection, historicizing, finding, analyzing, delivering, and visualizing. It is marketed as an enterprise infrastructure for management of real-time data and events.  Falkonry provides a pre-built integrator the PI environment.  For more information contact info@falkonry.com.
+The `OSISoft PI System <http://www.osisoft.com/pi-system/>`_ is a suite of software products that are used for data collection, historicizing, finding, analyzing, delivering, and visualizing. It is marketed as an enterprise infrastructure for management of real-time data and events.  Falkonry provides a pre-built integrator for the PI System.  
+
+.. toctree::
+   :maxdepth: 1
+   
+   ../pi/index
    
 Build Your Own Connectors
 -------------------------

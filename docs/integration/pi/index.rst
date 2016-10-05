@@ -60,7 +60,9 @@ connection.
 In order to start a data flow between Falkonry Service and PI System, you will now create 
 a new **Link** to the PI AF server.
 
-Step 1. Click on the button **Add new Link** and provide the following properties:
+Step 1. Select an *Element Template*
+
+Click on the button **Add new Link** and provide the following properties:
 
   a. *Name*: Choose a name for the event buffer and pipeline created from this *Link*
   b. *Assessment Name*: Provide a name for the assessment produced by the pipeline created from this data
@@ -71,24 +73,34 @@ Step 1. Click on the button **Add new Link** and provide the following propertie
 
 .. image:: ./images/AddNewLinkPanel.png
 
-2. As a result of selections made for this *Link*, the attributes related to the selected Asset Template will be brought into Falkonry Service automatically. You can remove/add attributes here by simply crossing them or selecting them from the drop down list.
-3. To bring data of all child entity/elements of the selected element template, select first radio button (Use all Elements based on template) OR if you want to process only selected entity/element then select second radio button (Select Elements From Element Tree) and select the appropriate elements from the tree view.
-4. Next, choose a time range of PI System data to populate into Falkonry.
-5. Select a timezone to use with your data.
-11. Click **Save** and your link is created.
+Step 2. Select *Element Attributes* to use with Falkonry Service:
+
+As a result of selections made for this *Link*, the attributes related to the selected Asset Template will be brought into Falkonry Service automatically. You can remove/add attributes here by simply crossing them or selecting them from the drop down list.
+
+Step 3. Select elements to use with Falkonry Service:
+
+To bring data of all child entity/elements of the selected element template, select first radio button (Use all Elements based on template) OR if you want to process only selected entity/element then select second radio button (Select Elements From Element Tree) and select the appropriate elements from the tree view.
+
+Step 4. Select time and its configuration:
+
+Choose a time range for the PI System data to populate into Falkonry. Also, you will need to select a timezone to use with your data.
+
+Final Step.
+
+After making all the selections for creating the *Link*, click **Save** and your *Link* will be created.
 
 .. image:: ./images/LinkCreated.png
 
-12. You should see event buffer and pipeline with name same as the created link name in the corresponding list.
+You can now see the newly created *Event Buffer* and *Pipeline* with name same as the *Link* created in the corresponding list.
 
 .. image:: ./images/EB&PipelineCreated.png
 
-13. Click on the just created PI Wind Turbine **Link** and it takes you to the Event Buffer page where all the details for this event buffer are available.
+You can navigate to the corresponding PI Wind Turbine **Link** and it takes you to the Event Buffer page where all its details are available.
 
 .. image:: ./images/EBDetails.png
 
-14. Clicking on the pipeline with the same name in the event buffer details, will take you to the pipeline detail view 
+Clicking on the pipeline with the same name in the event buffer details, will take you to the pipeline detail view 
 
 .. image:: ./images/PipelineDetail.png
 
-15. In background falkonry will pull data continuously from PI server and will store in the event buffer which will internally flow to pipeline. You can verify the availability of the data by clicking on inflow button on pipeline details page. Once you have the data you can go the **Learn Tab** and create a model revision for pattern analysis. 
+In the background, Falkonry will continuously pull data from the PI Data Archive and will synchronize with the *Event Buffer* for the corresponding *Link*. All pipelines created from this *Event Buffer* will automatically receive this data. You can verify the availability of the data by clicking on the **Inflow** button on *Pipeline* **Configure Tab**. Once you have the data you can go the **Learn Tab** and create a model for pattern discovery and recognition. 

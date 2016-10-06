@@ -62,6 +62,7 @@ The `OSISoft PI System <http://www.osisoft.com/pi-system/>`_ is a suite of softw
    :maxdepth: 1
    
    ../pi/index
+   ../pi/video
    
 Build Your Own Connectors
 -------------------------

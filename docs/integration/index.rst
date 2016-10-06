@@ -61,8 +61,8 @@ The `OSISoft PI System <http://www.osisoft.com/pi-system/>`_ is a suite of softw
 .. toctree::
    :maxdepth: 1
    
-   ../pi/index
-   ../pi/video
+   ./pi/video
+   ./pi/index
    
 Build Your Own Connectors
 -------------------------

@@ -42,7 +42,7 @@ Event Buffer subscription to MQTT broker
 ----------------------------------------
 
 When a continuous stream of data is required for a pipeline, the data can be delivered to
-Falkonry either through its `Event Buffer REST API <../connector/api/buffer/index.html>`
+Falkonry either through its `Event Buffer REST API <../connector/api/buffer/index.html>`_
 or through subscription of the event buffer to an MQTT broker. 
 
 Simple properties of the subscription are specified when the MQTT broker is configured,

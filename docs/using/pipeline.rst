@@ -7,6 +7,14 @@ In order to create a pipeline, the user must select an event buffer. Multiple pi
 
 Falkonry displays the characteristics of each signal it identifys and allows the user to **use** or **ignore** any of the sensors in the data. In the Human Activity data example, all the signals are numerical samples.
 
+Entity Management
+-----------------
+
+.. image:: ./images/entity_manage.png
+
+When creating a pipeline user has option to use all the entities for learning or user can use a specific subset of entities for learning.
+
+
 .. image:: ./images/updatedCreatePipeline.png
 
 Falkonry asks what is being assessed, in the case of the Human Activity example, it is what activity is being performed. 

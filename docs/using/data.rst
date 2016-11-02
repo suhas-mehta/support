@@ -184,17 +184,17 @@ assessment are the names of conditions that were produced by the pipeline. For e
 the following data is a snippet of the output from the sports activity pipeline::
 
   time, person, Activity
-  2016-01-05T21:42:50.000Z, p1, Sitting
-  2016-01-05T21:44:48.000Z, p1, Sitting
-  2016-01-05T21:45:32.000Z, p1, Walking
-  2016-01-05T21:42:24.000Z, p1, Rowing
+  1474866318337, p1, Sitting
+  1474866328417, p1, Sitting
+  1474866318217, p1, Walking
+  1474866328897, p1, Rowing
   
 In line-delimited JSON, this data would appear like the following::  
   
-  {"time": "2016-01-05T21:42:50.000Z", "person": "p1", "Activity": "Sitting"}
-  {"time": "2016-01-05T21:44:48.000Z", "person": "p1", "Activity": "Sitting"}
-  {"time": "2016-01-05T21:45:32.000Z", "person": "p1", "Activity": "Walking"}
-  {"time": "2016-01-05T21:42:24.000Z", "person": "p1", "Activity": "Rowing"}
+  {"time": "1474866318337", "person": "p1", "Activity": "Sitting"}
+  {"time": "1474866328417", "person": "p1", "Activity": "Sitting"}
+  {"time": "1474866318217", "person": "p1", "Activity": "Walking"}
+  {"time": "1474866328897", "person": "p1", "Activity": "Rowing"}
 
 Transferring Data
 -----------------

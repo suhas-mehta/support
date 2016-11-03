@@ -1,7 +1,7 @@
 Configure
 =========
 
-.. image:: ./images/updated-configure.png
+.. image:: ./images/configure.png
 
 
 The configure tab allows you to examine an overview of all your revisions and your flow history. After you create an initial model in the `learn <./learn.html>`_ tab, you can open the pipeline by clicking on the arrow and begin to `monitor <./monitor.html>`_  data.

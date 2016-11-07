@@ -2,6 +2,13 @@ Learn
 =====
 Learning allows Falkonry to create a model of the assessments so it it able to generalize
 results for future data.
+A model can be created by clicking on Create Model button on the Learn Tab. The Create Model panel provides all the options before a model revision is started:
+
+Clustering Guidance
+-------------------
+.. image:: ./images/Cluster_guidance.png
+
+Clustering guidance helps you select no. of unlabeled conditions you want Falkonry to detect after learning.
 
 Start Model Revision
 --------------------

@@ -10,6 +10,26 @@ Clustering Guidance
 
 Clustering guidance helps you select no. of unlabeled conditions you want Falkonry to detect after learning.
 
+Time Window Guidance
+--------------------
+.. image:: ./images/time_Window.png
+
+Window Options: 
+Although user had already selected during pipeline creation, the window selections can be edited for any new model revision.
+
+Assessment Interval Options: 
+Assessment interval, i. e, time period between assessments, can be set independently of the lower and upper bounds on the window. There are three options when assessments results will be produced:
+
+- System determined
+- Minimum interval (Produce assessment as frequently as the data allows)
+- Explicit interval - User can select a desired interval
+
+Entity Management
+-----------------
+.. image:: ./images/entity_management.png
+
+For each model revision, a user can select either all entities or a subset of entities to be used for learning the model.
+
 Start Model Revision
 --------------------
 
@@ -22,7 +42,6 @@ the data provided, and views the results.
 
 Since no verified condition facts were provided, the pipeline gave placeholder names 
 to different conditions in the data that it identified.
-
 
 Learn some more
 ---------------

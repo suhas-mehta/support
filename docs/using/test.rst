@@ -3,6 +3,9 @@ Test
 
 The **Test** tab provides a flexible way to test the accuracy of each model against different sets of data.
 
+
+.. image:: ./images/test_tab.png
+
 .. image:: ./images/test.png
 
 In order to use the Test tab, the user must have already created a model revision in the `Learn <./learn.html>`_ 

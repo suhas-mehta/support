@@ -22,7 +22,19 @@ Time series data is represented in the Falkonry Service as a set of Signals. Eac
 Conditions
 ----------
 
-Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition assessment.
+Conditions are what we are trying to extract from patterns found in time series data. This is typically a measure of the state of some Entity. Conditions could be used to represent health, operating mode, risk or threat level, quality level, or almost any form of condition assessment. 
+
+Falkonry can also recognize two other conditions - *Unknown* and *Gap*.
+
+**Unknown**
+
+While a pipeline is monitoring the inflow or merely running a test revision, any new patterns that arise which were not seen when the pipeline was learning will be reported as the unknown condition. An unknown condition is displayed on the timeline alongside other condition labels. 
+
+If a fact is added about that pattern, then Falkonry learns from it and replaces the unknown condition with the provided fact.
+
+**Gap**
+
+Ordinarily unevenly sampled data is automatically handled in Falkonry. However, if there is long period of time during which any of the input signals has no data samples, then the assessment for such a period is reported as a gap condition and it is displayed on the UI with other assessment condition labels after learning. 
 
 Facts
 -----------------------

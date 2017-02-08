@@ -36,7 +36,7 @@ sends the HTTP POST request.
     var myEventBufferId = "517cher3ptu1fm"
     var myToken = "m9v8pxfykd24bz"
     var myFile = "./test_source.csv"
-    var url = "https://service.falkonry.io/eventBuffer/" + myEventBufferId + "/input";
+    var url = "https://sandbox.falkonry.ai/eventBuffer/" + myEventBufferId + "/input";
 
     var Request = unirest.post(url)
       .headers({

@@ -149,7 +149,7 @@ Here is some sample code for invoking the pipeline creation API:
     var myPipelineId = null;
     var myToken = "m9v8pxfykd24bz";
 
-    var url = "https://service.falkonry.io/pipeline";
+    var url = "https://sandbox.falkonry.ai/pipeline";
     var myFile = "./createPipeline.json";
 
     var myData = JSON.parse(fs.readFileSync(myFile))  //add error handling here

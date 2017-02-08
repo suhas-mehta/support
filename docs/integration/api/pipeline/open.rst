@@ -27,7 +27,7 @@ The Javascript code will look something like this:
     var myToken = "m9v8pxfykd24bz"
     var myModelRevision = "1"
 
-    var url = "https://service.falkonry.io/pipeline/" + myPipelineId + "/open";
+    var url = "https://sandbox.falkonry.ai/pipeline/" + myPipelineId + "/open";
 
     var Request = unirest.post(url)
       .headers({

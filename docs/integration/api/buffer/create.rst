@@ -31,7 +31,7 @@ Here is some sample code for invoking the event buffer creation API:
     var myEventBufferId = null;
     var myToken = "m9v8pxfykd24bz";
 
-    var url = "https://service.falkonry.io/eventBuffer";
+    var url = "https://sandbox.falkonry.ai/eventBuffer";
     var myFile = "./createPipeline.json";
 
     var Request = unirest.post(url)

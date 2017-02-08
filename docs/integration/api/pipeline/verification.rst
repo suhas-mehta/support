@@ -27,7 +27,7 @@ code is very similar as well.
     var myToken = "m9v8pxfykd24bz"
     var myFile = "./test_facts.csv"
 
-    var url = "https://service.falkonry.io/pipeline/" + myPipelineId + "/facts";
+    var url = "https://sandbox.falkonry.ai/pipeline/" + myPipelineId + "/facts";
 
     var Request = unirest.post(url)
       .headers({

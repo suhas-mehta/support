@@ -38,7 +38,7 @@ Now let’s look at the Javascript code to achieve this:
     var myEndTime = "2016-01-05T21:45:00Z"
 
     var output = [];
-    var url = "https://service.falkonry.io/pipeline/" + myPipelineId + "/output";
+    var url = "https://sandbox.falkonry.ai/pipeline/" + myPipelineId + "/output";
 
     var Request = unirest.get(url)
       .headers({

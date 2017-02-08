@@ -26,4 +26,4 @@ Learn more about the Falkonry Service and what it can do for your operations:
    integration/index
    using/index
 
-Sign up for an account on the `Falkonry Service Cloud <https://falkonry.io/signup>`_ and get started now.   
+Sign up for an account on the `Falkonry Service Cloud <https://sandbox.falkonry.ai/signup>`_ and get started now.   

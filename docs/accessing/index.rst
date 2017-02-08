@@ -8,7 +8,7 @@ Service Cloud
 -------------
 
 The simplest way to get immediate and effortless access to the Falkonry service is to take 
-advantage of the `Falkonry Service Cloud <https://service.falkonry.io>`_. This allows you to 
+advantage of the `Falkonry Service Cloud <https://sandbox.falkonry.ai>`_. This allows you to 
 focus on creating and refining your pipelines while leaving the infrastructure management 
 and maintenance to us. 
 

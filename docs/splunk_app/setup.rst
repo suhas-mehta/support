@@ -101,7 +101,7 @@ Connect the Falkonry Splunk App with your Falkonry Service
 
 2. On the Falkonry connection screen, the status will show as Not Connected. The default settings should show:
 
-  - Service URL: *https://service.falkonry.io*
+  - Service URL: *https://sandbox.falkonry.ai*
   - Connection Mode: *Default*
   - Management Port: *8089*
   - Event Collector Port: *8088*

@@ -32,7 +32,7 @@ Now let’s take a look at some example Javascript code to invoke this API.
     var myStartTime = "2016-01-05T21:45:55Z"
     var myEndTime = "2016-01-05T21:50:55Z"
 
-    var url = "https://service.falkonry.io/pipeline/" + myPipelineId + "/reviseModel";
+    var url = "https://sandbox.falkonry.ai/pipeline/" + myPipelineId + "/reviseModel";
 
     var Request = unirest.post(url)
       .headers({

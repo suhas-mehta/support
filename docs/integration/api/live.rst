@@ -2,7 +2,7 @@ Interactive API page
 ~~~~~~~~~~~~~~~~~~~~
 
 Let’s first examine the API through the `interactive Falkonry Service API web page 
-<https://service.falkonry.io/api>`_.  This Web page lets you view the function inputs and 
+<https://sandbox.falkonry.ai/api>`_.  This Web page lets you view the function inputs and 
 outputs, get a sense of how to access these functions, and actually test the functions
 interactively.  You will need to log in to the Falkonry Service before using this Web page. 
 Once you have logged in you can view the detailed API and use the built-in forms to try 

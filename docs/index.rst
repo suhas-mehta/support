@@ -1,5 +1,5 @@
-The Falkonry Service
-====================
+The Falkonry Overview
+=====================
 
 There is tremendous value of being able to understand the condition of complex systems 
 (machines, devices, people, animals, plants, weather, organizations) from data streams 
@@ -20,9 +20,9 @@ Learn more about the Falkonry Service and what it can do for your operations:
 .. toctree::
    :maxdepth: 1
 
+   overview.rst
    concepts
    usecases.rst
-   accessing/index
    integration/index
    using/index
 

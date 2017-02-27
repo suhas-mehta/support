@@ -5,8 +5,6 @@ User Guide
    :maxdepth: 1
    
    overview
+   datastreamdetails/index.rst
+   viewingdata
    accounts
-   data
-   eventbuffer
-   pipeline
-   pipelinedetails

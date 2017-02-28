@@ -79,7 +79,7 @@ Falkonry API or client libraries.
   there might be a few rough edges.
 
 Before you can use the Falkonry API you must have a Falkonry account.  Create an account 
-from the `Falkonry Website <http://falkonry.com/>`_.  Additionally, this document 
+from the `Falkonry Website <http://falkonry.com>`_.  Additionally, this document 
 assumes knowledge of `Falkonry AI concepts <../concepts.html>`_ and the Falkonry UI.  
    
 Connector Technologies

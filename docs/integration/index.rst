@@ -1,10 +1,29 @@
 Deployment and Integration
 ==========================
+<<<<<<< HEAD
 
-REST API
---------
+Deployment Configurations
+-------------------------
 
-This document will focus on using the Falkonry REST API and will explore two different 
+The figure below shows the elements of a typical Falkonry deployment.
+
+
+The elements are:
+  - Data collection:
+  - Time Series Data Store: 
+  - Monitoring/Performance Management Application: Pattern recognition will support some form of
+    application that is built on top of the datastore. Applications could include operations monitoring
+    or yield or performance management.
+  - Falkonry Integration Agent
+  - Falkonry Instance: Where the magic happens.
+  - Falkonry Host Environment:
+  - Falkonry Admin Client:
+  
+=======
+>>>>>>> da6fce40d00d57ab5dff120b194fd4bac0ac220b
+
+
+Falkonry This document will focus on using the Falkonry REST API and will explore two different 
 ways to access it: 
 
   - Falkonry Service API page - This is an interactive web page which allows you to easily 

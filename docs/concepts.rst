@@ -4,7 +4,7 @@ Falkonry Concepts
 Here's a quick overview of the basic elements of the Falkonry Service and concepts that
 are referenced elsewhere in the documentation.
 
-.. image:: images/appfalkonry.png
+.. image:: images/operations_mgmt_solution.png
 
 The Falkonry Service is used to extract a real-time understanding of condition from patterns in time series data. The most common use of the Falkonry Service is to provide intelligence to applications that are monitoring some Entity or set of Entities.  
 	   

@@ -94,7 +94,7 @@ The Views tab provides a flexible way for the user to view:
 .. image:: images/M2view.png
 .. image:: images/M2view2.png
 .. image:: images/M2view3.png
-.. image:: images/M2zoom.png
+.. image:: images/M2viewzoom.png
 .. image:: images/M2viewaddfact.png
     
 

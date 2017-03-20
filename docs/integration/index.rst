@@ -43,7 +43,7 @@ Agent Dev Kits
 ~~~~~~~~~~~~~~
 Falkonry provides Agent Dev Kits that facilitate rapid construction of Agents for any time series data storage system. These kits are provided as free and open-source software (FOSS) in a variety of programming languages. Currently available Dev Kits include:
 
-  - `C# Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-csharp-client>`
+  - `C# Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-csharp-client>`_
 
 Falkonry Server Environments
 ----------------------------

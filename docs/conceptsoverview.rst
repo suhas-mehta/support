@@ -58,3 +58,13 @@ A *Datastream* is the basic building block for pattern recognition used in Falko
 A Datastream can consume a *History Window* of signal data and *Facts* that lie within the window to facilitate the learning of *Models*.
 
 At any time one model can be designated as "Active". If the Datastream is turned on with an active model, signal data streamed into the Datastreams will produce a live output stream of assessment results.
+
+
+Live monitoring 
+---------------
+
+After a model revision has been trained, a user may want to switch to *live monitoring* to evaluate patterns in real-time.
+
+Any model revision can be selected to be the basis of live monitoring. Falkonry will assign conditions to multi-variate patterns based on the signals that were used to create the model revision. 
+
+To turn this on, a user should make sure that the **Accepting data** toggle is turned on. This suggests that Falkonry is ready to listen to incoming data. Next, the user should toggle on **Live Monitoring** to switch Falkonry from a *learning* state to a *monitoring* state. 

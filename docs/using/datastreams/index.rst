@@ -45,9 +45,15 @@ The first thing the user does is identify from which segments of time within the
 
 There are other settings which the user can control to improve the models that are created. These include:
 
-  - Cluster Guidance: Upper and lower bound on the number of Clusters that are found. This gives some control of granularity of the Assessment results.
-  - Time Window Guidance: Here the user chooses between sliding and fixed windows, and upper and lower bounds for the case of sliding windows.
-  - Assessment Rate: The user can control how frequently Assessment results are produced.
+  - *Cluster Guidance*: Upper and lower bound on the number of Clusters that are found. This gives some control of granularity of the Assessment results. Falkonry will try to maximize the number of clusters and hence patterns that be identified based on the signal features. The user can change the bounds of the number of clusters (default being set between 4 and 10) and thus control the impact of the signal feature sets on the number of patterns identified in unsupervised learning.
+
+  - *Time Window Guidance*: Here the user chooses between sliding and fixed windows, and upper and lower bounds for the case of sliding windows. A user can either provide explicit grouping guidance (Fixed window) or provide bounds on a minimum window width (Sliding window) of the incoming signals to achieve the desired time granularity by changing the size of the windows based on signal variability. In Fixed window, signal are sampled by splitting them into fixed window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
+
+  - *Assessment Rate*: The user can control how frequently Assessment results are produced. These can be:
+
+      1. Configured by the system
+      2. Made as frequent as possible to exploit rate of change in incoming signals
+      3. Be user defined: default set at 1s
 
 .. image:: images/createmodel2.png
 

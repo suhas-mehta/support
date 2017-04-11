@@ -118,3 +118,15 @@ The **Signal Location** is describing where the signal name is in the tag field.
 
 The **Value Field** is ``value`` or the location of the numerical or categorical readings.
 
+
+Numerical vs Categorical
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Categorical data: Categorical data represent characteristics such as a person's gender, marital status, hometown, or the types of movies they like. Categorical data can take on numerical values (such as “1” indicating male and “2” indicating female), but those numbers don't have mathematical meaning.
+
+Numerical data: Numerical data carries values that are measures of certain fields (such as Temperature, Pressure, Current, e.t.c.)
+
+Sample vs Occurrences
+~~~~~~~~~~~~~~~~~~~~~
+
+The Samples type indicates that the signal has been sampled at a convenient rate and that more values are present between events that were simply not sampled. Its opposite is the Occurrences type, which indicates that every moment in time for which the signal could be sampled has been recorded and that there is no other value possible for other timestamps.

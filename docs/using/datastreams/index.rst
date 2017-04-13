@@ -71,6 +71,14 @@ Finally the user can control which Entities, Signals, and Facts are to be used i
 
 .. image:: images/createmodel3.png
 
+Pattern Generalization
+++++++++++++++++++++++
+The featurization aims to find temporal patterns in the time series data. The featurization learns these patterns based on the training set and then looks for “similar” shapes in live mode. The following parameter defines the generalization power (also known as sensitivity) of both classifier and featurization. 
+
+When set to "Minimum Generalization" the engine is restricted to what it sees in training dataset. Patterns that are slightly different from learned patterns are classified as unknown. This usually gives us better FPR rate. The TPR rate also might be low.
+
+When set to "Maximum Generalization" the engine only looks at the general shape of the time series. It is less sensitive to temporal shift or even small number of peaks and troughs in the general pattern. With this approach, one can achieve higher TPR. However, the FPR might be high as well.
+
 
 Adding Facts & Using Facts When Learning a Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

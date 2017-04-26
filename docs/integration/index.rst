@@ -2,7 +2,7 @@ Deployment and Integration
 ==========================
 
 Solution Architecture
----------------------
+-----------------------
 The Falkonry Pattern Recognition System is a key component in many different types of operations management and monitoring solutions. The figure below shows the the high-level structure of a typical solution. The Falkonry System can be dropped into an existing operations management solution or it can be designed in at the start. 
 
 .. image:: ../images/operations_mgmt_solution.png
@@ -36,7 +36,7 @@ Pre-Built Integration Agents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pre-built Agents are currently available for:
 
-  - OSISoft PI
+  - :ref:`OSISoft PI<pi_agent>`
   - Splunk
 
 Agent Dev Kits
@@ -44,6 +44,7 @@ Agent Dev Kits
 Falkonry provides Agent Dev Kits that facilitate rapid construction of Agents for any time series data storage system. These kits are provided as free and open-source software (FOSS) in a variety of programming languages. Currently available Dev Kits include:
 
   - `C# Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-csharp-client>`_
+  - `Java Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-java-client>`_
 
 Falkonry Server Environments
 ----------------------------
@@ -55,7 +56,7 @@ A Falkonry Server instance runs in a clustered compute environment. This envirom
 A Falkonry Server instance can be installed on customer provided hardware or virtualized environments in certain circumstance. Please contact us if you believe you will need to deploy in this manner <info@falkonry.com>.
 
 Advanced Falkonry System Configurations
---------------------------------
+-----------------------------------------
 As mentioned previously, the Falkonry System is typically deployed via a single Falkonry Server that is responsible for learning models and applying those models to recognize patterns in live streaming data. There are some circumstances where it is advantageous to divide learning and live recognition responsibilities across a set of Falkonry Server instances. In such a configuration, models can be learned in one server and then be delivered to other servers for purposes of live recognition.
 
 .. image:: images/split_learn_recog.png

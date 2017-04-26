@@ -42,7 +42,7 @@ This column is used to mark the end of the interval for which the record provide
 
 
 Identifying entities
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Often your Falkonry data will correspond to more than one "entity", such as a process, a machine,
 a device, a computer, or a subject.  You may have several turbofan motors that you are monitoring, 
@@ -120,7 +120,7 @@ The **Value Field** is ``value`` or the location of the numerical or categorical
 
 
 Numerical vs Categorical
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Categorical data: Categorical data represent characteristics such as a person's gender, marital status, hometown, or the types of movies they like. Categorical data can take on numerical values (such as “1” indicating male and “2” indicating female), but those numbers don't have mathematical meaning.
 

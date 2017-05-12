@@ -94,3 +94,7 @@ A green indicator next to "Live Monitoring" at the bottom should suggest that th
 Note, Live Monitoring can be activated from the Falkonry Service as well. In either case, turning on Live Monitoring should reflect in the other application. For example, if the user turns on Live Monitoring from within the PI agent, it should show the active "Live Monitoring" status in the Falkonry Service.
 
 For the definition and details on **Live Monitoring**, see :ref:`live_monitoring`
+
+
+
+

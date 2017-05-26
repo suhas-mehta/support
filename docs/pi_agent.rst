@@ -1,6 +1,6 @@
 .. _pi_agent:
 
-Falkonry PI Integration Agent
+PI Integration Agent
 =====================
 
 Falkonry supports different integration agents that help tap into the time series data store so as to enable communication of historical data betwwen the data store and Falkonry Services.
@@ -44,6 +44,9 @@ You will need to provide the following:
      * Data
      * A subject matter expert (SME) who understands the operation of the entity or entities in question, and who can evaluate the results produced by Falkonry.
 
-   
 
+User Guide
+^^^^^^^^^^^
+   
+Refer to the **User Guide** on the **PI Integration Agent** to get started (see :doc:`using/using_pi_agent`)
 

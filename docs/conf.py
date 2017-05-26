@@ -104,7 +104,7 @@ pygments_style = 'sphinx'
 todo_include_todos = False
 
 # -- Options for PDF output ---------------------------------------------- 
-pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Jeegar Shah'),]
+#pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Jeegar Shah'),]
 
 # -- Options for HTML output ----------------------------------------------
 

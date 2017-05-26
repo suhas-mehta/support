@@ -1,6 +1,6 @@
 .. _pi_agent:
 
-PI Integration Agent
+Falkonry PI Integration Agent
 =====================
 
 Falkonry supports different integration agents that help tap into the time series data store so as to enable communication of historical data betwwen the data store and Falkonry Services.

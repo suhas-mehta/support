@@ -354,7 +354,7 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
-
+sys.path.append('/Library/Python/2.7/site-packages')
 from recommonmark.parser import CommonMarkParser
 
 source_parsers = {

@@ -5,4 +5,4 @@
    conceptsoverview.rst
    integration/index
    using/index
-   sdk/index
+   sdk

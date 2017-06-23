@@ -33,21 +33,6 @@ A Falkonry Integration Agent bridges interactions between the time series data s
 
 There is a growing list of pre-built Integration Agents for data storage products like OSISoft PI and Splunk, and there are several downloadable Agent Dev Kits that make construction of Agents for any storage system relatively easy.
 
-Pre-Built Integration Agents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pre-built Agents are currently available for:
-
-  - :ref:`OSISoft PI<pi_agent>`
-  - Splunk
-
-Agent Dev Kits
-~~~~~~~~~~~~~~
-Falkonry provides Agent Dev Kits that facilitate rapid construction of Agents for any time series data storage system. These kits are provided as free and open-source software (FOSS) in a variety of programming languages. Currently available Dev Kits include:
-
-  - `C# Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-csharp-client>`_
-  - `Java Falkonry Agent Dev Kit <https://github.com/Falkonry/falkonry-java-client>`_
-  - Python Falkonry Agent Dev Kit
-
 Falkonry Server Environments
 ----------------------------
 A Falkonry Server instance runs in a clustered compute environment. This enviroment can be located on premise or in the cloud. In all cases, Falkonry monitors and maintains the health of the instance and manages software upgrades. The Falkonry Server instance only requires outbound internet connectivity. There are two types of compute environments preferred for deployment:

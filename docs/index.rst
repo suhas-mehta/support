@@ -5,4 +5,5 @@
    conceptsoverview.rst
    integration/index
    using/index
+   pi_agent/index
    sdk

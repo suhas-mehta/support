@@ -12,4 +12,3 @@ The third link provides documentation on how to use the Falkonry PI Integration 
    
    datastreams/index.rst
    accounts
-   using_pi_agent

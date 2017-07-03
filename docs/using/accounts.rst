@@ -30,5 +30,4 @@ Integration
 The Integration section allows users to generate security tokens that can be used by Falkonry Integration Agents to access the Account.
 
 .. image:: images/integration.png
-.. image:: images/integration2.png
 

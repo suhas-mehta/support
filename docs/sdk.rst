@@ -1,5 +1,5 @@
 
-Falkonry SDK
+Falkonry ADK
 ============
 
 Welcome to the Falkonry Integrator API! 

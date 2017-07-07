@@ -53,9 +53,9 @@ Falkonry will try to maximize the number of clusters and hence patterns that be 
 
 Time Window Guidance
 ++++++++++++++++++++
-Here the user chooses between sliding and fixed windows, and upper and lower bounds for the case of sliding windows. A user can either provide explicit grouping guidance (Fixed window) or provide bounds on a minimum window width (Sliding window) of the incoming signals to achieve the desired time granularity by changing the size of the windows based on signal variability. 
+Here the user chooses between sliding and batch windows, and upper and lower bounds for the case of sliding windows. A user can either provide explicit grouping guidance (Batch window) or provide bounds on a minimum window width (Sliding window) of the incoming signals to achieve the desired time granularity by changing the size of the windows based on signal variability. 
 
-In Fixed window, signal are sampled by splitting them into fixed window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
+In Batch window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
 
 Assessment Rate
 +++++++++++++++

@@ -10,7 +10,7 @@ We have language bindings in Java, C#, Python and Shell (coming soon)!
 
 
 
-`Falkonry's SDK reference <sdk_documentation.html>`_
+`Falkonry's ADK reference <sdk_documentation.html>`_
 
 
 

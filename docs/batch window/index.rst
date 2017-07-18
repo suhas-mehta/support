@@ -12,7 +12,7 @@ To access the dataset used to create the sliding windows video go to
 :download:`Verification File <Dataset/verification-health.csv/>`
 
 Video
-^^^^^^^^^^^^^^^^
+------------------
 A video illustrating the the use of batch windows is shown below
 https://vimeo.com/225296153
 

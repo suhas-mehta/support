@@ -10,7 +10,7 @@ This section presents tutorials on
 The source and validation datasets that go into generating these scenarios are also available.
 
 Sliding Window
-================
+^^^^^^^^^^^^^^^
 In Sliding windows, incoming signals may not be very well characterized and temporal proximity can be exploited to enable opportunistic
 loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features. 
 
@@ -36,7 +36,7 @@ A video illustrating the the use of sliding windows is shown below
 https://vimeo.com/175744365
 
 Batch Window
-============
+^^^^^^^^^^^^^
 In Batch window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is 
 repetition of temporal patterns.
 

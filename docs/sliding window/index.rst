@@ -8,7 +8,7 @@ loss-limited sampling by changing the size of the windows (within a suggested ra
          
 Dataset
 -----------------
-The dataset used to create the sliding windows video can be downloaded below
+The dataset used to create and validate the sliding windows scenario can be downloaded below
 
 :download:`Input .yaml file<Dataset/input.yaml/>`
 :download:`Source1 <Dataset/source1.csv/>`

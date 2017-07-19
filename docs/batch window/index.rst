@@ -7,7 +7,8 @@ repetition of temporal patterns.
 
 Dataset
 -----------------
-To access the dataset used to create the sliding windows video go to 
+The dataset used to create and validate the batch windows scenario can be downloaded below
+
 :download:`Source File <Dataset/source.csv/>`
 :download:`Verification File <Dataset/verification-health.csv/>`
 

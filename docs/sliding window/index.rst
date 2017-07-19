@@ -2,13 +2,14 @@
 
 Sliding Window
 =====================
-In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic
+In Sliding windows, incoming signals may not be very well characterized and temporal proximity can be exploited to enable opportunistic
 loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features. 
 
          
 Dataset
 -----------------
-To access the dataset used to create the sliding windows video go to 
+The dataset used to create the sliding windows video can be downloaded below
+
 :download:`Input .yaml file<Dataset/input.yaml/>`
 :download:`Source1 <Dataset/source1.csv/>`
 :download:`Source2 <Dataset/source2.csv/>`

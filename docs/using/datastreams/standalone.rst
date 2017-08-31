@@ -9,7 +9,6 @@ A dialog will allow the user to choose a name, select a file, disambiguate file 
 .. image:: images/new_datastream.png
 .. image:: images/new_datastream2.png
 .. image:: images/new_datastream3.png
-.. image:: images/new_datastream4.png
 
 Data Format Requirements for Stand-alone Mode
 ---------------------------------------------
@@ -126,7 +125,3 @@ Categorical data: Categorical data represent characteristics such as a person's 
 
 Numerical data: Numerical data carries values that are measures of certain fields (such as Temperature, Pressure, Current, e.t.c.)
 
-Sample vs Occurrences
-~~~~~~~~~~~~~~~~~~~~~
-
-The Samples type indicates that the signal has been sampled at a convenient rate and that more values are present between events that were simply not sampled. Its opposite is the Occurrences type, which indicates that every moment in time for which the signal could be sampled has been recorded and that there is no other value possible for other timestamps.

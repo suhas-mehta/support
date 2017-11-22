@@ -87,33 +87,31 @@ Narrow Format
 
 In this format the Human Activity data would appear as::
 
-  time, tag, value
-  1452030355080, p1:T_xacc, 7.9469
-  1452030355080, p1:T_yacc, 0.29302
-  1452030355080, p1:T_zacc, 5.604
-  1452030356020, p1:T_xacc, 8.5439
-  1452030356020, p1:T_yacc, 0.46781
-  1452030356020, p1:T_zacc, 5.432
+  time, person, signal, value
+  1452030355080, p1, T_xacc, 7.9469
+  1452030355080, p1, T_yacc, 0.29302
+  1452030355080, p1, T_zacc, 5.604
+  1452030356020, p1, T_xacc, 8.5439
+  1452030356020, p1, T_yacc, 0.46781
+  1452030356020, p1, T_zacc, 5.432
 
 
 **JSON Example**
 
 Rows of data in a narrow JSON file would look like::
 
-  {"time": 1452030355080, "tag": p1:T_xacc, "value": 7.9469}
-  {"time": 1452030355080, "tag": p1:T_yacc, "value": 0.29302}
-  {"time": 1452030355080, "tag": p1:T_zacc, "value": 5.604}
-  {"time": 1452030356020, "tag": p1:T_xacc, "value": 8.5439}
-  {"time": 1452030356020, "tag": p1:T_yacc, "value": 0.46781}
-  {"time": 1452030356020, "tag": p1:T_zacc, "value": 5.432}
+  {"time": 1452030355080, "person": "p1", "signal": "T_xacc", "value": 7.9469}
+  {"time": 1452030355080, "person": "p1", "signal": "T_yacc", "value": 0.29302}
+  {"time": 1452030355080, "person": "p1", "signal": "T_zacc", "value": 5.604}
+  {"time": 1452030356020, "person": "p1", "signal": "T_xacc", "value": 8.5439}
+  {"time": 1452030356020, "person": "p1", "signal": "T_yacc", "value": 0.46781}
+  {"time": 1452030356020, "person": "p1", "signal": "T_zacc", "value": 5.432}
 
 note that each line only has a single data value. 
 
-The **Tag Field** in this case would be ``tag``, the concatenated variables person and sensor.
+The **Entity Field** is ``person`` that identifies the person.
 
-The **Signal Delimeter** is a ``:``, or what seperates the concatenated variables in the tag field.
-
-The **Signal Location** is describing where the signal name is in the tag field. In the Human Activity example, the tag field contains the entity first, then the signal name (p1:T_xacc). Therefore the siganl location would be ``suffix`` because the signal name is at the end.
+The **Signal Field** is ``signal`` that identifies the signal.
 
 The **Value Field** is ``value`` or the location of the numerical or categorical readings.
 

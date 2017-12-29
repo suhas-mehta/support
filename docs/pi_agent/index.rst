@@ -44,6 +44,12 @@ You will need to provide the following:
      * Data
      * A subject matter expert (SME) who understands the operation of the entity or entities in question, and who can evaluate the results produced by Falkonry.
 
+AF Version Support
+^^^^^^^^^^^^^^^^^^
+Falkonry supports AF Server 2016 R2 (SDK version: 1.4.6.494) and beyond
+
+Note: AF Server 2012 (SDK version: 1.4.2.445) and AF Server 2014 (SDK version: 1.4.4.484) are not supported.
+
 
 Using Falkonry PI agent
 ------------------------

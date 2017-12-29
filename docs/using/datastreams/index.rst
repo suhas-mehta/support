@@ -79,6 +79,26 @@ When set to "Minimum Generalization" the engine is restricted to what it sees in
 
 When set to "Maximum Generalization" the engine only looks at the general shape of the time series. It is less sensitive to temporal shift or even small number of peaks and troughs in the general pattern. With this approach, one can achieve higher TPR. However, the FPR might be high as well.
 
+Depreacted Models
+++++++++++++++++++
+As Falkonry technology evolves existing models created may need to be deprecated.
+At times a user may notice that certain models have an icon .. image:: images/warning-icon.png ssuggesting model deprecation.
+
+.. image:: images/model-deprecation.png
+
+A model is classified as deprecated when Falkonry technology has evolved since the original model was created such that it is likely that the original model may not deliver the same results. At Falkonry, the effort is constantly towards improving our condition classification capabilities. This would suggest that recreating the model could potentially result in improved classifications. 
+
+A deprecated model essentially suggests that a user cannot perform the following:
+ - Apply the model on more/ new data using the old model
+ - Live streaming 
+
+Existing results persist on the Falkonry UI and you can see your original results anytime.
+
+To be able to apply the model to additional data, the user should recreate the model. A quick way to regenerate this model is by using the “clone” button (next to the Deprecation symbol) that helps with model creation process by remembering the model selections made in the deprecated model.
+
+Falkonry technology is updated every 2 weeks for both Falkonry managed and customer managed environments. 
+
+
 
 Adding Facts & Using Facts When Learning a Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

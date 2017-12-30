@@ -4,17 +4,17 @@ Frequently asked Questions
 ==========================
 
 
-   :ref:`Getting Started<getting_started>`
-   :ref:`Account<accounts>`
-   :ref:`Datastreams<datastreams>`
-   :ref:`Assessments<assessments>`
-   :ref:`Models<models>`
-   :ref:`Facts<facts>`
-   :ref:`Live Monitoring<live_monitoring>`
-   :ref:`Licensing<licensing>`
-   :ref:`Support<support>`
-   :ref:`Software Updates<software_updates>`
-   :ref:`Infrastructure and Deployment<infrastructure>`
+|   :ref:`Getting Started<getting_started>`
+|   :ref:`Account<accounts>`
+|   :ref:`Datastreams<datastreams>`
+|   :ref:`Assessments<assessments>`
+|   :ref:`Models<models>`
+|   :ref:`Facts<facts>`
+|   :ref:`Live Monitoring<live_monitoring>`
+|   :ref:`Licensing<licensing>`
+|   :ref:`Support<support>`
+|   :ref:`Software Updates<software_updates>`
+|   :ref:`Infrastructure and Deployment<infrastructure>`
    
    
 .. _getting_started:
@@ -330,13 +330,13 @@ Facts
     *1. Manually adding facts from the UI*
     Click on a time segment on a particular model and then click on the blue menu “SELECT EPISODE” and then “Add a Fact” item
 
-    .. image:: images/add_manual_fact_1.png
+        .. image:: images/add_manual_fact_1.png
 
 
     
     In the window that opens up provide a fact name and an optional tag and hit “SAVE” or “SAVE AND ADD”.
 
-    .. image:: images/add_manual_fact_2.png
+        .. image:: images/add_manual_fact_2.png
 
 
 
@@ -344,7 +344,7 @@ Facts
 
     Falkonry’s PI Integration agent for OSIsoft PI System users allows users to import event frames into the Falkonry Service. The integration agent can easily connect to a PI system database using the AFSDK and also allows assessments to be written back into the PI system as attributes. For more details on Falkonry’s PI agent refer to the following link: http://help.falkonry.com/en/latest/pi_agent.html#pi-agent
 
-    .. image:: images/add_piagent_fact.png
+        .. image:: images/add_piagent_fact.png
 
 
 
@@ -390,11 +390,11 @@ Facts
     
     Similar to adding facts on the UI, open up the "Select Episode" window and choose "Delete Facts". Drag the mouse over the fact segments and conform deleteion.
 
-    .. image:: images/add_manual_fact_1.png
+        .. image:: images/add_manual_fact_1.png
 
     *2. Facts can be deleted in batches from the Facts panel*
     
-    .. image:: images/facts_button.png
+        .. image:: images/facts_button.png
 
     From the Facts panel, select the "Deletion" radio button and select from any of the following different filters:
         #. Model
@@ -422,7 +422,7 @@ Facts
     
     You can assign these tags when manually adding facts on the UI.
 
-    .. image:: images/manual_tags.png
+        .. image:: images/manual_tags.png
 
     Tags can also be introduced when injecting fact files. Please refer to the CSV, JSON formats shown above. Tags can also be managed through any of the Falkonry ADKs.
 

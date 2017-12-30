@@ -22,12 +22,12 @@ The dataset used to create and validate the sliding windows scenario can be down
 :download:`Source1 <Dataset/source1.csv/>`
 :download:`Source2 <Dataset/source2.csv/>`
 :download:`Source3 <Dataset/source3.csv/>`
-:download:`PartialVerification1 <Dataset/partialVerification1.csv/>`
-:download:`PartialVerification2 <Dataset/partialVerification2.csv/>`
-:download:`PartialVerification3 <Dataset/partialVerification3.csv/>`
-:download:`Verification1 <Dataset/verification-activity1.csv/>`
-:download:`Verification2 <Dataset/verification-activity2.csv/>`
-:download:`Verification3 <Dataset/verification-activity3.csv/>`
+:download:`PartialFacts1 <Dataset/partialVerification1.csv/>`
+:download:`PartialFacts2 <Dataset/partialVerification2.csv/>`
+:download:`PartialFacts3 <Dataset/partialVerification3.csv/>`
+:download:`Facts1 <Dataset/verification-activity1.csv/>`
+:download:`Facts2 <Dataset/verification-activity2.csv/>`
+:download:`Facts3 <Dataset/verification-activity3.csv/>`
 
 
 Video

@@ -3,8 +3,6 @@
 Frequently asked Questions
 ==========================
 
-.. toctree::
-   :maxdepth: 2
 
    :ref:`Getting Started<getting_started>`
    :ref:`Account<accounts>`
@@ -22,6 +20,8 @@ Frequently asked Questions
 .. _getting_started:
 
 
+
+
 Falkonry - Getting started
 ---------------------------
 
@@ -30,6 +30,7 @@ Falkonry - Getting started
 Please refer to the following link for an overview of Falkonry - Definition of Terms:
 
     `Falkonry Definition of Terms <http://help.falkonry.com/en/latest/conceptsoverview.html>`_
+
 
 
 **2. What is an overall approach to use Falkonry?**
@@ -65,6 +66,8 @@ Please refer to the following link for an overview of Falkonry - Definition of T
 .. _accounts:
 
 
+
+
 Account
 --------
 
@@ -90,6 +93,8 @@ To change the default provisioning please reach out to Falkonry Admin at help@fa
 .. _datastreams:
 
 
+
+
 Datastreams
 -----------
 
@@ -100,10 +105,11 @@ Datastreams
      b. For OSIsoft PI customers, data can be ingested using the PI Agent, refer to :ref:`OSIsoft PI agent<pi_agent>` for more details
      c. Datastreams can be created using any of the following Falkonry provided ADKs
      	- Python
-	- Java
-	- C#
-	- Shell / bash
-	Detailed Falkonry ADK doumentation can be found at `Falkonry's ADK reference <sdk_documentation.html>`_
+	    - Java
+	    - C#
+	    - Shell / bash
+	 Detailed Falkonry ADK doumentation can be found at `Falkonry's ADK reference <sdk_documentation.html>`_
+
 
 
 **2. What is the frequency at which live data gets injected into Falkonry from the PI AF system or any other database? Is this setting configurable?**
@@ -112,12 +118,15 @@ Datastreams
      This is easily configurable using the Falkomnry PI Agent by using the Advanced Settings.  
 
 
+
 **3. What are the frequent errors one runs into while importing data into Falkonry?**
 
-     Here are some of the most common errors witnessed when importing data into Falkonry
-     	  a. Data inconsistency - Numerical and Categorical signals used interchangibly
+    Some of the most common errors witnessed when importing data into Falkonry are:
+
+      a. Data inconsistency - Numerical and Categorical signals used interchangibly
 	  b. Incorrect date format - using dates not supported (*details on supported dates below*)
 	  c. Network issues when uploading larger datasets
+
 
 
 **4. What is the maximum limit to the data that can be ingested into Falkonry?**
@@ -126,10 +135,12 @@ Datastreams
      The default for jumpstarts is 20MB
 
 
+
 **5. What is the difference between Numerical and Categorical signal data?**
      
      *Numerical* - As the name suggests this signal has numerical data type and is suggestive of continuous data (for e.g. sensors, control systems, etc)
      *Categorical* - These are signals with discrete values that often suggest the state of a system or a primitive (e.g. True/ False, High/ Med/ Low, 0/1)
+
 
 
 **6. What timestamp granularity does Falkonry support? (For example does it support time granularity finer than millisecond?)**
@@ -137,67 +148,59 @@ Datastreams
      Falkonry supports granularity down to nanoseconds
 
 
+
 **7. Is there a common format and MIME type that is supported for ingesting CSV format data into a Falkonry datastream?**
      
      Yes. We support RFC 4180 regarding support for common format. More details can be found at `RFC <https://tools.ietf.org/html/rfc4180>`_
      Following is a list of implementations and formats that is supported in conjunction with RFC 4180.
 
-     i.  Each record is located on a separate line, delimited by a line
-       break (CRLF).  For example:
+     i.  Each record is located on a separate line, delimited by a linebreak (CRLF).  For example:
 
        aaa,bbb,ccc CRLF
        zzz,yyy,xxx CRLF
 
-   ii.  The last record in the file may or may not have an ending line
-       break.  For example:
+     ii.  The last record in the file may or may not have an ending line break.  For example:
 
        aaa,bbb,ccc CRLF
        zzz,yyy,xxx
 
-   iii.  There maybe an optional header line appearing as the first line
-       of the file with the same format as normal record lines.  This
-       header will contain names corresponding to the fields in the file
-       and should contain the same number of fields as the records in
-       the rest of the file (the presence or absence of the header line
-       should be indicated via the optional "header" parameter of this
-       MIME type).  For example:
+     iii.  There maybe an optional header line appearing as the first line of the file with the same format as normal record lines. 
+           This header will contain names corresponding to the fields in the file and should contain the same number of fields as the records in
+           the rest of the file (the presence or absence of the header line should be indicated via the optional "header" parameter of this MIME type).  
+           For example:
 
-       field_name,field_name,field_name CRLF
-       aaa,bbb,ccc CRLF
-       zzz,yyy,xxx CRLF
+                field_name,field_name,field_name CRLF
+                aaa,bbb,ccc CRLF
+                zzz,yyy,xxx CRLF
 
-    iv. Within the header and each record, there may be one or more
-       fields, separated by commas.  Each line should contain the same
-       number of fields throughout the file.  Spaces are considered part
-       of a field and should not be ignored.  The last field in the
-       record must not be followed by a comma.  For example:
+     iv. Within the header and each record, there may be one or more fields, separated by commas.  Each line should contain the same
+         number of fields throughout the file.  Spaces are considered part of a field and should not be ignored.  The last field in the
+         record must not be followed by a comma.  For example:
 
-       aaa,bbb,ccc
+                aaa,bbb,ccc
 
-     v.  Each field may or may not be enclosed in double quotes (however
-       some programs, such as Microsoft Excel, do not use double quotes
-       at all).  If fields are not enclosed with double quotes, then
-       double quotes may not appear inside the fields.  For example:
+     v.  Each field may or may not be enclosed in double quotes (however some programs, such as Microsoft Excel, do not use double quotes at all).  
+         If fields are not enclosed with double quotes, then double quotes may not appear inside the fields.  For example:
 
-       "aaa","bbb","ccc" CRLF
-       zzz,yyy,xxx
+                "aaa","bbb","ccc" CRLF
+                zzz,yyy,xxx
 
-   vi.  Fields containing line breaks (CRLF), double quotes, and commas
-       should be enclosed in double-quotes.  For example:
+     vi.  Fields containing line breaks (CRLF), double quotes, and commas should be enclosed in double-quotes.  For example:
 
-       "aaa","b CRLF
-       bb","ccc" CRLF
-       zzz,yyy,xxx
+                "aaa","b CRLF
+                bb","ccc" CRLF
+                zzz,yyy,xxx
 
-  vii.  If double-quotes are used to enclose fields, then a double-quote
-       appearing inside a field must be escaped by preceding it with
-       another double quote.  For example:
+     vii.  If double-quotes are used to enclose fields, then a double-quote appearing inside a field must be escaped by preceding it with
+           another double quote.  For example:
 
-       "aaa","b""bb","ccc"
+                "aaa","b""bb","ccc"
 
 
 
 .. _assessments:
+
+
 
 Assessments
 -----------
@@ -215,6 +218,7 @@ Assessments
      c. Explicit user defined interval
 
 
+
 **2. Under what circumstances do I use the Falkonry output as input for Modeling?**
 
     In certain continuous/ discrete operations setups, such as a manufacturing lines, the assessment output from one entity/ machine/ line can feed into further downstream operations.
@@ -230,6 +234,9 @@ Assessments
 
 .. _models:
 
+
+
+
 Models
 ------
 **1. What is a Sliding Window?**
@@ -238,10 +245,14 @@ Models
     For Sliding windows, a user selects the lower and upper bounds of the window and Falkonry determines the appropriate size of the window. A user also has the ability to determine an "assessment rate" that suggests the rate at which Falkonry produces an assessment output.
     In the absence of a user provided assessment rate, Falkonry determines the appropriate assessment rate.
 
+
+
 **2. What is a Batch Window?**
 
     In Batch window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns.
     For Batch window a user provide explicit grouping guidance by selecting one of the input signals to serve as a grouping identifier e.g. sample/ batch ID
+
+
 
 **3. When should I use Sliding Windows as against Batched Windows ?**
 
@@ -250,6 +261,7 @@ Models
      A user can either provide explicit grouping guidance (Batched windows) or provide upper and lower bounds to define a minimum and maximum window width (Sliding windows) which Falkonry will apply to the source data signals.
      In Batched windows, signals are sampled by splitting them into fixed/batched window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. 
      In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
+
 
 
 **4. How do I determine the lower and upper bounds when using a Sliding Window approach?**
@@ -262,10 +274,12 @@ Models
      The above should hope to serve as a good heuristic in deciding upper and lower bounds on Sliding windows. This example shows how selecting the bounds on Sliding windows helps build the accuracy of the model.
 
 
+
 **5. How do I determine the bounds for the number of conditions/ states for my model?**
 
      Falkonry transforms raw signals into meaningful features that differentiate behavior. Clustering is the process of identifying groupings of these feature vectors to characterize historical phenomena. When creating a model in Falkonry, a user has the option to suggest upper and lower bounds on the number of clusters. This gives some control of granularity of the Assessment results.
      Falkonry will try to maximize the number of clusters and hence patterns that be identified based on the signal features. The user can change the bounds of the number of clusters (default being set between 4 and 10) and thus control the impact of the signal feature sets on the number of patterns identified in unsupervised learning.
+
 
 
 **6. What is the minimum assessment rate that I can use given different sampling rates of my data?**
@@ -275,21 +289,23 @@ Models
      Theoretically, you can choose an assessment rate equal to or slightly greater than the sampling rate of the lowest frequency signal provided that all the signals are aligned in time.
 
 
+
 **7. What signals (inputs) do I select when creating a Model?**
 
-    It is essential to pick the right subset of signals to use for model training. Adding unnecessary signals that may not contribute to accurately characterizing a condition/ state may end up deteriorating the results while also increasing run time.
-    This is usually best addressed by the user (SME) to make a judegement in terms of what signals would be necessary for modeling. There can be no better substitutes to domain knowledge and floor experience.
+     It is essential to pick the right subset of signals to use for model training. Adding unnecessary signals that may not contribute to accurately characterizing a condition/ state may end up deteriorating the results while also increasing run time.
+     This is usually best addressed by the user (SME) to make a judegement in terms of what signals would be necessary for modeling. There can be no better substitutes to domain knowledge and floor experience.
 
-    Falkonry is actively working on addressing this issue. Stay tuned!
+     Falkonry is actively working on addressing this issue. Stay tuned!
+
 
 
 **8. What can I do if my Model learning process is frequently failing/aborting?**
 
-     There can be multiple reasons for failing/ aborting model learning processes:
-     a. Resource constraints
-     	On private deployments, running more extensive models with multiple high frequency input signals may require additional compute and storage. Increasing the resources being made available to Falkonry often alleviates this problem.
-	For help regarding this, you can send en email to Falkonry Admin at help@falkonry.com or you can send in a question or concern using the Intercom which you can find on the top right corner of the UI.
-     
+     There can be multiple reasons for failing/ aborting model learning processes.
+     On private deployments, running more extensive models with multiple high frequency input signals may require additional compute and storage. Increasing the resources being made available to Falkonry often alleviates this problem.
+	 For help regarding this, you can send en email to Falkonry Admin at help@falkonry.com or you can send in a question or concern using the Intercom which you can find on the top right corner of the UI.
+
+
 
 **9. How many models can I create in parallel?** 
 
@@ -298,6 +314,8 @@ Models
 
 
 .. _facts:
+
+
 
 
 Facts
@@ -315,9 +333,11 @@ Facts
     .. image:: images/add_manual_fact_1.png
 
 
+    
     In the window that opens up provide a fact name and an optional tag and hit “SAVE” or “SAVE AND ADD”.
 
     .. image:: images/add_manual_fact_2.png
+
 
 
     *2. Falkonry Integration Agents  (e.g. Event Frames from OSIsoft’s PI System)*
@@ -327,35 +347,41 @@ Facts
     .. image:: images/add_piagent_fact.png
 
 
+
     *3. Falkonry supported SDKs*
 
     Falkonry supports the following development kits that can be used for integrating and extracting data from your choice of data sources:
+
         `Java <https://github.com/Falkonry/falkonry-java-client>`_
+
         `C# <https://github.com/Falkonry/falkonry-csharp-client>`_
+
         `Python <https://github.com/Falkonry/falkonry-python-client>`_
+
 
     *4. Uploading csv/ json files with facts data*
 	
     Facts can be uploaded, viewed, filtered and downloaded from the UI.  Select “FACTS” button and in the Facts pane click on the gray box which says “Select or Drop CSV or JSON file here”.
 
     *Sliding window facts*
-    ``CSV:
+        CSV:
         <time>		<end>		<entity>	<value>		<tag>
 
         JSON:
-        {"time":X,"end":Y,"entity":"A","value":"B",”tag”:”C”}``
+        {"time":X,"end":Y,"entity":"A","value":"B",”tag”:”C”}
 
     .. image:: images/add_file_facts.png
 
     *Batch window facts*
 
-    ``CSV:
+        CSV:
         <batch>		<entity>	<value>		<tag>
 
         JSON:
-        {"batch":X,"entity":"A","value":"B",”tag”:”C”}``
+        {"batch":X,"entity":"A","value":"B",”tag”:”C”}
 
     Note: In the above examples "tag" is optional. 
+
 
 
 **2. How do I delete facts?**
@@ -366,7 +392,7 @@ Facts
 
     .. image:: images/add_manual_fact_1.png
 
-    *2. Facts can be deleted in batches from the Facts panel
+    *2. Facts can be deleted in batches from the Facts panel*
     
     .. image:: images/facts_button.png
 
@@ -382,9 +408,10 @@ Facts
 
     Confirm the fact selections and confirm with the "DELETE" button on the top right of the panel.
 
-    *3. Facts can also be deleted using any one of the ADKs. For details please refer to the following ADK documentation:
+    *3. Facts can also be deleted using any one of the ADKs. For details please refer to the following ADK documentation:*
 
     `Falkonry ADK <http://help.falkonry.com/en/latest/sdk_documentation.html>`_    
+
 
 
 **3. How do I create various fact subsets?**
@@ -417,19 +444,19 @@ Licensing
 Support
 --------
 
-**1. What are the different Support Severity levels**
+**1. What are the different Support Severity levels?**
 
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  **Severity Level**    |   **Description and Examples**                                                                                                                                   |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Level 1 - Critical	 |    Critical production issue affecting all users, including system unavailability and data integrity issues with no workaround available.                        |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 2 - Urgent	     |    Major functionality is impacted or significant performance degradation is experienced. Issue is persistent and affects many users and/or major functionality. |
+|  Level 2 - Urgent	 |    Major functionality is impacted or significant performance degradation is experienced. Issue is persistent and affects many users and/or major functionality. |
 |                        |    No reasonable workaround available. Also includes time-sensitive requests such as requests for feature activation or a data export.                           |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 3 - High	     |    System performance issue or bug affecting some but not all users. Short-term workaround is available, but not scalable.                                       |
+|  Level 3 - High	 |    System performance issue or bug affecting some but not all users. Short-term workaround is available, but not scalable.                                       |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 4 - Medium	     |    Inquiry regarding a routine technical issue; information requested on application capabilities, navigation, installation or configuration;                    |
+|  Level 4 - Medium	 |    Inquiry regarding a routine technical issue; information requested on application capabilities, navigation, installation or configuration;                    |
 |                        |    bug affecting a small number of users. Reasonable workaround available. Resolution required as soon as reasonably practicable.                                |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -464,7 +491,7 @@ Support
     *Standard Success Plan*
 
     +--------------------------+---------------------------------------+
-    |  **Severity Level**	   |   **Target Initial Response Time**    |
+    |  *Severity Level*	       |   *Target Initial Response Time*      |
     +--------------------------+---------------------------------------+
     |  1                       |    2 business days                    |
     +--------------------------+---------------------------------------+
@@ -478,7 +505,7 @@ Support
     *Premier Success Plan*
 
     +--------------------------+---------------------------------------+
-    |  **Severity Level**	   |   **Target Initial Response Time**    |
+    |  *Severity Level*	       |   *Target Initial Response Time*      |
     +--------------------------+---------------------------------------+
     |  1                       |    2 hours                            |
     +--------------------------+---------------------------------------+
@@ -492,7 +519,7 @@ Support
     *Elite Success Plan*
 
     +--------------------------+---------------------------------------+
-    |  **Severity Level**	   |   **Target Initial Response Time**    |
+    |  *Severity Level*	       |   *Target Initial Response Time*      |
     +--------------------------+---------------------------------------+
     |  1                       |    4 hours                            |
     +--------------------------+---------------------------------------+
@@ -599,10 +626,10 @@ Infrastructure and Deployment
 
 **8. What are the minimum requirements to run the Falkonry client application?**
 
-    #.Client laptop/desktop should have browser that supports HTML5 (Chrome, Firefox, IE9, Safari)
-    #.At least 1GB available for use by the browser
-    #.At least 1GHz or better processor
-    #.Standard disk/flash based storage used by your organization.
+    #. Client laptop/desktop should have browser that supports HTML5 (Chrome, Firefox, IE9, Safari)
+    #. At least 1GB available for use by the browser
+    #. At least 1GHz or better processor
+    #. Standard disk/flash based storage used by your organization.
 
 
 

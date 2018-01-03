@@ -7,5 +7,5 @@
    using/index
    faq/index
    pi_agent/index
-   sdk
+   adk
    Tutorial/index

@@ -11,7 +11,6 @@ Frequently asked Questions
 |   :ref:`Models<models>`
 |   :ref:`Facts<facts>`
 |   :ref:`Live Monitoring<live_monitoring>`
-|   :ref:`Licensing<licensing>`
 |   :ref:`Support<support>`
 |   :ref:`Software Updates<software_updates>`
 |   :ref:`Infrastructure and Deployment<infrastructure>`
@@ -47,11 +46,11 @@ Please refer to the following link for an overview of Falkonry - Definition of T
 
     #. Run unsupervised model 
 
-    #. Add facts (group truths) to establish conditions in Falkonry based on SME domain knowledge
+    #. Add facts (ground truths) to establish conditions in Falkonry based on SME domain knowledge
 
     #. Train model using injected facts (Supervised model)
 
-    #. Tweak and fine tune model using an iterative approach of facts injestion, model parameter tuning by using Episode Gallery  
+    #. Tweak and fine tune model using an iterative approach of facts injestion, and model parameter tuning
 
     #. Ingest additional data to the datastream for model validation
 
@@ -73,17 +72,17 @@ Account
 
 **1. How many datastreams can be created within an account ?**
 
-By default, when a new account is provisioned the limitation for number of datastreams is set to 10.
+By default, when a new jumpstart account is provisioned the limitation for number of datastreams is set to 5.
 Consult that table below for defaults:
 
 +-----------------------------------------+---------+
-|  Max number of Datastreams              |   10    |
+|  Data storage limit                     |  100MB  |
 +-----------------------------------------+---------+
-|  Max number of Assessments              |   10    |
+|  Max number of Datastreams              |    5    |
 +-----------------------------------------+---------+
 |  Max number of parallel model creation  |    3    |
 +-----------------------------------------+---------+
-|  Assessment production limit            |    3    |
+|  Assessment production limit            |    1    |
 +-----------------------------------------+---------+
 
 To change the default provisioning please reach out to Falkonry Admin at help@falkonry.com
@@ -101,6 +100,7 @@ Datastreams
 **1. What are the various methods through which I can import data into Falkonry?**
 
      Data can be imported using one of the following:
+
      a. Directly from Falkonry LRS using the UI
      b. For OSIsoft PI customers, data can be ingested using the PI Agent, refer to :ref:`OSIsoft PI agent<pi_agent>` for more details
      c. Datastreams can be created using any of the following Falkonry provided ADKs
@@ -108,7 +108,7 @@ Datastreams
 	    - Java
 	    - C#
 	    - Shell / bash
-	 Detailed Falkonry ADK doumentation can be found at `Falkonry's ADK reference <sdk_documentation.html>`_
+	 Detailed Falkonry ADK doumentation can be found at `Falkonry's ADK reference <adk_documentation.html>`_
 
 
 
@@ -119,33 +119,22 @@ Datastreams
 
 
 
-**3. What are the frequent errors one runs into while importing data into Falkonry?**
-
-    Some of the most common errors witnessed when importing data into Falkonry are:
-
-      a. Data inconsistency - Numerical and Categorical signals used interchangibly
-	  b. Incorrect date format - using dates not supported (*details on supported dates below*)
-	  c. Network issues when uploading larger datasets
-
-
-
-**4. What is the maximum limit to the data that can be ingested into Falkonry?**
+**3. What is the maximum limit to the data that can be ingested into Falkonry?**
      
      Data ingestion limit is detemined based on your account settings. These can be changed by reaching out to Falkonry Admin at help@fakonry.com
-     The default for jumpstarts is 20MB
 
 
 
-**5. What is the difference between Numerical and Categorical signal data?**
+**4. What is the difference between Numerical and Categorical signal data?**
      
      *Numerical* - As the name suggests this signal has numerical data type and is suggestive of continuous data (for e.g. sensors, control systems, etc)
      *Categorical* - These are signals with discrete values that often suggest the state of a system or a primitive (e.g. True/ False, High/ Med/ Low, 0/1)
 
 
 
-**6. What timestamp granularity does Falkonry support? (For example does it support time granularity finer than millisecond?)**
+**5. What timestamp granularity does Falkonry support? (For example does it support time granularity finer than millisecond?)**
 
-     Falkonry supports granularity down to nanoseconds
+     Falkonry supports granularity down to microseconds
 
 
 
@@ -156,13 +145,13 @@ Datastreams
 
      i.  Each record is located on a separate line, delimited by a linebreak (CRLF).  For example:
 
-       aaa,bbb,ccc CRLF
-       zzz,yyy,xxx CRLF
+                aaa,bbb,ccc CRLF
+                zzz,yyy,xxx CRLF
 
      ii.  The last record in the file may or may not have an ending line break.  For example:
 
-       aaa,bbb,ccc CRLF
-       zzz,yyy,xxx
+                aaa,bbb,ccc CRLF
+                zzz,yyy,xxx
 
      iii.  There maybe an optional header line appearing as the first line of the file with the same format as normal record lines. 
            This header will contain names corresponding to the fields in the file and should contain the same number of fields as the records in
@@ -247,17 +236,17 @@ Models
 
 
 
-**2. What is a Batch Window?**
+**2. What is a Batched Window?**
 
-    In Batch window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns.
-    For Batch window a user provide explicit grouping guidance by selecting one of the input signals to serve as a grouping identifier e.g. sample/ batch ID
+    In Batched window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns.
+    For Batched window a user provide explicit grouping guidance by selecting one of the input signals to serve as a grouping identifier e.g. sample/ batch ID
 
 
 
 **3. When should I use Sliding Windows as against Batched Windows ?**
 
-     An important interpretation of time series data is whether condition assessments are based on Sliding windows or Fixed windows. 
-     Sliding windows are used when a conditions change on a continuous basis. In some cases, condition assessment is relative to ‘batched’ window of time. For example, consider a railway switch that intermittently executes ‘throw’ cycles. In such cases we desire to compare one complete throw cycle to another, and are not interested in the long periods between throws. When generating a model for an assessment, you can instruct Falkonry to use either a sliding or a batched  window approach.
+     An important interpretation of time series data is whether condition assessments are based on Sliding windows or Batched windows. 
+     Sliding windows are used when a condition changes on a continuous basis. In some cases, condition assessment is relative to ‘fixed’ window of time. For example, consider a railway switch that intermittently executes ‘throw’ cycles. In such cases we desire to compare one complete throw cycle to another, and are not interested in the long periods between throws. When generating a model for an assessment, you can instruct Falkonry to use either a sliding or a batched  window approach.
      A user can either provide explicit grouping guidance (Batched windows) or provide upper and lower bounds to define a minimum and maximum window width (Sliding windows) which Falkonry will apply to the source data signals.
      In Batched windows, signals are sampled by splitting them into fixed/batched window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. 
      In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
@@ -293,7 +282,11 @@ Models
 **7. What signals (inputs) do I select when creating a Model?**
 
      It is essential to pick the right subset of signals to use for model training. Adding unnecessary signals that may not contribute to accurately characterizing a condition/ state may end up deteriorating the results while also increasing run time.
-     This is usually best addressed by the user (SME) to make a judegement in terms of what signals would be necessary for modeling. There can be no better substitutes to domain knowledge and floor experience.
+     Avoid signals that are flat over the whole range
+     Avoid signals that are monotonously increasing or decreasing over the whole range
+     In highly correlated signals select only one in the set
+
+     For the remaining signals it is usually best addressed by the user (SME) to make a judgement in terms of what signals would be necessary for modeling. There can be no better substitutes to domain knowledge and floor experience.
 
      Falkonry is actively working on addressing this issue. Stay tuned!
 
@@ -311,6 +304,12 @@ Models
 
      Models can be created simultaneously, given that there are enough hardware resources.
      This number can be configured by your Falkonry Admin (feel free to reach out at help@falkonry.com). By default, jumpstarts can create 3 models at the same time.
+
+
+**10. Is the Falkonry created pattern recognition model dynamic?**
+
+     Falkonry created models are static.  Once created in Falkonry LRS the model remains static.  During live monitoring any new patterns discovered that were not part of model training will be labeled as 'Unknown'.  To classify these newly discovered patterns you have to create a new model revision and redeploy for live monitoring.
+
 
 
 .. _facts:
@@ -348,7 +347,7 @@ Facts
 
 
 
-    *3. Falkonry supported SDKs*
+    *3. Falkonry supported ADKs*
 
     Falkonry supports the following development kits that can be used for integrating and extracting data from your choice of data sources:
 
@@ -410,7 +409,7 @@ Facts
 
     *3. Facts can also be deleted using any one of the ADKs. For details please refer to the following ADK documentation:*
 
-    `Falkonry ADK <http://help.falkonry.com/en/latest/sdk_documentation.html>`_    
+    `Falkonry ADK <http://help.falkonry.com/en/latest/adk_documentation.html>`_    
 
 
 
@@ -428,113 +427,19 @@ Facts
 
 
 
-.. _licensing:
-
-
-Licensing
-----------
-**1. Does Falkonry use any open source libraries and if so, under what licensing agreements?**
-
-    Falkonry software uses open source license software libraries (MIT, Apache, BSD-2, BSD-3 clause, for example)
-
-
 .. _support:
 
 
 Support
 --------
-
-**1. What are the different Support Severity levels?**
-
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  **Severity Level**    |   **Description and Examples**                                                                                                                                   |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 1 - Critical	 |    Critical production issue affecting all users, including system unavailability and data integrity issues with no workaround available.                        |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 2 - Urgent	 |    Major functionality is impacted or significant performance degradation is experienced. Issue is persistent and affects many users and/or major functionality. |
-|                        |    No reasonable workaround available. Also includes time-sensitive requests such as requests for feature activation or a data export.                           |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 3 - High	 |    System performance issue or bug affecting some but not all users. Short-term workaround is available, but not scalable.                                       |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Level 4 - Medium	 |    Inquiry regarding a routine technical issue; information requested on application capabilities, navigation, installation or configuration;                    |
-|                        |    bug affecting a small number of users. Reasonable workaround available. Resolution required as soon as reasonably practicable.                                |
-+------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    For more details please see `Falkonry Support Plans <http://falkonry.com/legal/support>`_ 
 
 
-**2. What different support models and plans does Falkonry provide?**
-
-    Users can submit cases over the Web or by telephone. Falkonry will use commercially reasonable efforts to promptly respond to each case, and will use commercially reasonable efforts to promptly resolve each case. 
-    Actual resolution time will depend on the nature of the case and the resolution. A resolution may consist of a fix, workaround or other solution in Falkonry’s reasonable determination.
-
-    Falkonry provides 3 success plans:
-
-    *Standard success plan*
-
-    *Premier success plan*
-
-    *Elite success plan*   
-
-    More more details please see `Falkonry Support Plans <http://falkonry.com/legal/support>`_ 
-
-
-**2. Does Falkonry provide around the clock support for geographically spread customers?**
-
-    *Standard success plan* : Support is available on weekdays, excluding holidays, during local business hours. 
-
-    *Premier success plan*  : Support in English is available twenty-four hours a day, Monday to Friday GMT. Telephone Support is not available on U.S. public holidays.
-
-    *Elite success plan*    : Support in English is available twenty-four hours a day, seven days a week.
-
-
-**3. What support response times should I expect from Falkonry to address any tickets/ concerns?**
-
-    *Standard Success Plan*
-
-    +--------------------------+---------------------------------------+
-    |  *Severity Level*	       |   *Target Initial Response Time*      |
-    +--------------------------+---------------------------------------+
-    |  1                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-    |  2                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-    |  3                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-    |  4                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-
-    *Premier Success Plan*
-
-    +--------------------------+---------------------------------------+
-    |  *Severity Level*	       |   *Target Initial Response Time*      |
-    +--------------------------+---------------------------------------+
-    |  1                       |    2 hours                            |
-    +--------------------------+---------------------------------------+
-    |  2                       |    4 hours                            |
-    +--------------------------+---------------------------------------+
-    |  3                       |    1 business day                     |
-    +--------------------------+---------------------------------------+
-    |  4                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-
-    *Elite Success Plan*
-
-    +--------------------------+---------------------------------------+
-    |  *Severity Level*	       |   *Target Initial Response Time*      |
-    +--------------------------+---------------------------------------+
-    |  1                       |    4 hours                            |
-    +--------------------------+---------------------------------------+
-    |  2                       |    8 hours                            |
-    +--------------------------+---------------------------------------+
-    |  3                       |    1 business day                     |
-    +--------------------------+---------------------------------------+
-    |  4                       |    2 business days                    |
-    +--------------------------+---------------------------------------+
-
-
-**4. How may I escalate a support issue/ ticket?**
+**1. How may I escalate a support issue/ ticket?**
 
     Reproducible errors that cannot promptly be resolved will be escalated to higher support tiers for further investigation and analysis. 
     Issues will be generally categorized and handled according to an assigned severity level.
+    Please contact your customer success manager to esclate the issue.
 
 
 
@@ -553,10 +458,8 @@ Services and software updates
 
 **2. What is your release strategy?**
 
-    Jumpstart users on Falkonry cloud environments should see an update 2 days prior to private deployments. In either case all deployments get updated weekly.
-    Our strategy is to stress-test these software updates on internal and customer facing Falkonry environments before making any on-prem deployments for our customers to minimize any impact or the need for patches.
-
-    Falkonry has adopted stringent procedures and methodoligies to test any software updates with a Kanban approach. 
+    Falkonry makes software updates every week. Jumpstart users on Falkonry cloud environments should see an update 2 days prior to private deployments.
+    Falkonry has adopted stringent procedures and methodoligies to test any software updates with a Kanban approach. We rigorously follow our stringent testing procedures for every software update or release before installing on our cloud environments or our customer environments to minimize any impact.
 
 
 **3. How advance a notice would I get of updates in Shared environment?**
@@ -567,7 +470,7 @@ Services and software updates
 
 **4. How often and when does my local instance of Falkonry software gets updated?**
 
-    Falkonry strives to make weekly updates. On certain occasions (significant planned changes) Falkonry may skip a weekly update in lieu of the impact and changes that may need to be tested before releasing to out customers
+    Falkonry strives to make weekly updates. On certain occasions (significant planned changes) Falkonry may skip a weekly update in lieu of the impact and changes that may need to be tested before releasing to out customers.
     In any case, Falkonry is committed to making the update process as bug-free and easy as possible.
 
 
@@ -606,7 +509,7 @@ Infrastructure and Deployment
 
 **6. Can I integrate my local Falkonry instance with my Active Directory?**
 
-    No
+    No.  Falkonry will be supporting Active Directory integration in second half of 2018.
 
 
 **7. What are minimum requirements for a Falkonry LRS Private Environment deployment?**
@@ -614,14 +517,15 @@ Infrastructure and Deployment
    Minimum Requirements:
 
     +--------------------------+----------------------+
-    |  Compute                 |    16 CPU            |
+    |  Compute                 |    16 CPU cores      |
     +--------------------------+----------------------+
     |  Memory (RAM)            |    64 GB             |
     +--------------------------+----------------------+
     |  Storage                 |    128GB disk        |
     +--------------------------+----------------------+
 
-   The following configuration would support a quanta of Falkonry compute which would constitute a single model build with 15 signals, 10 entities and 100K datapoints.
+   This configuration would support a quanta of Falkonry compute which would constitute a single model build with 15 signals, 10 entities and 100K datapoints.
+   To get specific environment requirements for your needs please reach out to Falkonry at help@falkonry.com
 
 
 **8. What are the minimum requirements to run the Falkonry client application?**
@@ -630,8 +534,3 @@ Infrastructure and Deployment
     #. At least 1GB available for use by the browser
     #. At least 1GHz or better processor
     #. Standard disk/flash based storage used by your organization.
-
-
-
-
-

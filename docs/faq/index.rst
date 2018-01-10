@@ -432,7 +432,7 @@ Facts
 
 Support
 --------
-    For more details please see `Falkonry Support Plans <http://falkonry.com/legal/support>`_ 
+    For more details please contact `Falkonry Support <support@falkonry.com>`_
 
 
 **1. How may I escalate a support issue/ ticket?**

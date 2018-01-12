@@ -1,6 +1,6 @@
 .. include:: conceptsoverview.rst
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    conceptsoverview.rst
    integration/index

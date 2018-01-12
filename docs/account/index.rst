@@ -134,6 +134,6 @@ On Falkonry’s Cloud Instances
 1. Follow the procedure for “Resetting Falkonry User password - On Falkonry’s Cloud Instances” changing your password.
 
 
-For more details please contact `Falkonry Support <support@falkonry.com>`_
+For more details please contact Falkonry Support at <support AT falkonry>
 
 

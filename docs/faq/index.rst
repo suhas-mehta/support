@@ -263,7 +263,7 @@ Models
      The above should hope to serve as a good heuristic in deciding upper and lower bounds on Sliding windows. This example shows how selecting the bounds on Sliding windows helps build the accuracy of the model.
 
 
-     .. image:: images/sliding_window_bounds.png
+        .. image:: images/sliding_window_bounds.png
 
 
 **5. How do I determine the bounds for the number of conditions/ states for my model?**
@@ -443,7 +443,7 @@ Facts
 
 Support
 --------
-    For more details please contact `Falkonry Support <support@falkonry.com>`_
+    For more details please contact Falkonry Support at <support AT falkonry>
 
 
 **1. How may I escalate a support issue/ ticket?**

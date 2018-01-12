@@ -40,7 +40,7 @@ Please refer to the following link for an overview of Falkonry - Definition of T
 
     #. Prepare use case data (select inut signals over a time range that well characterizes episodes and activities of interest) for ingestion into Falkonry
 
-    #. Confirm approach: use Sliding windows vs Batched Windows and the goal of the assessment output
+    #. Confirm approach: use Sliding windows vs batch Windows and the goal of the assessment output
 
     #. Create a Falkonry datastream by uploading the dataset
 
@@ -236,19 +236,19 @@ Models
 
 
 
-**2. What is a Batched Window?**
+**2. What is a batch Window?**
 
-    In Batched window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns.
-    For Batched window a user provide explicit grouping guidance by selecting one of the input signals to serve as a grouping identifier e.g. sample/ batch ID
+    In batch window, signal are sampled by splitting them into batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns.
+    For batch window a user provide explicit grouping guidance by selecting one of the input signals to serve as a grouping identifier e.g. sample/ batch ID
 
 
 
-**3. When should I use Sliding Windows as against Batched Windows ?**
+**3. When should I use Sliding Windows as against batch Windows ?**
 
-     An important interpretation of time series data is whether condition assessments are based on Sliding windows or Batched windows. 
-     Sliding windows are used when a condition changes on a continuous basis. In some cases, condition assessment is relative to ‘fixed’ window of time. For example, consider a railway switch that intermittently executes ‘throw’ cycles. In such cases we desire to compare one complete throw cycle to another, and are not interested in the long periods between throws. When generating a model for an assessment, you can instruct Falkonry to use either a sliding or a batched  window approach.
-     A user can either provide explicit grouping guidance (Batched windows) or provide upper and lower bounds to define a minimum and maximum window width (Sliding windows) which Falkonry will apply to the source data signals.
-     In Batched windows, signals are sampled by splitting them into fixed/batched window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. 
+     An important interpretation of time series data is whether condition assessments are based on Sliding windows or batch windows. 
+     Sliding windows are used when a condition changes on a continuous basis. In some cases, condition assessment is relative to ‘fixed’ window of time. For example, consider a railway switch that intermittently executes ‘throw’ cycles. In such cases we desire to compare one complete throw cycle to another, and are not interested in the long periods between throws. When generating a model for an assessment, you can instruct Falkonry to use either a sliding or a batch  window approach.
+     A user can either provide explicit grouping guidance (Batch windows) or provide upper and lower bounds to define a minimum and maximum window width (Sliding windows) which Falkonry will apply to the source data signals.
+     In batch windows, signals are sampled by splitting them into fixed/batch window sizes. This helps improve runtime in scenarios where there is repetition of temporal patterns. 
      In Sliding windows, incoming signals may not be be very well characterized and temporal proximity can be exploited to enable opportunistic loss-limited sampling by changing the size of the windows (within a suggested range) to better identify characteristic signal features.
 
 
@@ -262,6 +262,8 @@ Models
      We create another model with a lower bound of 30 min and upper bound of 8 hours and  Falkonry picks up the other two subsequent events based on the one fact provided that classifies this condition. The lower bound of 30 min ensures that there are about 4 assessment points that capture the trough. The upper bound of 8 hours conservatively captures signal characteristics before and after the downward spike.
      The above should hope to serve as a good heuristic in deciding upper and lower bounds on Sliding windows. This example shows how selecting the bounds on Sliding windows helps build the accuracy of the model.
 
+
+     .. image:: images/sliding_window_bounds.png
 
 
 **5. How do I determine the bounds for the number of conditions/ states for my model?**
@@ -310,6 +312,15 @@ Models
 
      Falkonry created models are static.  Once created in Falkonry LRS the model remains static.  During live monitoring any new patterns discovered that were not part of model training will be labeled as 'Unknown'.  To classify these newly discovered patterns you have to create a new model revision and redeploy for live monitoring.
 
+
+**11. Can I rename the machine generated labels (U1, U2, U3, etc.,)?**
+
+     No.  Keeping these labels fixed helps you differentiate between user applied labels for classification vs Falkonry generated labels.
+
+
+**12. Why can’t I delete the models?**
+
+     Failed and cancelled models can be deleted.  You cannot delete successful models.  The history of models show you the iterations and model parameter adjustments that you tried to arrive at a satisfactory model.
 
 
 .. _facts:

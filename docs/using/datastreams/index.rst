@@ -82,9 +82,7 @@ When set to "Maximum Generalization" the engine only looks at the general shape 
 Depreacted Models
 ++++++++++++++++++
 As Falkonry technology evolves existing models created may need to be deprecated.
-At times a user may notice that certain models have an icon .. image:: images/warning-icon.png ssuggesting model deprecation.
-
-.. image:: images/model-deprecation.png
+At times a user may notice that certain models have an icon .. image:: images/model-deprectaion.png. This only suggests that Falkonry updates have happened since the time of this model creation and re-running the model would possibly yield improved results. In such cases, Falkonry strongly suggests rerunning the model. A quick way to re-run a model is by using the *cloning* functionality mentioned below.
 
 A model is classified as deprecated when Falkonry technology has evolved since the original model was created such that it is likely that the original model may not deliver the same results. At Falkonry, the effort is constantly towards improving our condition classification capabilities. This would suggest that recreating the model could potentially result in improved classifications. 
 
@@ -96,7 +94,7 @@ Existing results persist on the Falkonry UI and you can see your original result
 
 To be able to apply the model to additional data, the user should recreate the model. A quick way to regenerate this model is by using the “clone” button (next to the Deprecation symbol) that helps with model creation process by remembering the model selections made in the deprecated model.
 
-Falkonry technology is updated every 2 weeks for both Falkonry managed and customer managed environments. 
+Falkonry technology is updated on a weekly basis for both Falkonry managed and customer managed environments. 
 
 
 

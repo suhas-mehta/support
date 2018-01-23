@@ -96,7 +96,7 @@ The **Override Input and Facts Data** allows the user to override existing data 
 
 .. image:: images/falkonry_pi_agent_history.png
 
-Within **Automated Update Settings** a user can define variables that define the streaming performance of the data. It's best to leave these settings as default. Feel free to reach out to Falkonry at help@falkonry.com for help with changing these settings.
+Within **Automated Update Settings** a user can define variables that define the streaming performance of the data. It's best to leave these settings as default. Feel free to reach out to Falkonry at support[at]falkonry[dot]com for help with changing these settings.
 
 
 Assessment to Attribute Bindings

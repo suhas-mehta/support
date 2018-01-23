@@ -85,7 +85,7 @@ Consult that table below for defaults:
 |  Assessment production limit            |    1    |
 +-----------------------------------------+---------+
 
-To change the default provisioning please reach out to Falkonry Admin at help@falkonry.com
+To change the default provisioning please reach out to Falkonry Admin at support[at]falkonry[dot]com
 
 
 
@@ -121,7 +121,7 @@ Datastreams
 
 **3. What is the maximum limit to the data that can be ingested into Falkonry?**
      
-     Data ingestion limit is detemined based on your account settings. These can be changed by reaching out to Falkonry Admin at help@fakonry.com
+     Data ingestion limit is detemined based on your account settings. These can be changed by reaching out to Falkonry Admin at support[at]falkonry[dot]com
 
 
 
@@ -185,6 +185,19 @@ Datastreams
 
                 "aaa","b""bb","ccc"
 
+
+**8. What is the data file size limit when uploading to a datastream?**
+
+    Falkonry can ingest reasonably large JSON/CSV data files successfully.
+    However, it is always a good idea to start with smaller datasets so as to be able to iterate over model design and data schema.
+
+    Once you have some reasonable confidence on the data schema, you may always update more data by accessing the Datastream Configuration window which is available at the top of the timeline UI
+
+    .. image:: images/datastream_configuration.png
+
+    Clicking on Upload Data will allow you to add more data at any later point in time.
+
+    .. image:: images/upload_more_data.png
 
 
 .. _assessments:
@@ -298,14 +311,14 @@ Models
 
      There can be multiple reasons for failing/ aborting model learning processes.
      On private deployments, running more extensive models with multiple high frequency input signals may require additional compute and storage. Increasing the resources being made available to Falkonry often alleviates this problem.
-	 For help regarding this, you can send en email to Falkonry Admin at help@falkonry.com or you can send in a question or concern using the Intercom which you can find on the top right corner of the UI.
+	 For help regarding this, you can send en email to Falkonry Admin at support[at]falkonry[dot]com or you can send in a question or concern using the Intercom which you can find on the top right corner of the UI.
 
 
 
 **9. How many models can I create in parallel?** 
 
      Models can be created simultaneously, given that there are enough hardware resources.
-     This number can be configured by your Falkonry Admin (feel free to reach out at help@falkonry.com). By default, jumpstarts can create 3 models at the same time.
+     This number can be configured by your Falkonry Admin (feel free to reach out at support[at]falkonry[dot]com). By default, jumpstarts can create 3 models at the same time.
 
 
 **10. Is the Falkonry created pattern recognition model dynamic?**
@@ -321,6 +334,36 @@ Models
 **12. Why can’t I delete the models?**
 
      Failed and cancelled models can be deleted.  You cannot delete successful models.  The history of models show you the iterations and model parameter adjustments that you tried to arrive at a satisfactory model.
+
+
+**13. What is the approach to modeling when I have multiple entities in a datastream?**
+
+    Falkonry can train a model on a single entity, a subset or group of entities or all the entities.
+    The choice of entities entirely depends on the use case and how differentiated the entities are in terms of characteristics that would help build a more precise model.
+
+    Here are some sample scenarios:
+
+    a] *Single entity based models:* Each entity may behave differently and may need to be modeled separately. For example, similar robotic arms deployed on different production lines building different automobiles.
+    In this case the range of movement would be very different and would require modeling each entity by itself.
+
+    b] *Group of entities:* In this case, most of the entities behave similarly but may have some idiosyncractic characteristics that need to be normalized or blended over. 
+    For example, gas pipelines with pressure valves measuring gas flow anomalies can largely be modeled as a generic entity with minor structural and environmental differences blended across the single model.
+
+    c] *All entities*: If the entities are all expected to behave in a similar fashion then adding more facts associated with different entities may help improve the accuracy of the model. 
+    In such a scenario, it would make sense to create one model (trained over multiple entities) that can be applied across several instances individually. For example, similar elevators in a building that serve the same set of floors.
+
+
+**14. What should I do when I encounter a “Error in generating output” message?**
+    
+    Outside of data/fact ingestion errors, model failures can be classified into *model learning* and *model applying* failures.
+    Model apply failures result primarily due to hardware resource limitations and constraints.
+    
+    In the event of a model apply failure and to re-trigger model apply, simply click on the "Regenerate Output" gear icon as shown below
+
+    ..  image:: images/regenerate_output.png
+
+    Clicking on the "Regenerate Output" button would trigger model apply again.
+    Note, model apply is also automatically re-triggered when selected a new time range and/or selecting a different list of entities for which model output does not exist.
 
 
 .. _facts:
@@ -536,7 +579,7 @@ Infrastructure and Deployment
     +--------------------------+----------------------+
 
    This configuration would support a quanta of Falkonry compute which would constitute a single model build with 15 signals, 10 entities and 100K datapoints.
-   To get specific environment requirements for your needs please reach out to Falkonry at help@falkonry.com
+   To get specific environment requirements for your needs please reach out to Falkonry at support[at]falkonry[dot]com
 
 
 **8. What are the minimum requirements to run the Falkonry client application?**

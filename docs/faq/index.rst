@@ -5,7 +5,7 @@ Frequently asked Questions
 
 
 |   :ref:`Getting Started<getting_started>`
-|   :ref:`Account<accounts>`
+|   :ref:`Accounts<accounts>`
 |   :ref:`Datastreams<datastreams>`
 |   :ref:`Assessments<assessments>`
 |   :ref:`Models<models>`

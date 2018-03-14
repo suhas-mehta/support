@@ -1,0 +1,9 @@
+For ADK changes
+1. Make your updates in index.html.md in falkonry-sdk-documentation
+2. Run 'bundle exec middleman build'
+3. Verify your changes by running 'bundle exec middleman server'
+4. Connect to localhost:4567 to verify your updates
+5. Copy the falkonry-sdk-documentation/build/index.html to support/docs/adk/adk_documentation.html
+6. Run 'make clean'
+7. Run 'make html'
+8. Commit and Push

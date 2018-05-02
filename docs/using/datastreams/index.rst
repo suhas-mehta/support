@@ -118,6 +118,7 @@ A Fact is a known condition for a particular episode of time for a particular As
 Facts are means by which Falkonry can learn to recognize semantically meaningful names for conditions that have previously occurred.
 
 Facts can be entered into Falkonry in any one of the following ways:
+
   - Integration agents/ connectors for TSDB historians
   - Manually by selecting segments from the Falkonry LRS
   - Any of the Falkonry ADKs (C#, Java, Python)
@@ -278,7 +279,10 @@ Section (:ref:`modellearning`) discusses how the model can be applied for a spec
 
 Any model can be applied across a previously selected time range (:ref:`selectingtimerange`) on any set of entities post model creation.
 
-In the image below, a gear icon in "orange" color .. image:: images/orange_gear.png suggests that the assessment output for model M[8] does not exist while the dark gray gear icon .. image:: images/gray_gear.png suggests that the assessment output for model M[3] exists as displayed in the corresponding swim lane.
+.. |gray_gear| image:: images/gray_gear.png
+.. |orange_gear| image:: images/orange_gear.png
+
+In the image below, a gear icon in "orange" color |orange_gear| suggests that the assessment output for model M[8] does not exist while the "dark gray" gear icon |gray_gear| suggests that the assessment output for model M[3] exists as displayed in the corresponding swim lane.
 To generate assessment output for M[8] or to apply the model for the given time range for entity *machine 1* the user can click on the orange gear **Apply model** icon. 
 
 .. image:: images/model_apply1.png

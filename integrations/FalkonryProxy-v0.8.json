@@ -1,0 +1,303 @@
+[
+    {
+        "id": "2953c225.453d0e",
+        "type": "tab",
+        "label": "Falkonry Proxy",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "239ba735.b81178",
+        "type": "http request",
+        "z": "2953c225.453d0e",
+        "name": "Execute request",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 340,
+        "y": 580,
+        "wires": [
+            [
+                "c0a73935.4b9068",
+                "6facd0f1.e55f2",
+                "65ff917.661427"
+            ]
+        ]
+    },
+    {
+        "id": "c990f9fa.b994c8",
+        "type": "link in",
+        "z": "2953c225.453d0e",
+        "name": "Proxy IN v0.7",
+        "links": [],
+        "x": 35,
+        "y": 580,
+        "wires": [
+            [
+                "239ba735.b81178",
+                "6facd0f1.e55f2",
+                "403bd91d.775ae8"
+            ]
+        ]
+    },
+    {
+        "id": "4604e5ec.8d065c",
+        "type": "file",
+        "z": "2953c225.453d0e",
+        "name": "Append Logs",
+        "filename": "/Users/suhas/Falkonry/logs/log.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 620,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0a73935.4b9068",
+        "type": "link out",
+        "z": "2953c225.453d0e",
+        "name": "Proxy OUT v0.7",
+        "links": [],
+        "x": 675,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "68fd8436.31ec8c",
+        "type": "function",
+        "z": "2953c225.453d0e",
+        "name": "Truncate i/p Payload",
+        "func": "var newline     = \"\\n\";\nvar inputLine   = \"------------- INPUT (TASK: \" + msg.task  + \") --------------------------\" + newline;\nvar headersLine = \"Authorization:Bearer \" + global.get (\"token\");\nvar contentLine = \"content-type:\"  + global.get (\"contentType\");\n\nmsg.payload = (inputLine + msg.payload).substring(0, 5000);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 680,
+        "wires": [
+            [
+                "4604e5ec.8d065c",
+                "9ab5bd85.de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "6facd0f1.e55f2",
+        "type": "debug",
+        "z": "2953c225.453d0e",
+        "name": "Message Dump",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 320,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "403bd91d.775ae8",
+        "type": "switch",
+        "z": "2953c225.453d0e",
+        "name": "Method Type Check",
+        "property": "method",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "GET",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "POST",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "PUT",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "68fd8436.31ec8c"
+            ],
+            [
+                "68fd8436.31ec8c"
+            ],
+            [
+                "68fd8436.31ec8c"
+            ],
+            [
+                "4604e5ec.8d065c"
+            ]
+        ]
+    },
+    {
+        "id": "65ff917.661427",
+        "type": "function",
+        "z": "2953c225.453d0e",
+        "name": "Truncate o/p Payload",
+        "func": "var newline     = \"\\n\";\nvar outputLine  = \"------------ OUTPUT (TASK: \" + msg.task + \") ------------\" + newline;\n\nmsg.payload = (outputLine + msg.payload).substring(0, 5000);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ab5bd85.de0e9",
+        "type": "debug",
+        "z": "2953c225.453d0e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 780,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2b54e61f.7254ca",
+        "type": "http request",
+        "z": "2953c225.453d0e",
+        "name": "Execute request",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "1e2115a1.05eb7a",
+                "3a106e74.ba0332",
+                "ba4c5b3b.745e58"
+            ]
+        ]
+    },
+    {
+        "id": "35482904.5e4f16",
+        "type": "link in",
+        "z": "2953c225.453d0e",
+        "name": "Proxy IN v0.8",
+        "links": [
+            "9880c557.8191d8"
+        ],
+        "x": 175,
+        "y": 140,
+        "wires": [
+            [
+                "2b54e61f.7254ca",
+                "3a106e74.ba0332",
+                "1dcb73f2.04c6ec"
+            ]
+        ]
+    },
+    {
+        "id": "fb7b5dca.d3c04",
+        "type": "file",
+        "z": "2953c225.453d0e",
+        "name": "Append Logs",
+        "filename": "/Users/suhas/Falkonry/logs/log.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 940,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e2115a1.05eb7a",
+        "type": "link out",
+        "z": "2953c225.453d0e",
+        "name": "Proxy OUT v0.8",
+        "links": [],
+        "x": 815,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1dcb73f2.04c6ec",
+        "type": "function",
+        "z": "2953c225.453d0e",
+        "name": "Truncate i/p Payload",
+        "func": "var newline     = \"\\n\";\nvar inputLine   = newline + newline + \"* * * * * * * * * * * * * * * * * * *\" + newline +\n                  \"------- INPUT [TASK: \" + msg.action  + \"] -------\" + newline;\n\nif (msg.method === \"GET\") {\n    msg.payload = (inputLine + msg.inputPayload).substring (0, 5000);\n}\nelse {\n    msg.payload = (inputLine + msg.payload).substring (0, 5000);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "fb7b5dca.d3c04"
+            ]
+        ]
+    },
+    {
+        "id": "3a106e74.ba0332",
+        "type": "debug",
+        "z": "2953c225.453d0e",
+        "name": "Message Dump",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 460,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ba4c5b3b.745e58",
+        "type": "function",
+        "z": "2953c225.453d0e",
+        "name": "Truncate o/p Payload",
+        "func": "var newline     = \"\\n\";\nvar outputLine  = \"------- OUTPUT [TASK: \" + msg.action + \"] -------\" + newline;\n\nmsg.payload = (outputLine + msg.payload).substring (0, 5000);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 200,
+        "wires": [
+            [
+                "fb7b5dca.d3c04"
+            ]
+        ]
+    },
+    {
+        "id": "c9a414b8.469128",
+        "type": "comment",
+        "z": "2953c225.453d0e",
+        "name": "Proxy 0.8",
+        "info": "",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8f52fb13.b2dae8",
+        "type": "comment",
+        "z": "2953c225.453d0e",
+        "name": "Proxy v0.7",
+        "info": "",
+        "x": 80,
+        "y": 460,
+        "wires": []
+    }
+]

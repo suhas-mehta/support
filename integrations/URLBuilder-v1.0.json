@@ -1,0 +1,296 @@
+[
+    {
+        "id": "b7d73e17.84ec",
+        "type": "tab",
+        "label": "URL Builder",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1ed0c471.7c6acc",
+        "type": "inject",
+        "z": "b7d73e17.84ec",
+        "name": "Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "2602de42.99ce02"
+            ]
+        ]
+    },
+    {
+        "id": "180df130.15feaf",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "URL Builder",
+        "func": "/*\n  This function builds the URL for service - Retrieve Datastream Information.\n*/\n\nmsg = {\n    headers:{\n       \"Authorization\":\"Bearer \" + global.get (\"token\"),\n       \"content-type\":global.get (\"contentType\")\n    },\n    method:global.get (\"method\"),\n    url: global.get (\"base\") + \"/accounts/\" +\n         global.get (\"accountID\") + \"/datastreams/\" +\n         global.get (\"datastreamID\")\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 220,
+        "wires": [
+            [
+                "b29debbe.e24c88"
+            ]
+        ]
+    },
+    {
+        "id": "2602de42.99ce02",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "Global Parameter Settings",
+        "func": "global.set (\"base\", \"https://uswest9.falkonry.ai:30063/api/1.1\")\nglobal.set (\"token\", \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDUyMzE0ODU2MTgsICJlbWFpbCIgOiAic3VoYXMubWVodGFAZmFsa29ucnkuY29tIiwgIm5hbWUiIDogIlN1aGFzIE1laHRhIiB9.POrmruiHyXhZwcivBk_F81V5lx0dU56uONBQP8GL58A\");\nglobal.set (\"contentType\", \"application/json\");\nglobal.set (\"action\", \"CREATE_JOB\");\nglobal.set (\"accountID\",\"Bormiw2u4iwoi3\");\nglobal.set (\"datastreamID\",\"1548762628811685\");\nglobal.set (\"method\", \"GET\");\n\nreturn msg;\n\n// https://dev.falkonry.ai:30076/api/1.1/accounts/Bormiw2u4iwoi3/datastreams/1548762628811685\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "e8e05dad.f5fb3"
+            ]
+        ]
+    },
+    {
+        "id": "e8e05dad.f5fb3",
+        "type": "switch",
+        "z": "b7d73e17.84ec",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "GET_DATASTREAM",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "CREATE_JOB",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "180df130.15feaf"
+            ],
+            [
+                "12f66b0b.5c8605"
+            ]
+        ]
+    },
+    {
+        "id": "7f21c364.072dbc",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "URL Builder",
+        "func": "var pl = msg.payload;\nmsg = {\n    headers:{\n       \"Authorization\":\"Bearer \" + global.get (\"token\"),\n       \"content-type\":global.get (\"contentType\")\n    },\n    method:'POST',\n    url: global.get (\"base\") + \"/accounts/\" +\n         global.get (\"accountID\") + \"/jobs\",\n    payload:pl,\n    action:global.get(\"action\")\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "b29debbe.e24c88"
+            ]
+        ]
+    },
+    {
+        "id": "12f66b0b.5c8605",
+        "type": "change",
+        "z": "b7d73e17.84ec",
+        "name": "Set Data Identifiers & datastreamID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"jobType\":\"INGESTDATA\",\"status\":\"CREATED\",\"message\":\"Ingest Job successfully created\",\"datastream\":\"1555998548809659\",\"spec\":{\"format\":{\"signalIdentifier\":\"signal\",\"entityIdentifier\":\"entity\",\"valueIdentifier\":\"value\",\"timeIdentifier\":\"time\",\"timeFormat\":\"micro\",\"timeZone\":\"America/Los_Angeles\"}}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "7f21c364.072dbc"
+            ]
+        ]
+    },
+    {
+        "id": "b29debbe.e24c88",
+        "type": "link out",
+        "z": "b7d73e17.84ec",
+        "name": "Input to proxy",
+        "links": [],
+        "x": 1015,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7a428db4.d877a4",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "URL Builder",
+        "func": "var pl = msg.payload;\nmsg = {\n    headers:{\n       \"Authorization\":\"Bearer \" + global.get (\"token\"),\n       \"content-type\":\"text/csv\"\n    },\n    method:'POST',\n    url: global.get (\"base\") + \"/accounts/\" + global.get (\"accountID\") + \n    \"/datastreams/\"+ global.get(\"datastreamID\") + \n    \"/ingestdata/\" + msg.jobID + \"/inputs\",\n    payload:pl,\n    action:msg.action\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 360,
+        "wires": [
+            [
+                "b29debbe.e24c88"
+            ]
+        ]
+    },
+    {
+        "id": "447ca51a.02d21c",
+        "type": "file in",
+        "z": "b7d73e17.84ec",
+        "name": "Data File",
+        "filename": "/Users/namratarao/Desktop/Falkonry/NodeRed_Integration/test.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "7a428db4.d877a4"
+            ]
+        ]
+    },
+    {
+        "id": "e1b831bf.2a54",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "URL Builder",
+        "func": "var pl = msg.payload;\nmsg = {\n    headers:{\n       \"Authorization\":\"Bearer \" + global.get (\"token\"),\n       \"content-type\":global.get (\"contentType\")\n    },\n    method:'PUT',\n    url: global.get (\"base\") + \"/accounts/\" + global.get (\"accountID\") + \n    \"/jobs/\" + msg.jobID,\n    payload:pl\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 440,
+        "wires": [
+            [
+                "b29debbe.e24c88"
+            ]
+        ]
+    },
+    {
+        "id": "b79ffe24.fed0b",
+        "type": "change",
+        "z": "b7d73e17.84ec",
+        "name": "Job Status -> COMPLETED",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"jobType\":\"INGESTDATA\",\"status\":\"COMPLETED\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 440,
+        "wires": [
+            [
+                "e1b831bf.2a54"
+            ]
+        ]
+    },
+    {
+        "id": "7137cc4e.af1a04",
+        "type": "link in",
+        "z": "b7d73e17.84ec",
+        "name": "Output from proxy",
+        "links": [],
+        "x": 55,
+        "y": 400,
+        "wires": [
+            [
+                "869880c7.10054"
+            ]
+        ]
+    },
+    {
+        "id": "94e470a5.035e9",
+        "type": "switch",
+        "z": "b7d73e17.84ec",
+        "name": "",
+        "property": "action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "INGEST_DATA",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "COMPLETE_JOB",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "447ca51a.02d21c"
+            ],
+            [
+                "b79ffe24.fed0b"
+            ]
+        ]
+    },
+    {
+        "id": "869880c7.10054",
+        "type": "function",
+        "z": "b7d73e17.84ec",
+        "name": "get JobID & set Action",
+        "func": "// jobType = msg.payload.jobType\n// jobStatus = msg.payload.status\n\nif(msg.action == \"CREATE_JOB\"){\n    msg.action = 'INGEST_DATA'\n    msg.jobID = msg.payload.id\n}else if(msg.action == \"INGEST_DATA\"){\n    msg.jobID = msg.url.split('/')[10]\n    msg.action = \"COMPLETE_JOB\"\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 220,
+        "y": 400,
+        "wires": [
+            [
+                "94e470a5.035e9"
+            ]
+        ]
+    },
+    {
+        "id": "a93a5976.e405b8",
+        "type": "comment",
+        "z": "b7d73e17.84ec",
+        "name": "Retrive Datastream & Historical Ingestion",
+        "info": "",
+        "x": 180,
+        "y": 80,
+        "wires": []
+    }
+]

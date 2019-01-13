@@ -1,0 +1,85 @@
+[
+    {
+        "id": "18eace71.c745e2",
+        "type": "tab",
+        "label": "Falkonry Proxy Backup-1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f4c6d41e.ec0d38",
+        "type": "http request",
+        "z": "18eace71.c745e2",
+        "name": "Execute request",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "604577ba.c759c8",
+                "b0ef7d7d.5c5b4",
+                "6e2ca890.85c648"
+            ]
+        ]
+    },
+    {
+        "id": "499032b9.85b83c",
+        "type": "link in",
+        "z": "18eace71.c745e2",
+        "name": "Proxy IN",
+        "links": [
+            "5500a67b.810eb8"
+        ],
+        "x": 255,
+        "y": 220,
+        "wires": [
+            [
+                "6e2ca890.85c648",
+                "f4c6d41e.ec0d38",
+                "604577ba.c759c8"
+            ]
+        ]
+    },
+    {
+        "id": "604577ba.c759c8",
+        "type": "debug",
+        "z": "18eace71.c745e2",
+        "name": "Output Message",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6e2ca890.85c648",
+        "type": "file",
+        "z": "18eace71.c745e2",
+        "name": "Append Logs",
+        "filename": "/Users/suhas/Falkonry/logs/log.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 440,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0ef7d7d.5c5b4",
+        "type": "link out",
+        "z": "18eace71.c745e2",
+        "name": "Proxy OUT",
+        "links": [],
+        "x": 615,
+        "y": 220,
+        "wires": []
+    }
+]

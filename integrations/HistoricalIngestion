@@ -1,0 +1,625 @@
+[
+    {
+        "id": "99a711b3.be751",
+        "type": "tab",
+        "label": "API testing - Hist Ingest",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "befa44c.3220db8",
+        "type": "inject",
+        "z": "99a711b3.be751",
+        "name": "API Token & account id",
+        "topic": "",
+        "payload": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NjUyNzg1NzQsICJlbWFpbCIgOiAic3VoYXMubWVodGFAZmFsa29ucnkuY29tIiwgIm5hbWUiIDogInN1aGFzLm1laHRhQGZhbGtvbnJ5LmNvbSIsICJzZXNzaW9uIiA6ICIxNTUyNzM1MjQzMzAxNjE0IiB9.-LipZI1Bi9gHihdZqZ2iAo9m_OzTHM1b7DOCanPmijU\",\"account_id\":\"Bormiw2u4iwoi3\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "4766e3f7.75ff2c"
+            ]
+        ]
+    },
+    {
+        "id": "4766e3f7.75ff2c",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "var token = msg.payload.token;\nvar newMsg = {\n headers:\n {\n \"Authorization\":\"Bearer \"+token,\n \"content-type\":\"application/json\"\n },\n id: msg.payload.account_id\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "3d9a7ce2.e89f94"
+            ]
+        ]
+    },
+    {
+        "id": "3d9a7ce2.e89f94",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "request for /accounts/accountID/datastream?limit=1000",
+        "method": "GET",
+        "ret": "obj",
+        "url": "https://dev.falkonry.ai:30076/api/1.1/accounts/{{id}}/datastreams/1549755267074143",
+        "tls": "",
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "30eb9a94.fd8646"
+            ]
+        ]
+    },
+    {
+        "id": "30eb9a94.fd8646",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 930,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "60ac86dc.5a1fa8",
+        "type": "inject",
+        "z": "99a711b3.be751",
+        "name": "API Token & account id",
+        "topic": "",
+        "payload": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NjUyNzg1NzQsICJlbWFpbCIgOiAic3VoYXMubWVodGFAZmFsa29ucnkuY29tIiwgIm5hbWUiIDogInN1aGFzLm1laHRhQGZhbGtvbnJ5LmNvbSIsICJzZXNzaW9uIiA6ICIxNTUyNzM1MjQzMzAxNjE0IiB9.-LipZI1Bi9gHihdZqZ2iAo9m_OzTHM1b7DOCanPmijU\",\"account_id\":\"Bormiw2u4iwoi3\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 80,
+        "wires": [
+            [
+                "f727e74e.ca7e88"
+            ]
+        ]
+    },
+    {
+        "id": "f727e74e.ca7e88",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "var token = msg.payload.token;\nvar newMsg = {\n headers:\n {\n \"Authorization\":\"Bearer \"+token,\n \"content-type\":\"application/json\"\n },\n id: msg.payload.account_id\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "7e5f5bae.7d65d4"
+            ]
+        ]
+    },
+    {
+        "id": "e0ce78ee.a9d688",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "request for /accounts/accountID/authTokens",
+        "method": "POST",
+        "ret": "obj",
+        "url": "https://dev.falkonry.ai:30076/api/1.1/accounts/{{id}}/authTokens",
+        "tls": "",
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "e5a981e4.9a819"
+            ]
+        ]
+    },
+    {
+        "id": "e5a981e4.9a819",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4d0b6c91.8c22b4",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "Retrieve datastreams",
+        "info": "",
+        "x": 120,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7e5f5bae.7d65d4",
+        "type": "change",
+        "z": "99a711b3.be751",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"email\":\"suhas.mehta@falkonry.com\",\"purpose\":\"integration\",\"accessType\":\"ACCOUNT_USER\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 120,
+        "wires": [
+            [
+                "e0ce78ee.a9d688"
+            ]
+        ]
+    },
+    {
+        "id": "1c69d25f.5f8fce",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "Create authToken",
+        "info": "",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ee476718.f57878",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "var token = global.get(\"token\");\nvar newMsg = {\n method:'POST',\n headers:\n {\n \"Authorization\":\"Bearer \"+token, \n \"content-type\":\"application/json\"\n },\n url:`https://dev.falkonry.ai:30077/api/1.1/accounts/${global.get(\"account_id\")}/jobs`\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 640,
+        "wires": [
+            [
+                "d70533a.dffc6d"
+            ]
+        ]
+    },
+    {
+        "id": "6b9c5933.f98e58",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "request for /accounts/{accountID}/jobs",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 570,
+        "y": 680,
+        "wires": [
+            [
+                "7ed2a27a.9a1ebc",
+                "1de77dc0.807512"
+            ]
+        ]
+    },
+    {
+        "id": "b468ca63.b304a8",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "25ee67f5.0f4878",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "Historical Data Ingestion",
+        "info": "",
+        "x": 130,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d70533a.dffc6d",
+        "type": "change",
+        "z": "99a711b3.be751",
+        "name": "Set Data Identifiers & datastreamID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"jobType\":\"INGESTDATA\",\"status\":\"CREATED\",\"message\":\"Ingest Job successfully created\",\"datastream\":\"1555816038867532\",\"spec\":{\"format\":{\"entityIdentifier\":\"Entity\",\"timeIdentifier\":\"Time\",\"timeFormat\":\"YYYY-MM-DD HH:mm:ss\",\"timeZone\":\"America/Los_Angeles\"}}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 640,
+        "wires": [
+            [
+                "6b9c5933.f98e58"
+            ]
+        ]
+    },
+    {
+        "id": "e2b9a794.6c5478",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "1. Create Ingest Job",
+        "info": "",
+        "x": 130,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "af6b5a81.964888",
+        "type": "inject",
+        "z": "99a711b3.be751",
+        "name": "API Token & account id",
+        "topic": "",
+        "payload": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NjUyNzg1NzQsICJlbWFpbCIgOiAic3VoYXMubWVodGFAZmFsa29ucnkuY29tIiwgIm5hbWUiIDogInN1aGFzLm1laHRhQGZhbGtvbnJ5LmNvbSIsICJzZXNzaW9uIiA6ICIxNTUyNzM1MjQzMzAxNjE0IiB9.-LipZI1Bi9gHihdZqZ2iAo9m_OzTHM1b7DOCanPmijU\",\"account_id\":\"Bormiw2u4iwoi3\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "8b01db8e.1afed8"
+            ]
+        ]
+    },
+    {
+        "id": "8b01db8e.1afed8",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "var token = msg.payload.token;\nvar newMsg = {\n headers:\n {\n \"Authorization\":\"Bearer \"+token,\n \"content-type\":\"application/json\"\n },\n id: msg.payload.account_id\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "8376193e.575298"
+            ]
+        ]
+    },
+    {
+        "id": "a905371b.3642c8",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "request for /accounts/accountID/datastreams",
+        "method": "POST",
+        "ret": "obj",
+        "url": "https://dev.falkonry.ai:30076/api/1.1/accounts/{{id}}/datastreams",
+        "tls": "",
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "490650d6.bc548"
+            ]
+        ]
+    },
+    {
+        "id": "490650d6.bc548",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "549d2369.e7cc3c",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "1. Create Datastream",
+        "info": "",
+        "x": 120,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8376193e.575298",
+        "type": "change",
+        "z": "99a711b3.be751",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"name\":\"small-data-4\",\"stats\":{\"data\":0,\"events\":0,\"earliestDataPoint\":0,\"latestDataPoint\":0},\"isMultiEntity\":true,\"isBatch\":false}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 400,
+        "wires": [
+            [
+                "a905371b.3642c8"
+            ]
+        ]
+    },
+    {
+        "id": "c0a8e22e.c6be7",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "2. Ingest Data",
+        "info": "",
+        "x": 110,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "7ed2a27a.9a1ebc",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "//var id = msg.payload.id;\nvar token = global.get(\"token\");\nvar link = msg.payload.links[0].url;\nvar newMsg = {\n url:`https://dev.falkonry.ai:30077${link}`,\n method:'POST',\n headers: {\n \"Authorization\":\"Bearer \"+token,\n \"content-type\":\"text/csv\" \n }\n}\n//msg.url = `https://dev.falkonry.ai:30076/api/1.1/accounts/${global.get(\"account_id\")}/datastreams/${global.set(\"datastream_id\")}/ingestdata/${id}/inputs`\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 760,
+        "wires": [
+            [
+                "2a2f7e7d.3567e2"
+            ]
+        ]
+    },
+    {
+        "id": "6ad21da9.e53394",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "/accounts/{accountId}/datastreams/{datastreamId}/ingestdata/{id}/inputs",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 480,
+        "y": 800,
+        "wires": [
+            [
+                "b468ca63.b304a8",
+                "150808fe.1a3077"
+            ]
+        ]
+    },
+    {
+        "id": "2a2f7e7d.3567e2",
+        "type": "file in",
+        "z": "99a711b3.be751",
+        "name": "Data File",
+        "filename": "/Users/suhas/Documents/Falkonry/01-Product/2-Dataset/1-Test/2-Continuous/SmallData/verysmall1e-25.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 680,
+        "y": 760,
+        "wires": [
+            [
+                "6ad21da9.e53394"
+            ]
+        ]
+    },
+    {
+        "id": "904d0975.f81c88",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "Authorization",
+        "func": "var token = global.get(\"token\");\nvar job_id = msg.url.split('/')[10];\n//var job_id = 1548838553355232;\nvar newMsg = {\n method:'PUT',\n url:`https://dev.falkonry.ai:30077/api/1.1/accounts/${global.get(\"account_id\")}/jobs/${job_id}`,\n headers:\n {\n \"Authorization\":\"Bearer \"+token, \n \"content-type\":\"application/json\"\n },\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 880,
+        "wires": [
+            [
+                "86ad413.50316c"
+            ]
+        ]
+    },
+    {
+        "id": "5ee997a4.82c328",
+        "type": "http request",
+        "z": "99a711b3.be751",
+        "name": "request for /accounts/{accountID}/jobs/{jobID}",
+        "method": "use",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 580,
+        "y": 920,
+        "wires": [
+            [
+                "5faf0d22.b83a54"
+            ]
+        ]
+    },
+    {
+        "id": "5faf0d22.b83a54",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "86ad413.50316c",
+        "type": "change",
+        "z": "99a711b3.be751",
+        "name": "Job Status -> COMPLETED",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"jobType\":\"INGESTDATA\",\"status\":\"COMPLETED\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 880,
+        "wires": [
+            [
+                "5ee997a4.82c328"
+            ]
+        ]
+    },
+    {
+        "id": "207b66f0.5cad0a",
+        "type": "comment",
+        "z": "99a711b3.be751",
+        "name": "3. Complete Job",
+        "info": "",
+        "x": 120,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "897cef43.51168",
+        "type": "function",
+        "z": "99a711b3.be751",
+        "name": "global(account_id, token)",
+        "func": "global.set(\"account_id\",msg.payload.account_id)\nglobal.set(\"token\",msg.payload.token)",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99901e61.95f6b",
+        "type": "inject",
+        "z": "99a711b3.be751",
+        "name": "Account ID & Token",
+        "topic": "",
+        "payload": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NjUyNzg1NzQsICJlbWFpbCIgOiAic3VoYXMubWVodGFAZmFsa29ucnkuY29tIiwgIm5hbWUiIDogInN1aGFzLm1laHRhQGZhbGtvbnJ5LmNvbSIsICJzZXNzaW9uIiA6ICIxNTUyNzM1MjQzMzAxNjE0IiB9.-LipZI1Bi9gHihdZqZ2iAo9m_OzTHM1b7DOCanPmijU\",\"account_id\":\"Bormiw2u4iwoi3\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "897cef43.51168"
+            ]
+        ]
+    },
+    {
+        "id": "5bb82c97.4df394",
+        "type": "inject",
+        "z": "99a711b3.be751",
+        "name": "ingest",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "ee476718.f57878"
+            ]
+        ]
+    },
+    {
+        "id": "1de77dc0.807512",
+        "type": "debug",
+        "z": "99a711b3.be751",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 910,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "150808fe.1a3077",
+        "type": "delay",
+        "z": "99a711b3.be751",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 220,
+        "y": 880,
+        "wires": [
+            [
+                "904d0975.f81c88"
+            ]
+        ]
+    }
+]
